@@ -54,6 +54,9 @@ public class CRM1 extends javax.swing.JDialog {
             documento.add(parrafo);
             String probab=prob.getSelectedItem().toString();
             String impac =impacto.getSelectedItem().toString();
+            Chunk chunk = new Chunk("Matriz de evaluacion de riesgos", chapterFont);
+            chunk.setBackground(BaseColor.GRAY);
+            Chapter chapter = new Chapter(new Paragraph(chunk), 1);
             documento.add(new Paragraph("1. Función de combate: \n" + "    " + funcion.getText() + "\n"));
             documento.add(new Paragraph("2. Peligro identificado: \n" + "    " + peligro.getText() + "\n"));
             documento.add(new Paragraph("3. Factor posibilitante: \n" + "    " + factor.getText() + "\n"));

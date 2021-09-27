@@ -793,8 +793,8 @@ public class ActSit extends java.awt.Dialog {
             //va a modificar el documento
         } catch (FileNotFoundException ex) {
             Logger.getLogger(ActSit.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (DocumentException ex) {
-            Logger.getLogger(ActSit.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (DocumentException exception) {
+            Logger.getLogger(ActSit.class.getName()).log(Level.SEVERE, null, exception);
         }
 
         JOptionPane.showMessageDialog(null, "Cambios guardados, documento generado");

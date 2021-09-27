@@ -8,16 +8,18 @@ package PMTD.CRM;
 import PMTD.EValInicial.EvaRiesgo;
 import PMTD.EValInicial.EvalRiesgo;
 import PMTD.GuiaIni;
-import com.itextpdf.text.Document;
-import com.itextpdf.text.DocumentException;
-import com.itextpdf.text.Paragraph;
+import com.itextpdf.*;
+import com.itextpdf.text.*;
+import com.itextpdf.text.pdf.*;
 import com.itextpdf.text.pdf.PdfWriter;
 import java.awt.Desktop;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
+import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javafx.util.Pair;
 import javax.swing.JOptionPane;
 import net.sf.clipsrules.jni.Environment;
 import net.sf.clipsrules.jni.FactAddressValue;
@@ -32,6 +34,29 @@ public class CRM1 extends javax.swing.JDialog {
     /**
      * Creates new form CRM1
      */
+    //Color
+    private static BaseColor verdeClaro = new BaseColor(197,255,99);
+    private static BaseColor amarillo = new BaseColor(255,255,0);
+    private static BaseColor rosadoClaro = new BaseColor(255,135,207);
+    private static BaseColor rojo = new BaseColor(255,0,0);
+    private static BaseColor guinda = new BaseColor(212,0,0);
+    private static BaseColor hueso = new BaseColor(255,253,219);
+    private static BaseColor blanco = new BaseColor(255,255,255);
+    
+    private static final Font chapterFont = FontFactory.getFont(FontFactory.HELVETICA, 26, Font.BOLDITALIC);
+    private static final Font paragraphFont = FontFactory.getFont(FontFactory.HELVETICA, 12, Font.NORMAL);
+         
+    private static final Font categoryFont = new Font(Font.FontFamily.TIMES_ROMAN, 18, Font.BOLD);
+    private static final Font subcategoryFont = new Font(Font.FontFamily.TIMES_ROMAN, 16, Font.BOLD);
+    private static final Font normalFont = new Font(Font.FontFamily.TIMES_ROMAN, 10, Font.NORMAL);    
+    private static final Font smallBold = new Font(Font.FontFamily.TIMES_ROMAN, 10, Font.BOLD); 
+    private static final Font tittleBold = new Font(Font.FontFamily.TIMES_ROMAN, 20, Font.BOLD);
+    private static final Font HeaderWhite = new Font(Font.FontFamily.TIMES_ROMAN, 10, Font.BOLD,blanco);
+     
+    private static final String iTextExampleImage = "/home/xules/codigoxules/iText-Example-image.png";
+
+    private String resultadoAnalisis;
+    
     String nombre ="riesgos";
     Environment clips;
     public CRM1(java.awt.Frame parent, boolean modal) {
@@ -47,23 +72,201 @@ public class CRM1 extends javax.swing.JDialog {
             FileOutputStream archivo = new FileOutputStream(nombre + ".pdf"); 
             Document documento = new Document();
             PdfWriter.getInstance(documento, archivo);
-            documento.open();
             
-            Paragraph parrafo = new Paragraph("EVALUACIÓN DE RIESGOS \n\n");
-            parrafo.setAlignment(1);
-            documento.add(parrafo);
             String probab=prob.getSelectedItem().toString();
             String impac =impacto.getSelectedItem().toString();
-            Chunk chunk = new Chunk("Matriz de evaluacion de riesgos", chapterFont);
-            chunk.setBackground(BaseColor.GRAY);
-            Chapter chapter = new Chapter(new Paragraph(chunk), 1);
-            documento.add(new Paragraph("1. Función de combate: \n" + "    " + funcion.getText() + "\n"));
-            documento.add(new Paragraph("2. Peligro identificado: \n" + "    " + peligro.getText() + "\n"));
-            documento.add(new Paragraph("3. Factor posibilitante: \n" + "    " + factor.getText() + "\n"));
-            documento.add(new Paragraph("4. Riesgo: \n" + "    " + riesgo.getText() + "\n"));
-            documento.add(new Paragraph("5. Probabilidad: \n" + "    " + probab + "\n"));
-            documento.add(new Paragraph("6. Impacto: \n" + "    " + impac + "\n"));
-            documento.add(new Paragraph("7. Categoria del riesgo: \n" + "    " + cat.getText() + "\n"));
+            
+            documento.open();
+            
+            //Titulo
+            Paragraph parrafo = new Paragraph("EVALUACIÓN DE RIESGOS \n\n",tittleBold);
+            parrafo.setAlignment(1);
+            documento.add(parrafo);
+            
+            //Tabla de riesgos detectados
+            documento.add(new Paragraph("1. Riesgos detectados: \n\n",smallBold));
+            
+            //Nro de filas y columnas
+            Integer numColumnsRiesgosDetectados = 5;
+            Integer numRowsRiesgosDetectados = 1;
+            
+            // Creacion de la tabla
+            PdfPTable tablaRiesgosDetectados = new PdfPTable(numColumnsRiesgosDetectados); 
+            
+            //Lista de campos de la cabecera
+            ArrayList<Pair<String, Integer>> camposRiesgosList =  new ArrayList<>();
+            camposRiesgosList.add(new Pair("NRO",0));
+            camposRiesgosList.add(new Pair("RIESGO",1));
+            camposRiesgosList.add(new Pair("FUNCIÓN DE COMBATE",2));
+            camposRiesgosList.add(new Pair("FACTOR POSIBILITANTE",3));
+            camposRiesgosList.add(new Pair("EVALUACIÓN O ANÁLISIS",4));
+            
+            //Lista de campos de la cabecera
+            ArrayList<Pair<String, Integer>> valoresRiesgoList =  new ArrayList<>();
+            valoresRiesgoList.add(new Pair("1",0));
+            valoresRiesgoList.add(new Pair(riesgo.getText(),1));
+            valoresRiesgoList.add(new Pair(funcion.getText(),2));
+            valoresRiesgoList.add(new Pair(factor.getText(),3));
+            valoresRiesgoList.add(new Pair("P   :"+ probab + "\n"+"I:   "+ impac + "\n"+ "CR:" +resultadoAnalisis,4));
+            
+            //rellenamos los campos de la cabecera de la tabla
+            PdfPCell columnHeader;            
+            for (int column = 0; column < numColumnsRiesgosDetectados; column++) {
+                columnHeader = new PdfPCell(new Phrase(camposRiesgosList.get(column).getKey(),HeaderWhite));
+                columnHeader.setHorizontalAlignment(Element.ALIGN_CENTER);
+                columnHeader.setVerticalAlignment(Element.ALIGN_MIDDLE);
+                columnHeader.setBackgroundColor(guinda);
+                tablaRiesgosDetectados.addCell(columnHeader);
+            }
+            tablaRiesgosDetectados.setWidths(new int[]{30,80,100,120,80});
+            tablaRiesgosDetectados.setHeaderRows(1);
+            
+            // Rellenamos las filas de la tabla.
+            PdfPCell cellContentRiesgos;           
+            for (int row = 0; row < numRowsRiesgosDetectados; row++) {
+                for (int column = 0; column < numColumnsRiesgosDetectados; column++) {
+                    cellContentRiesgos = new PdfPCell(new Phrase(valoresRiesgoList.get(column).getKey(),normalFont));
+                    cellContentRiesgos.setVerticalAlignment(Element.ALIGN_MIDDLE);
+                    if(column==0||column==1||column==2){
+                        cellContentRiesgos.setHorizontalAlignment(Element.ALIGN_CENTER);                
+                    }
+                    cellContentRiesgos.setMinimumHeight(20);
+                    cellContentRiesgos.setBackgroundColor(hueso);
+                    tablaRiesgosDetectados.addCell(cellContentRiesgos);
+                }
+            }
+            // We add the paragraph with the table (Añadimos el elemento con la tabla).
+            documento.add(tablaRiesgosDetectados);
+            
+            documento.add(new Paragraph("\n"));
+            
+            documento.add(new Paragraph("2. Resumen de la Evaluacion de Matriz de riesgos: \n\n",smallBold ));
+            //Resumen de evaluacion de matriz de riesgos
+            Integer numColumns = 6;
+            Integer numRows = 5;
+            // We create the table (Creamos la tabla).
+            PdfPTable tablaEvaluacionRiesgos = new PdfPTable(numColumns); 
+            // Now we fill the PDF table 
+            //
+            ArrayList<Pair<String, Integer>> impactoList =  new ArrayList<>();
+            impactoList.add(new Pair("Catastrofico",0));
+            impactoList.add(new Pair("Critico",1));
+            impactoList.add(new Pair("Marginal",2));
+            impactoList.add(new Pair("Insignificante",3));
+            
+            //
+            ArrayList<Pair<String, Integer>> ocurrenciaList =  new ArrayList<>();
+            ocurrenciaList.add(new Pair("Improbable",1));
+            ocurrenciaList.add(new Pair("Rara-vez",2));
+            ocurrenciaList.add(new Pair("Ocasional",3));
+            ocurrenciaList.add(new Pair("Probable",4));
+            ocurrenciaList.add(new Pair("Frecuente",5));
+            
+            // Ahora llenamos la tabla del PDF
+            
+            // Fill table rows (rellenamos las filas de la tabla).                
+            
+            tablaEvaluacionRiesgos.setHeaderRows(0);
+            // Fill table rows (rellenamos las filas de la tabla.
+            
+            for (int row = 0; row < numRows-1; row++) {
+                //col 0
+                PdfPCell rowLeft = new PdfPCell(new Phrase(impactoList.get(row).getKey(),normalFont));
+                rowLeft.setHorizontalAlignment(Element.ALIGN_CENTER);
+                rowLeft.setVerticalAlignment(Element.ALIGN_MIDDLE);
+                rowLeft.setBorderWidth(0);
+                tablaEvaluacionRiesgos.addCell(rowLeft);
+                //col 1-maxcol
+                for (int column = 1; column < numColumns; column++) {
+                    
+                    PdfPCell cellContent = new PdfPCell();
+                    cellContent.setMinimumHeight(32);
+                    cellContent.setHorizontalAlignment(Element.ALIGN_CENTER);
+                    cellContent.setVerticalAlignment(Element.ALIGN_MIDDLE);
+                    System.out.println(impactoList.get(row).getKey()+"-"+impac+","+ocurrenciaList.get(column-1).getKey()+"-"+probab);
+                    if (impactoList.get(row).getKey().equalsIgnoreCase(impac)&&ocurrenciaList.get(column-1).getKey().equalsIgnoreCase(probab)){
+                        cellContent.setPhrase(new Phrase(new Chunk("Riesgo 01",smallBold)));
+                    }
+                    
+                    switch(""+row+column){
+                        case "01":{
+                            cellContent.setBackgroundColor(amarillo);
+                            break;
+                        }
+                        case "02":
+                        case "03":{
+                            cellContent.setBackgroundColor(rosadoClaro);
+                            break;
+                        }
+                        case "04":
+                        case "05":{
+                            cellContent.setBackgroundColor(rojo);
+                            break;
+                        }
+                        case "11":{
+                            cellContent.setBackgroundColor(verdeClaro);
+                            break;
+                        }
+                        case "12":{
+                            cellContent.setBackgroundColor(amarillo);
+                            break;
+                        }
+                        case "13":
+                        case "14":{
+                            cellContent.setBackgroundColor(rosadoClaro);
+                            break;
+                        }
+                        case "15":{
+                            cellContent.setBackgroundColor(rojo);
+                            break;
+                        }
+                        case "21":
+                        case "22":{
+                            cellContent.setBackgroundColor(verdeClaro);
+                            break;
+                        }
+                        case "23":
+                        case "24":{
+                            cellContent.setBackgroundColor(amarillo);
+                            break;
+                        }
+                        case "25":{
+                            cellContent.setBackgroundColor(rosadoClaro);
+                            break;
+                        }
+                        case "31":
+                        case "32":
+                        case "33":
+                        case "34":{
+                            cellContent.setBackgroundColor(verdeClaro);
+                            break;
+                        }
+                        case "35":{
+                            cellContent.setBackgroundColor(amarillo);
+                            break;
+                        }
+                    }
+                    System.out.println(""+row+column+ "\n"+ cellContent);
+                    tablaEvaluacionRiesgos.addCell(cellContent);
+                }
+            }
+            PdfPCell cellVacio = new PdfPCell();
+            cellVacio.setMinimumHeight(32);
+            cellVacio.setBorderWidth(0);
+            tablaEvaluacionRiesgos.addCell(cellVacio);
+            
+            PdfPCell columnFooter;
+            for (int column = 1; column < numColumns; column++) {
+                columnFooter = new PdfPCell(new Phrase(ocurrenciaList.get(column-1).getKey(),normalFont));
+                columnFooter.setHorizontalAlignment(Element.ALIGN_CENTER);
+                columnFooter.setVerticalAlignment(Element.ALIGN_MIDDLE);
+                columnFooter.setMinimumHeight(32);
+                columnFooter.setBorderWidth(0);
+                tablaEvaluacionRiesgos.addCell(columnFooter);
+            }
+            // We add the paragraph with the table (Añadimos el elemento con la tabla).
+            documento.add(tablaEvaluacionRiesgos);
+            documento.add(new Paragraph("\n"));
           
             documento.close();
             JOptionPane.showMessageDialog(null, "El archivo pdf fue creado correctamente");
@@ -382,9 +585,9 @@ public class CRM1 extends javax.swing.JDialog {
         FactAddressValue fv = (FactAddressValue) ((MultifieldValue) clips.eval(evaluador)).get(0);
 
         try {
-            String msj = fv.getFactSlot("mensaje").toString();
-            JOptionPane.showMessageDialog(null, msj);
-            cat.setText(msj);
+            resultadoAnalisis = fv.getFactSlot("mensaje").toString();
+            JOptionPane.showMessageDialog(null,"La categoria del riesgo es "+ resultadoAnalisis);
+            cat.setText("La categoria del riesgo es "+resultadoAnalisis);
             clips.reset();
         } catch (Exception ex) {
             Logger.getLogger(EvalRiesgo.class.getName()).log(Level.SEVERE, null, ex);

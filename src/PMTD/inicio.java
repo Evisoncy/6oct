@@ -16,8 +16,10 @@ public class inicio {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        Iniciar sid =new Iniciar();
+        Iniciar sid = new Iniciar();
         sid.setVisible(true);
+        sid.audio();
+        
     }
     
 }

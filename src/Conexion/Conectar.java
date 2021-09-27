@@ -8,7 +8,7 @@ public class Conectar {
 
     static String bd = "archivos";
     static String login = "root";
-    static String password = "your_password";
+    static String password = "PeLoTeRo10&";
     static String url = "jdbc:mysql://localhost/" + bd;
     Connection connection = null;
 

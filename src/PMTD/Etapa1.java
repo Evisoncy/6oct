@@ -41,9 +41,9 @@ public class Etapa1 extends javax.swing.JPanel {
         jButton6 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jButton7 = new javax.swing.JButton();
-        jPanel1 = new javax.swing.JPanel();
-        jLabel2 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
 
         jMenu1.setText("jMenu1");
 
@@ -53,8 +53,8 @@ public class Etapa1 extends javax.swing.JPanel {
         setPreferredSize(new java.awt.Dimension(726, 468));
         setLayout(null);
 
-        jButton1.setText("ORGANIZAR EL GRUPO DE PLANEAMIENTO");
-        jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/etapa1/ORGANIZAR EL GRUPO DE PLANEAMIENTO.png"))); // NOI18N
+        jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jButton1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -62,10 +62,10 @@ public class Etapa1 extends javax.swing.JPanel {
             }
         });
         add(jButton1);
-        jButton1.setBounds(350, 100, 320, 25);
+        jButton1.setBounds(320, 100, 290, 30);
 
-        jButton3.setText("REUNIR HERRAMIENTAS");
-        jButton3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/etapa1/REUNIR HERRAMIENTAS.png"))); // NOI18N
+        jButton3.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jButton3.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -73,10 +73,10 @@ public class Etapa1 extends javax.swing.JPanel {
             }
         });
         add(jButton3);
-        jButton3.setBounds(350, 150, 320, 25);
+        jButton3.setBounds(320, 150, 290, 30);
 
-        jButton4.setText("ACTUALIZAR APRECIACIONES DE SITUACIÓN");
-        jButton4.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/etapa2/ACTUALIZAR APRECIACIONES DE SITUACIÓN.png"))); // NOI18N
+        jButton4.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jButton4.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -84,10 +84,10 @@ public class Etapa1 extends javax.swing.JPanel {
             }
         });
         add(jButton4);
-        jButton4.setBounds(350, 200, 320, 25);
+        jButton4.setBounds(320, 200, 290, 30);
 
-        jButton5.setText("ESTABLECER ENLACES");
-        jButton5.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/etapa1/ESTABLECER ENLACES.png"))); // NOI18N
+        jButton5.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jButton5.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jButton5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -95,10 +95,10 @@ public class Etapa1 extends javax.swing.JPanel {
             }
         });
         add(jButton5);
-        jButton5.setBounds(350, 250, 320, 25);
+        jButton5.setBounds(320, 250, 290, 30);
 
-        jButton6.setText("CONDUCIR LA EVALUACION INICIAL");
-        jButton6.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/etapa1/CONDUCIR LA EVALUACION INICIAL.png"))); // NOI18N
+        jButton6.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jButton6.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jButton6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -106,43 +106,41 @@ public class Etapa1 extends javax.swing.JPanel {
             }
         });
         add(jButton6);
-        jButton6.setBounds(350, 300, 320, 25);
+        jButton6.setBounds(320, 300, 290, 30);
 
-        jButton2.setText("GUIA DE INICIACIÓN");
-        jButton2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/etapa1/GUIA DE INICIACION.png"))); // NOI18N
+        jButton2.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
             }
         });
         add(jButton2);
-        jButton2.setBounds(350, 350, 320, 24);
+        jButton2.setBounds(320, 350, 290, 30);
 
-        jButton7.setText("ORDEN PREPARATORIA N°1");
-        jButton7.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/etapa1/ORDEN PREPARATORIA N1.png"))); // NOI18N
+        jButton7.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jButton7.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton7ActionPerformed(evt);
             }
         });
         add(jButton7);
-        jButton7.setBounds(350, 400, 320, 24);
-
-        jPanel1.setLayout(new java.awt.BorderLayout());
-
-        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel2.setText("RECEPCIÓN DE LA MISION");
-        jLabel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jLabel2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jPanel1.add(jLabel2, java.awt.BorderLayout.CENTER);
-
-        add(jPanel1);
-        jPanel1.setBounds(0, 0, 730, 50);
+        jButton7.setBounds(320, 400, 290, 30);
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/font1.jpg"))); // NOI18N
         add(jLabel1);
-        jLabel1.setBounds(0, 50, 330, 440);
+        jLabel1.setBounds(0, 60, 300, 430);
+
+        jLabel4.setFont(new java.awt.Font("Tahoma", 1, 20)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel4.setText("RECEPCIÓN DE LA MISIÓN");
+        add(jLabel4);
+        jLabel4.setBounds(170, 10, 270, 33);
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/etapa2/fondo1.png"))); // NOI18N
+        add(jLabel2);
+        jLabel2.setBounds(0, 0, 740, 60);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
@@ -208,7 +206,7 @@ public class Etapa1 extends javax.swing.JPanel {
     private javax.swing.JButton jButton7;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JMenu jMenu1;
-    private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }

@@ -8,6 +8,7 @@ package PMTD;
 
 import PMTD.EValInicial.evaInicial;
 import Visual.MostrarPDF;
+import Visual.PDF;
 import java.awt.Menu;
 
 /**
@@ -54,6 +55,7 @@ public class Etapa1 extends javax.swing.JPanel {
         setLayout(null);
 
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/etapa1/ORGANIZAR EL GRUPO DE PLANEAMIENTO.png"))); // NOI18N
+        jButton1.setContentAreaFilled(false);
         jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jButton1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -62,7 +64,7 @@ public class Etapa1 extends javax.swing.JPanel {
             }
         });
         add(jButton1);
-        jButton1.setBounds(320, 100, 290, 30);
+        jButton1.setBounds(330, 90, 290, 30);
 
         jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/etapa1/REUNIR HERRAMIENTAS.png"))); // NOI18N
         jButton3.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
@@ -73,7 +75,7 @@ public class Etapa1 extends javax.swing.JPanel {
             }
         });
         add(jButton3);
-        jButton3.setBounds(320, 150, 290, 30);
+        jButton3.setBounds(330, 140, 290, 30);
 
         jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/etapa2/ACTUALIZAR APRECIACIONES DE SITUACIÓN.png"))); // NOI18N
         jButton4.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
@@ -84,7 +86,7 @@ public class Etapa1 extends javax.swing.JPanel {
             }
         });
         add(jButton4);
-        jButton4.setBounds(320, 200, 290, 30);
+        jButton4.setBounds(330, 190, 290, 30);
 
         jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/etapa1/ESTABLECER ENLACES.png"))); // NOI18N
         jButton5.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
@@ -95,7 +97,7 @@ public class Etapa1 extends javax.swing.JPanel {
             }
         });
         add(jButton5);
-        jButton5.setBounds(320, 250, 290, 30);
+        jButton5.setBounds(330, 240, 290, 30);
 
         jButton6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/etapa1/CONDUCIR LA EVALUACION INICIAL.png"))); // NOI18N
         jButton6.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
@@ -106,7 +108,7 @@ public class Etapa1 extends javax.swing.JPanel {
             }
         });
         add(jButton6);
-        jButton6.setBounds(320, 300, 290, 30);
+        jButton6.setBounds(330, 290, 290, 30);
 
         jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/etapa1/GUIA DE INICIACION.png"))); // NOI18N
         jButton2.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
@@ -116,7 +118,7 @@ public class Etapa1 extends javax.swing.JPanel {
             }
         });
         add(jButton2);
-        jButton2.setBounds(320, 350, 290, 30);
+        jButton2.setBounds(330, 340, 290, 30);
 
         jButton7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/etapa1/ORDEN PREPARATORIA N1.png"))); // NOI18N
         jButton7.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
@@ -126,9 +128,9 @@ public class Etapa1 extends javax.swing.JPanel {
             }
         });
         add(jButton7);
-        jButton7.setBounds(320, 400, 290, 30);
+        jButton7.setBounds(330, 390, 290, 30);
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/font1.jpg"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/etapa1/etapa1fondo.png"))); // NOI18N
         add(jLabel1);
         jLabel1.setBounds(0, 60, 300, 430);
 
@@ -157,8 +159,9 @@ public class Etapa1 extends javax.swing.JPanel {
         r.setLocationRelativeTo(null);
         r.setVisible(true);*/
         
-        MostrarPDF f = new MostrarPDF();
+        PDF f = new PDF(null,true);
         f.setVisible(true);
+        f.setLocationRelativeTo(null);
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed

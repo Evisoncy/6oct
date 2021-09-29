@@ -50,6 +50,7 @@
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
           <Image iconType="3" name="/img/etapa1/ORGANIZAR EL GRUPO DE PLANEAMIENTO.png"/>
         </Property>
+        <Property name="contentAreaFilled" type="boolean" value="false"/>
         <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
           <Color id="Cursor Por defecto"/>
         </Property>
@@ -60,7 +61,7 @@
       </Events>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="320" y="100" width="290" height="30"/>
+          <AbsoluteConstraints x="330" y="90" width="290" height="30"/>
         </Constraint>
       </Constraints>
     </Component>
@@ -79,7 +80,7 @@
       </Events>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="320" y="150" width="290" height="30"/>
+          <AbsoluteConstraints x="330" y="140" width="290" height="30"/>
         </Constraint>
       </Constraints>
     </Component>
@@ -98,7 +99,7 @@
       </Events>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="320" y="200" width="290" height="30"/>
+          <AbsoluteConstraints x="330" y="190" width="290" height="30"/>
         </Constraint>
       </Constraints>
     </Component>
@@ -117,7 +118,7 @@
       </Events>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="320" y="250" width="290" height="30"/>
+          <AbsoluteConstraints x="330" y="240" width="290" height="30"/>
         </Constraint>
       </Constraints>
     </Component>
@@ -136,7 +137,7 @@
       </Events>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="320" y="300" width="290" height="30"/>
+          <AbsoluteConstraints x="330" y="290" width="290" height="30"/>
         </Constraint>
       </Constraints>
     </Component>
@@ -154,7 +155,7 @@
       </Events>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="320" y="350" width="290" height="30"/>
+          <AbsoluteConstraints x="330" y="340" width="290" height="30"/>
         </Constraint>
       </Constraints>
     </Component>
@@ -172,14 +173,14 @@
       </Events>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="320" y="400" width="290" height="30"/>
+          <AbsoluteConstraints x="330" y="390" width="290" height="30"/>
         </Constraint>
       </Constraints>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel1">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/img/font1.jpg"/>
+          <Image iconType="3" name="/img/etapa1/etapa1fondo.png"/>
         </Property>
       </Properties>
       <Constraints>

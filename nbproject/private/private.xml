@@ -4,6 +4,8 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/C:/Users/WIMBER/Downloads/PMTD_interfaz/src/PMTD/Suposicion.java</file>
+            <file>file:/C:/Users/WIMBER/Downloads/PMTD_interfaz/src/img/icons8_security_lock_30px.png</file>
+            <file>file:/C:/Users/WIMBER/Downloads/PMTD_interfaz/src/img/inicio1.jpeg</file>
             <file>file:/C:/Users/WIMBER/Downloads/PMTD_interfaz/src/Conexion/Conectar.java</file>
             <file>file:/C:/Users/WIMBER/Downloads/PMTD_interfaz/src/Visual/MostrarPDF.java</file>
             <file>file:/C:/Users/WIMBER/Downloads/PMTD_interfaz/src/DAO/PdfDAO.java</file>
@@ -16,19 +18,26 @@
             <file>file:/C:/Users/WIMBER/Downloads/PMTD_interfaz/src/PMTD/det_tareas.java</file>
             <file>file:/C:/Users/WIMBER/Downloads/PMTD_interfaz/src/PMTD/CRM/CRM1.java</file>
             <file>file:/C:/Users/WIMBER/Downloads/PMTD_interfaz/src/PMTD/requerimientoDialog.java</file>
+            <file>file:/C:/Users/WIMBER/Downloads/PMTD_interfaz/src/img/menu/fondoInicio.jpeg</file>
             <file>file:/C:/Users/WIMBER/Downloads/PMTD_interfaz/src/PMTD/CRM/EvImp.java</file>
             <file>file:/C:/Users/WIMBER/Downloads/PMTD_interfaz/src/PMTD/organizacionDialog.java</file>
             <file>file:/C:/Users/WIMBER/Downloads/PMTD_interfaz/src/PMTD/ReunirHe.java</file>
             <file>file:/C:/Users/WIMBER/Downloads/PMTD_interfaz/src/PMTD/Etapa1.java</file>
+            <file>file:/C:/Users/WIMBER/Downloads/PMTD_interfaz/src/img/etapa2/fondo1.png</file>
             <file>file:/C:/Users/WIMBER/Downloads/PMTD_interfaz/src/PMTD/Menu.java</file>
+            <file>file:/C:/Users/WIMBER/Downloads/PMTD_interfaz/src/img/etapa1/ORGANIZAR%20EL%20GRUPO%20DE%20PLANEAMIENTO.png</file>
             <file>file:/C:/Users/WIMBER/Downloads/PMTD_interfaz/src/PMTD/inicio.java</file>
             <file>file:/C:/Users/WIMBER/Downloads/PMTD_interfaz/src/PMTD/Iniciar.java</file>
             <file>file:/C:/Users/WIMBER/Downloads/PMTD_interfaz/src/PMTD/limitacionesDialog.java</file>
             <file>file:/C:/Users/WIMBER/Downloads/PMTD_interfaz/src/PMTD/PlanElonSup.java</file>
             <file>file:/C:/Users/WIMBER/Downloads/PMTD_interfaz/src/PMTD/Soldado.java</file>
             <file>file:/C:/Users/WIMBER/Downloads/PMTD_interfaz/src/PMTD/ActSit.java</file>
+            <file>file:/C:/Users/WIMBER/Downloads/PMTD_interfaz/src/PMTD/CRM/CRM.java</file>
             <file>file:/C:/Users/WIMBER/Downloads/PMTD_interfaz/src/PMTD/GuiaIni.java</file>
+            <file>file:/C:/Users/WIMBER/Downloads/PMTD_interfaz/src/img/etapa2/titulo.png</file>
             <file>file:/C:/Users/WIMBER/Downloads/PMTD_interfaz/src/Conexion/sql.java</file>
+            <file>file:/C:/Users/WIMBER/Downloads/PMTD_interfaz/src/img/etapa1/Sin%20título.png</file>
+            <file>file:/C:/Users/WIMBER/Downloads/PMTD_interfaz/src/img/icons8_pdf_48px.png</file>
             <file>file:/C:/Users/WIMBER/Downloads/PMTD_interfaz/src/PMTD/CRM/EvProb.java</file>
         </group>
     </open-files>

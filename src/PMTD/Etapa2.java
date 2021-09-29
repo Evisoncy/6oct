@@ -5,8 +5,7 @@
  */
 package PMTD;
 
-import PMTD.CRM.CRM1;
-
+import PMTD.CRM.CRM;
 import PMTD.EvalRecursos.tarea;
 
 /**
@@ -39,9 +38,9 @@ public class Etapa2 extends javax.swing.JPanel {
         jButton5 = new javax.swing.JButton();
         jButton8 = new javax.swing.JButton();
         jButton9 = new javax.swing.JButton();
-        jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
 
         jLabel1.setText("jLabel1");
 
@@ -59,10 +58,9 @@ public class Etapa2 extends javax.swing.JPanel {
                 jButton2ActionPerformed(evt);
             }
         });
-        add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 100, 280, 30));
+        add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 90, 280, 30));
 
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/etapa2/DETERMINACION DE TAREAS.png"))); // NOI18N
-        jButton1.setActionCommand("");
         jButton1.setBorder(null);
         jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jButton1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -71,7 +69,7 @@ public class Etapa2 extends javax.swing.JPanel {
                 jButton1ActionPerformed(evt);
             }
         });
-        add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 200, 280, 30));
+        add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 190, 280, 30));
 
         jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/etapa2/EVALUACION DE LOS RECURSOS DISPONIBLES.png"))); // NOI18N
         jButton3.setBorder(null);
@@ -82,7 +80,7 @@ public class Etapa2 extends javax.swing.JPanel {
                 jButton3ActionPerformed(evt);
             }
         });
-        add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 250, 280, 30));
+        add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 240, 280, 30));
 
         jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/etapa2/IDENTIFICACION DE LIMITACIONES.png"))); // NOI18N
         jButton4.setBorder(null);
@@ -93,18 +91,23 @@ public class Etapa2 extends javax.swing.JPanel {
                 jButton4ActionPerformed(evt);
             }
         });
-        add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 300, 280, 30));
+        add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 290, 280, 30));
 
-        jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/etapa2/HECHOS CRITICOS Y DESARROLLO DE SUPOSICIONES.png"))); // NOI18N
+        jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/etapa2/Etapa 2 - Actividad 6.png"))); // NOI18N
         jButton5.setBorder(null);
+        JButton5..setPreferredSize(new Dimension(300, 40));
+        jButton5.setContentAreaFilled(false);
         jButton5.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jButton5.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jButton5.setMaximumSize(new java.awt.Dimension(300, 40));
+        jButton5.setMinimumSize(new java.awt.Dimension(300, 40));
+        jButton5.setPreferredSize(new java.awt.Dimension(300, 40));
         jButton5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton5ActionPerformed(evt);
             }
         });
-        add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 350, 280, 30));
+        add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 330, 280, 30));
 
         jButton8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/etapa2/(CRM).png"))); // NOI18N
         jButton8.setBorder(null);
@@ -115,9 +118,9 @@ public class Etapa2 extends javax.swing.JPanel {
                 jButton8ActionPerformed(evt);
             }
         });
-        add(jButton8, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 400, 280, 30));
+        add(jButton8, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 390, 280, 30));
 
-        jButton9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/etapa1/REVISION DE LA SITUACION.png"))); // NOI18N
+        jButton9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/etapa2/WhatsApp Image 2021-09-29 at 4.26.25 PM.jpeg"))); // NOI18N
         jButton9.setBorder(null);
         jButton9.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jButton9.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -126,11 +129,7 @@ public class Etapa2 extends javax.swing.JPanel {
                 jButton9ActionPerformed(evt);
             }
         });
-        add(jButton9, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 150, 280, 30));
-
-        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/1.jpg"))); // NOI18N
-        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 60, 740, 430));
+        add(jButton9, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 140, 340, 40));
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 1, 20)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
@@ -140,6 +139,9 @@ public class Etapa2 extends javax.swing.JPanel {
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/etapa2/fondo1.png"))); // NOI18N
         jLabel2.setText("jghkhkjh");
         add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 740, 60));
+
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/etapa2/30.jpg"))); // NOI18N
+        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 310, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
@@ -179,7 +181,7 @@ public class Etapa2 extends javax.swing.JPanel {
     private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
         /*EvalRiesgo crm = new EvalRiesgo();
         crm.setVisible(true);*/
-        CRM1 c = new CRM1(null,true);
+        CRM c = new CRM(null,true);
         c.setVisible(true);
     }//GEN-LAST:event_jButton8ActionPerformed
 
@@ -200,7 +202,7 @@ public class Etapa2 extends javax.swing.JPanel {
     private javax.swing.JButton jButton9;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     // End of variables declaration//GEN-END:variables
 }

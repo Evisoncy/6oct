@@ -39,109 +39,174 @@ public class Etapa2 extends javax.swing.JPanel {
         jButton8 = new javax.swing.JButton();
         jButton9 = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
 
         jLabel1.setText("jLabel1");
 
         setBackground(new java.awt.Color(255, 255, 255));
-        setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        setOpaque(false);
         setPreferredSize(new java.awt.Dimension(726, 468));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/etapa2/ANALISIS DEL PLAN DEL ELON SUPERIOR.png"))); // NOI18N
+        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/2da etapa/botones/Etapa 2 - Actividad 1.png"))); // NOI18N
         jButton2.setBorder(null);
+        jButton2.setContentAreaFilled(false);
         jButton2.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jButton2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jButton2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jButton2MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                jButton2MouseExited(evt);
+            }
+        });
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
             }
         });
-        add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 90, 280, 30));
+        add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 90, 280, 30));
 
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/etapa2/DETERMINACION DE TAREAS.png"))); // NOI18N
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/2da etapa/botones/Etapa 2 - Actividad 3.png"))); // NOI18N
         jButton1.setBorder(null);
+        jButton1.setContentAreaFilled(false);
         jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jButton1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jButton1MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                jButton1MouseExited(evt);
+            }
+        });
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
-        add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 190, 280, 30));
+        add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 190, 280, 30));
 
-        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/etapa2/EVALUACION DE LOS RECURSOS DISPONIBLES.png"))); // NOI18N
+        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/2da etapa/botones/Etapa 2 - Actividad 4.png"))); // NOI18N
         jButton3.setBorder(null);
+        jButton3.setContentAreaFilled(false);
         jButton3.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jButton3.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jButton3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jButton3MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                jButton3MouseExited(evt);
+            }
+        });
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton3ActionPerformed(evt);
             }
         });
-        add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 240, 280, 30));
+        add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 240, 280, 30));
 
-        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/etapa2/IDENTIFICACION DE LIMITACIONES.png"))); // NOI18N
+        jButton4.setBackground(new java.awt.Color(255, 255, 255));
+        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/2da etapa/botones/Etapa 2 - Actividad 5.png"))); // NOI18N
         jButton4.setBorder(null);
+        jButton4.setBorderPainted(false);
+        jButton4.setContentAreaFilled(false);
         jButton4.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jButton4.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jButton4.setMaximumSize(new java.awt.Dimension(280, 30));
+        jButton4.setMinimumSize(new java.awt.Dimension(280, 30));
+        jButton4.setPreferredSize(new java.awt.Dimension(280, 33));
+        jButton4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jButton4MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                jButton4MouseExited(evt);
+            }
+        });
         jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton4ActionPerformed(evt);
             }
         });
-        add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 290, 280, 30));
+        add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 290, 280, 30));
 
-        jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/etapa2/Etapa 2 - Actividad 6.png"))); // NOI18N
+        jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/2da etapa/botones/Etapa 2 - Actividad 6.png"))); // NOI18N
         jButton5.setBorder(null);
-        JButton5..setPreferredSize(new Dimension(300, 40));
         jButton5.setContentAreaFilled(false);
         jButton5.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jButton5.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jButton5.setMaximumSize(new java.awt.Dimension(300, 40));
         jButton5.setMinimumSize(new java.awt.Dimension(300, 40));
         jButton5.setPreferredSize(new java.awt.Dimension(300, 40));
+        jButton5.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jButton5MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                jButton5MouseExited(evt);
+            }
+        });
         jButton5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton5ActionPerformed(evt);
             }
         });
-        add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 330, 280, 30));
+        add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 340, 280, 30));
 
-        jButton8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/etapa2/(CRM).png"))); // NOI18N
+        jButton8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/2da etapa/botones/Etapa 2 - Actividad 7.png"))); // NOI18N
         jButton8.setBorder(null);
+        jButton8.setContentAreaFilled(false);
         jButton8.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jButton8.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jButton8.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jButton8MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                jButton8MouseExited(evt);
+            }
+        });
         jButton8.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton8ActionPerformed(evt);
             }
         });
-        add(jButton8, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 390, 280, 30));
+        add(jButton8, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 390, 280, 30));
 
-        jButton9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/etapa2/WhatsApp Image 2021-09-29 at 4.26.25 PM.jpeg"))); // NOI18N
+        jButton9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/2da etapa/botones/Etapa 2 - Actividad 2.png"))); // NOI18N
         jButton9.setBorder(null);
+        jButton9.setContentAreaFilled(false);
         jButton9.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jButton9.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jButton9.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jButton9MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                jButton9MouseExited(evt);
+            }
+        });
         jButton9.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton9ActionPerformed(evt);
             }
         });
-        add(jButton9, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 140, 340, 40));
+        add(jButton9, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 140, 280, 30));
 
+        jLabel4.setBackground(new java.awt.Color(86, 96, 62));
         jLabel4.setFont(new java.awt.Font("Tahoma", 1, 20)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel4.setText("ANÁLISIS DE LA MISIÓN");
-        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 20, 260, -1));
-
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/etapa2/fondo1.png"))); // NOI18N
-        jLabel2.setText("jghkhkjh");
-        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 740, 60));
+        jLabel4.setOpaque(true);
+        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 340, 60));
 
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/etapa2/30.jpg"))); // NOI18N
-        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 310, -1));
+        jLabel5.setPreferredSize(new java.awt.Dimension(340, 600));
+        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 60, 340, 400));
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
@@ -191,6 +256,80 @@ public class Etapa2 extends javax.swing.JPanel {
         RS.setVisible(true);
     }//GEN-LAST:event_jButton9ActionPerformed
 
+    private void jButton2MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MouseEntered
+        // TODO add your handling code here:
+        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/2da etapa/botones/Etapa 2 - Actividad 1 - Seleccionable.png")));
+
+    }//GEN-LAST:event_jButton2MouseEntered
+
+    private void jButton2MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MouseExited
+        // TODO add your handling code here:
+        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/2da etapa/botones/Etapa 2 - Actividad 1.png")));
+
+    }//GEN-LAST:event_jButton2MouseExited
+
+    private void jButton9MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton9MouseEntered
+        // TODO add your handling code here:
+        jButton9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/2da etapa/botones/Etapa 2 - Actividad 2 - Seleccionable.png")));
+    }//GEN-LAST:event_jButton9MouseEntered
+
+    private void jButton9MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton9MouseExited
+        // TODO add your handling code here:
+        jButton9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/2da etapa/botones/Etapa 2 - Actividad 2.png")));
+
+    }//GEN-LAST:event_jButton9MouseExited
+
+    private void jButton1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseEntered
+        // TODO add your handling code here:
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/2da etapa/botones/Etapa 2 - Actividad 3 - Seleccionable.png")));
+    }//GEN-LAST:event_jButton1MouseEntered
+
+    private void jButton1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseExited
+        // TODO add your handling code here:
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/2da etapa/botones/Etapa 2 - Actividad 3.png")));
+
+    }//GEN-LAST:event_jButton1MouseExited
+
+    private void jButton3MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton3MouseExited
+        // TODO add your handling code here:
+        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/2da etapa/botones/Etapa 2 - Actividad 4.png")));
+    }//GEN-LAST:event_jButton3MouseExited
+
+    private void jButton3MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton3MouseEntered
+        // TODO add your handling code here:
+        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/2da etapa/botones/Etapa 2 - Actividad 4 - Seleccionable.png")));
+    }//GEN-LAST:event_jButton3MouseEntered
+
+    private void jButton4MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton4MouseExited
+        // TODO add your handling code here:
+        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/2da etapa/botones/Etapa 2 - Actividad 5.png")));
+    }//GEN-LAST:event_jButton4MouseExited
+
+    private void jButton4MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton4MouseEntered
+        // TODO add your handling code here:
+        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/2da etapa/botones/Etapa 2 - Actividad 5 - Seleccionable.png")));
+    }//GEN-LAST:event_jButton4MouseEntered
+
+    private void jButton5MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton5MouseEntered
+        // TODO add your handling code here:
+        jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/2da etapa/botones/Etapa 2 - Actividad 6 - Seleccionable.png")));
+    }//GEN-LAST:event_jButton5MouseEntered
+
+    private void jButton5MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton5MouseExited
+        // TODO add your handling code here:
+        jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/2da etapa/botones/Etapa 2 - Actividad 6.png")));
+    }//GEN-LAST:event_jButton5MouseExited
+
+    private void jButton8MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton8MouseEntered
+        // TODO add your handling code here:
+        jButton8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/2da etapa/botones/Etapa 2 - Actividad 7 - Seleccionable.png")));
+    }//GEN-LAST:event_jButton8MouseEntered
+
+    private void jButton8MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton8MouseExited
+        // TODO add your handling code here:
+        jButton8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/2da etapa/botones/Etapa 2 - Actividad 7.png")));
+    }//GEN-LAST:event_jButton8MouseExited
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
@@ -201,7 +340,6 @@ public class Etapa2 extends javax.swing.JPanel {
     private javax.swing.JButton jButton8;
     private javax.swing.JButton jButton9;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     // End of variables declaration//GEN-END:variables

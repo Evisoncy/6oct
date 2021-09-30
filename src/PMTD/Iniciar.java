@@ -134,7 +134,7 @@ public class Iniciar extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        Menu me = new Menu();
+        Menu me = new Menu(this);
         this.dispose();
         me.setVisible(true);
         JOptionPane.showMessageDialog(this, "Bienvenido Comandante");

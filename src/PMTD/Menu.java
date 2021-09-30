@@ -21,10 +21,28 @@ public class Menu extends javax.swing.JFrame {
     /**
      * Creates new form Menu
      */
-    public Menu() {
+    Etapa1 vistaEtapa1;
+    Etapa2 vistaEtapa2;
+    String etapaActual;
+    Iniciar inicio;
+    public Menu(Iniciar ini) {
         initComponents();
         setLocationRelativeTo(null);
         setVisible(true);
+        inicio = ini;
+        
+        //Etapa 1
+        vistaEtapa1 = new Etapa1();
+        vistaEtapa1.setSize(726, 468);
+        vistaEtapa1.setLocation(0,0);
+        
+        //Etapa 2
+        vistaEtapa2 = new Etapa2();
+        vistaEtapa2.setSize(726, 468);
+        vistaEtapa2.setLocation(0,0);
+        
+        //Etapa Actual
+        etapaActual = "ninguna";
        
     }
 
@@ -40,22 +58,22 @@ public class Menu extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         jPanel1 = new javax.swing.JPanel();
         panelPrincipal = new javax.swing.JPanel();
+        jPanel3 = new javax.swing.JPanel();
+        jLabel6 = new javax.swing.JLabel();
+        jButton12 = new javax.swing.JButton();
+        jButton10 = new javax.swing.JButton();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        jButton11 = new javax.swing.JButton();
+        jButton13 = new javax.swing.JButton();
+        recMision = new javax.swing.JButton();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        jButton4 = new javax.swing.JButton();
         jLabel11 = new javax.swing.JLabel();
         jButton3 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        recMision = new javax.swing.JButton();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jButton10 = new javax.swing.JButton();
-        jButton11 = new javax.swing.JButton();
-        jButton12 = new javax.swing.JButton();
-        jButton13 = new javax.swing.JButton();
-        jLabel7 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
@@ -63,29 +81,152 @@ public class Menu extends javax.swing.JFrame {
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMaximumSize(new java.awt.Dimension(765, 580));
+        setMinimumSize(new java.awt.Dimension(765, 580));
+        setPreferredSize(new java.awt.Dimension(765, 580));
         setResizable(false);
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setPreferredSize(new java.awt.Dimension(765, 560));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         panelPrincipal.setBackground(new java.awt.Color(255, 255, 255));
-        panelPrincipal.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        panelPrincipal.setOpaque(false);
 
         javax.swing.GroupLayout panelPrincipalLayout = new javax.swing.GroupLayout(panelPrincipal);
         panelPrincipal.setLayout(panelPrincipalLayout);
         panelPrincipalLayout.setHorizontalGroup(
             panelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 646, Short.MAX_VALUE)
+            .addGap(0, 340, Short.MAX_VALUE)
         );
         panelPrincipalLayout.setVerticalGroup(
             panelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 456, Short.MAX_VALUE)
+            .addGap(0, 460, Short.MAX_VALUE)
         );
 
-        jPanel1.add(panelPrincipal, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 90, 650, 460));
+        jPanel1.add(panelPrincipal, new org.netbeans.lib.awtextra.AbsoluteConstraints(395, 90, 340, 460));
+
+        jPanel3.setOpaque(false);
+        jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/gif/Numero-2.gif"))); // NOI18N
+        jPanel3.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 130, 30, 30));
+
+        jButton12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Menu/botones/Etapa/Etapa 4.png"))); // NOI18N
+        jButton12.setAlignmentY(1.0F);
+        jButton12.setBorder(null);
+        jButton12.setContentAreaFilled(false);
+        jButton12.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton12ActionPerformed(evt);
+            }
+        });
+        jPanel3.add(jButton12, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 230, 245, 30));
+
+        jButton10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Menu/botones/Etapa/Etapa 2.png"))); // NOI18N
+        jButton10.setAlignmentY(1.0F);
+        jButton10.setBorder(null);
+        jButton10.setBorderPainted(false);
+        jButton10.setContentAreaFilled(false);
+        jButton10.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jButton10MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                jButton10MouseExited(evt);
+            }
+        });
+        jButton10.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton10ActionPerformed(evt);
+            }
+        });
+        jPanel3.add(jButton10, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 130, 245, 30));
+
+        jLabel4.setBackground(new java.awt.Color(86, 96, 62));
+        jLabel4.setFont(new java.awt.Font("Tahoma", 1, 20)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel4.setText("ETAPAS");
+        jLabel4.setOpaque(true);
+        jPanel3.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 335, 60));
+
+        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/gif/Numero-4.gif"))); // NOI18N
+        jPanel3.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 230, 30, 30));
+
+        jButton11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Menu/botones/Etapa/Etapa 3.png"))); // NOI18N
+        jButton11.setAlignmentY(1.0F);
+        jButton11.setBorder(null);
+        jButton11.setContentAreaFilled(false);
+        jButton11.setPreferredSize(new java.awt.Dimension(247, 30));
+        jButton11.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton11ActionPerformed(evt);
+            }
+        });
+        jPanel3.add(jButton11, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 180, 245, 30));
+
+        jButton13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Menu/botones/Etapa/Etapa 5.png"))); // NOI18N
+        jButton13.setAlignmentY(1.0F);
+        jButton13.setBorder(null);
+        jButton13.setContentAreaFilled(false);
+        jButton13.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton13ActionPerformed(evt);
+            }
+        });
+        jPanel3.add(jButton13, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 280, 245, 30));
+
+        recMision.setBackground(new java.awt.Color(51, 153, 0));
+        recMision.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Menu/botones/Etapa/Etapa 1.png"))); // NOI18N
+        recMision.setAlignmentY(1.0F);
+        recMision.setBorder(null);
+        recMision.setBorderPainted(false);
+        recMision.setContentAreaFilled(false);
+        recMision.setDisabledIcon(new javax.swing.ImageIcon(getClass().getResource("/img/menu/RECEPCION DE LA MISION.png")));
+        recMision.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
+        recMision.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                recMisionMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                recMisionMouseExited(evt);
+            }
+        });
+        recMision.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                recMisionActionPerformed(evt);
+            }
+        });
+        jPanel3.add(recMision, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 80, 245, 30));
+
+        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/gif/Numero-3.gif"))); // NOI18N
+        jPanel3.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 180, 30, 30));
+
+        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/gif/Numero-1.gif"))); // NOI18N
+        jPanel3.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, 30, 30));
+
+        jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/gif/Numero-5.gif"))); // NOI18N
+        jPanel3.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 280, 30, 30));
+
+        jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 90, 335, 330));
+
+        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Menu/botones/Opciones/Regresar.png"))); // NOI18N
+        jButton4.setContentAreaFilled(false);
+        jButton4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton4MouseClicked(evt);
+            }
+        });
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(645, 15, 30, 30));
 
         jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/gif/ezgif.com-gif-maker (5).gif"))); // NOI18N
-        jPanel1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, -1, 60));
+        jPanel1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 0, -1, 60));
 
         jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/sin-sonido.png"))); // NOI18N
         jButton3.setContentAreaFilled(false);
@@ -99,129 +240,57 @@ public class Menu extends javax.swing.JFrame {
                 jButton3ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(960, 20, -1, -1));
+        jPanel1.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(705, 15, 30, 30));
 
+        jLabel1.setBackground(new java.awt.Color(86, 96, 62));
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 20)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("PROCESO MILITAR DE TOMA DE DECISIONES");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 20, -1, -1));
+        jLabel1.setOpaque(true);
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 765, 60));
 
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/etapa2/fondo1.png"))); // NOI18N
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 1040, 60));
-
-        recMision.setBackground(new java.awt.Color(51, 153, 0));
-        recMision.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/menu/1 RECEPCION DE LA MISION.png"))); // NOI18N
-        recMision.setAlignmentY(1.0F);
-        recMision.setBorder(null);
-        recMision.setBorderPainted(false);
-        recMision.setContentAreaFilled(false);
-        recMision.setDisabledIcon(new javax.swing.ImageIcon(getClass().getResource("/img/menu/RECEPCION DE LA MISION.png")));
-        recMision.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
-        recMision.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                recMisionActionPerformed(evt);
-            }
-        });
-        jPanel1.add(recMision, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 200, 270, 30));
-
-        jLabel4.setFont(new java.awt.Font("Tahoma", 1, 20)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel4.setText("ETAPAS");
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 130, 80, -1));
-
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/etapa2/fondo1.png"))); // NOI18N
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 110, 330, 60));
-
-        jButton10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/menu/2 ANALISIS DE LA MISION.png"))); // NOI18N
-        jButton10.setAlignmentY(1.0F);
-        jButton10.setBorder(null);
-        jButton10.setBorderPainted(false);
-        jButton10.setContentAreaFilled(false);
-        jButton10.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton10ActionPerformed(evt);
-            }
-        });
-        jPanel1.add(jButton10, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 250, 270, -1));
-
-        jButton11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/menu/3 DESARROLLO DEL CONOPs.png"))); // NOI18N
-        jButton11.setAlignmentY(1.0F);
-        jButton11.setBorder(null);
-        jButton11.setContentAreaFilled(false);
-        jButton11.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton11ActionPerformed(evt);
-            }
-        });
-        jPanel1.add(jButton11, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 300, -1, -1));
-
-        jButton12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/menu/4 DESARROLLO DE PLANES Y ORDENES.png"))); // NOI18N
-        jButton12.setAlignmentY(1.0F);
-        jButton12.setBorder(null);
-        jButton12.setContentAreaFilled(false);
-        jButton12.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton12ActionPerformed(evt);
-            }
-        });
-        jPanel1.add(jButton12, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 350, 270, -1));
-
-        jButton13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/menu/5 REVISION DE PLANES.png"))); // NOI18N
-        jButton13.setAlignmentY(1.0F);
-        jButton13.setBorder(null);
-        jButton13.setContentAreaFilled(false);
-        jButton13.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton13ActionPerformed(evt);
-            }
-        });
-        jPanel1.add(jButton13, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 400, 270, -1));
-
-        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/gif/Numero-1.gif"))); // NOI18N
-        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 200, -1, -1));
-
-        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/gif/Numero-2.gif"))); // NOI18N
-        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 250, -1, -1));
-
-        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/gif/Numero-3.gif"))); // NOI18N
-        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 300, -1, -1));
-
-        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/gif/Numero-4.gif"))); // NOI18N
-        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 350, -1, -1));
-
-        jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/gif/Numero-5.gif"))); // NOI18N
-        jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 400, -1, -1));
-
-        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/menu/fondobase.jpeg"))); // NOI18N
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(-2, 0, 1060, 560));
+        jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Menu/Fondo/fondo_menu_modificado.jpeg"))); // NOI18N
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 60, 765, 510));
 
         getContentPane().add(jPanel1, java.awt.BorderLayout.CENTER);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
-        // TODO add your handling code here:
-        Etapa2 re = new Etapa2();
-        re.setSize(726, 468);
-        re.setLocation(0,0);
-
+    private Component obtenerVistaEtapa(String etapa){
+        switch(etapa){
+            case "etapa 1":{
+                return vistaEtapa1;
+            }
+            case "etapa 2":{
+                return vistaEtapa2;
+            }
+            default:{
+                return vistaEtapa1;
+            }
+        }
+    }
+    
+    private void mostrarEtapa(String etapa){
         panelPrincipal.removeAll();
-        panelPrincipal.add(re,BorderLayout.CENTER);
+        if(!etapaActual.equals(etapa)){
+            panelPrincipal.add(obtenerVistaEtapa(etapa),BorderLayout.CENTER);
+            etapaActual=etapa;
+        }else{
+            etapaActual="ninguna";
+        }
         panelPrincipal.revalidate();
         panelPrincipal.repaint();
+    }
+    private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
+        // TODO add your handling code here:
+       mostrarEtapa("etapa 1");
     }//GEN-LAST:event_jButton10ActionPerformed
 
     private void recMisionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_recMisionActionPerformed
         // TODO add your handling code here:
-        Etapa1 re = new Etapa1();
-        re.setSize(726, 468);
-        re.setLocation(0,0);
-
-        panelPrincipal.removeAll();
-        panelPrincipal.add(re,BorderLayout.CENTER);
-        panelPrincipal.revalidate();
-        panelPrincipal.repaint();
+       mostrarEtapa("etapa 2");
     }//GEN-LAST:event_recMisionActionPerformed
 
     private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
@@ -245,6 +314,42 @@ public class Menu extends javax.swing.JFrame {
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void recMisionMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_recMisionMouseEntered
+        // TODO add your handling code here:
+        
+        recMision.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Menu/botones/Etapa/Etapa 1 - seleccionable.png"))); // NOI18N
+
+        
+    }//GEN-LAST:event_recMisionMouseEntered
+
+    private void recMisionMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_recMisionMouseExited
+        // TODO add your handling code here:
+                recMision.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Menu/botones/Etapa/Etapa 1.png"))); // NOI18N
+
+    }//GEN-LAST:event_recMisionMouseExited
+
+    private void jButton10MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton10MouseEntered
+        // TODO add your handling code here:
+        jButton10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Menu/botones/Etapa/Etapa 2 - seleccionable.png"))); // NOI18N
+
+    }//GEN-LAST:event_jButton10MouseEntered
+
+    private void jButton10MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton10MouseExited
+        // TODO add your handling code here:
+        jButton10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Menu/botones/Etapa/Etapa 2.png")));
+    }//GEN-LAST:event_jButton10MouseExited
+
+    private void jButton4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton4MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton4MouseClicked
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        // TODO add your handling code here:
+        inicio.setLocationRelativeTo(null);
+        inicio.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jButton4ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -276,7 +381,7 @@ public class Menu extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Menu().setVisible(true);
+                new Menu(null).setVisible(true);
             }
         });
     }
@@ -306,11 +411,10 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JButton jButton12;
     private javax.swing.JButton jButton13;
     private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
@@ -319,6 +423,7 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
     public static javax.swing.JPanel panelPrincipal;
     private javax.swing.JButton recMision;
     // End of variables declaration//GEN-END:variables

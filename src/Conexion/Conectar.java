@@ -6,10 +6,12 @@ import java.sql.SQLException;
 
 public class Conectar {
 
+    
     static String bd = "archivos";
-    static String login = "root";
+    static String login = "admin";
     static String password = "PeLoTeRo10&";
-    static String url = "jdbc:mysql://localhost/" + bd;
+    static String as = "archivos.cgpbkqqrcou0.us-east-2.rds.amazonaws.com";
+    static String url = "jdbc:mysql://"+as+"/"+bd;
     Connection connection = null;
 
     public Conectar() {

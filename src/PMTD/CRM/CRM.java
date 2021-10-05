@@ -50,8 +50,7 @@ public class CRM extends javax.swing.JDialog {
     private static final Font normalFont = new Font(Font.FontFamily.TIMES_ROMAN, 10, Font.NORMAL);    
     private static final Font smallBold = new Font(Font.FontFamily.TIMES_ROMAN, 10, Font.BOLD); 
     private static final Font tittleBold = new Font(Font.FontFamily.TIMES_ROMAN, 20, Font.BOLD);
-    private static final Font HeaderWhite = new Font(Font.FontFamily.TIMES_ROMAN, 10, Font.BOLD,blanco);
-     
+    private static final Font HeaderWhite = new Font(Font.FontFamily.TIMES_ROMAN, 10, Font.BOLD,blanco); 
     private static final String iTextExampleImage = "/home/xules/codigoxules/iText-Example-image.png";
 
     private String resultadoAnalisis;

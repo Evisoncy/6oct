@@ -143,11 +143,11 @@ public class organizacionDialog extends java.awt.Dialog {
 
         jLabel10.setText("Comandante General");
         jPanel6.add(jLabel10);
-        jLabel10.setBounds(20, 40, 140, 16);
+        jLabel10.setBounds(20, 40, 140, 14);
 
         jTextField9.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jPanel6.add(jTextField9);
-        jTextField9.setBounds(20, 60, 150, 24);
+        jTextField9.setBounds(20, 60, 150, 20);
 
         jLabel11.setText("Jefe de estado Mayor");
         jPanel6.add(jLabel11);
@@ -160,21 +160,21 @@ public class organizacionDialog extends java.awt.Dialog {
             }
         });
         jPanel6.add(jTextField10);
-        jTextField10.setBounds(190, 60, 150, 24);
+        jTextField10.setBounds(190, 60, 150, 20);
 
         jLabel12.setText("Movimiento y Maniobra");
         jPanel6.add(jLabel12);
-        jLabel12.setBounds(190, 100, 140, 16);
+        jLabel12.setBounds(190, 100, 140, 14);
 
         jLabel13.setText("Comando y control");
         jPanel6.add(jLabel13);
-        jLabel13.setBounds(20, 100, 120, 16);
+        jLabel13.setBounds(20, 100, 120, 14);
 
         jLabel14.setText("Inteligencia");
         jPanel6.add(jLabel14);
-        jLabel14.setBounds(370, 100, 80, 16);
+        jLabel14.setBounds(370, 100, 80, 14);
         jPanel6.add(jTextField11);
-        jTextField11.setBounds(370, 130, 150, 24);
+        jTextField11.setBounds(370, 130, 150, 20);
 
         jTextField12.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -182,9 +182,9 @@ public class organizacionDialog extends java.awt.Dialog {
             }
         });
         jPanel6.add(jTextField12);
-        jTextField12.setBounds(20, 130, 150, 24);
+        jTextField12.setBounds(20, 130, 150, 20);
         jPanel6.add(jTextField13);
-        jTextField13.setBounds(190, 130, 150, 24);
+        jTextField13.setBounds(190, 130, 150, 20);
 
         jTextField14.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -192,23 +192,23 @@ public class organizacionDialog extends java.awt.Dialog {
             }
         });
         jPanel6.add(jTextField14);
-        jTextField14.setBounds(20, 310, 150, 24);
+        jTextField14.setBounds(20, 310, 150, 20);
 
         jLabel15.setText("Sostenimieto");
         jPanel6.add(jLabel15);
-        jLabel15.setBounds(370, 280, 120, 16);
+        jLabel15.setBounds(370, 280, 120, 14);
         jPanel6.add(jTextField15);
-        jTextField15.setBounds(190, 310, 150, 24);
+        jTextField15.setBounds(190, 310, 150, 20);
 
         jLabel16.setText("Protección");
         jPanel6.add(jLabel16);
-        jLabel16.setBounds(190, 280, 80, 16);
+        jLabel16.setBounds(190, 280, 80, 14);
         jPanel6.add(jTextField16);
-        jTextField16.setBounds(370, 310, 150, 24);
+        jTextField16.setBounds(370, 310, 150, 20);
 
         jLabel17.setText("Fuegos");
         jPanel6.add(jLabel17);
-        jLabel17.setBounds(20, 280, 140, 16);
+        jLabel17.setBounds(20, 280, 140, 14);
 
         apoyo.setText("Apoyo electrónico");
         jPanel6.add(apoyo);
@@ -226,11 +226,16 @@ public class organizacionDialog extends java.awt.Dialog {
         jPanel6.add(jRadioButton6);
         jRadioButton6.setBounds(20, 200, 150, 20);
 
-        jRadioButton7.setText("Asusntos civiles");
+        jRadioButton7.setText("Asuntos civiles");
+        jRadioButton7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButton7ActionPerformed(evt);
+            }
+        });
         jPanel6.add(jRadioButton7);
         jRadioButton7.setBounds(20, 220, 150, 20);
 
-        jRadioButton8.setText("Ingenierpia");
+        jRadioButton8.setText("Ingenieria");
         jPanel6.add(jRadioButton8);
         jRadioButton8.setBounds(190, 180, 150, 20);
 
@@ -266,7 +271,7 @@ public class organizacionDialog extends java.awt.Dialog {
         jPanel6.add(jRadioButton16);
         jRadioButton16.setBounds(20, 380, 150, 20);
 
-        jRadioButton17.setText("Ing(proteccion)");
+        jRadioButton17.setText("Ingenieria");
         jPanel6.add(jRadioButton17);
         jRadioButton17.setBounds(190, 360, 150, 20);
 
@@ -334,11 +339,11 @@ public class organizacionDialog extends java.awt.Dialog {
 
         jLabel2.setText("Comandante General");
         jPanel3.add(jLabel2);
-        jLabel2.setBounds(20, 50, 120, 16);
+        jLabel2.setBounds(20, 50, 120, 14);
 
         jTextField1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jPanel3.add(jTextField1);
-        jTextField1.setBounds(20, 80, 150, 24);
+        jTextField1.setBounds(20, 80, 150, 20);
 
         jLabel3.setText("Jefe de estado Mayor");
         jPanel3.add(jLabel3);
@@ -351,21 +356,21 @@ public class organizacionDialog extends java.awt.Dialog {
             }
         });
         jPanel3.add(jTextField2);
-        jTextField2.setBounds(190, 80, 150, 24);
+        jTextField2.setBounds(190, 80, 150, 20);
 
         jLabel4.setText("S5/ G5");
         jPanel3.add(jLabel4);
-        jLabel4.setBounds(190, 200, 140, 16);
+        jLabel4.setBounds(190, 200, 140, 14);
 
         jLabel5.setText("S3/ G3");
         jPanel3.add(jLabel5);
-        jLabel5.setBounds(370, 140, 120, 16);
+        jLabel5.setBounds(370, 140, 120, 14);
 
         jLabel6.setText("S4/ G4");
         jPanel3.add(jLabel6);
-        jLabel6.setBounds(20, 200, 80, 16);
+        jLabel6.setBounds(20, 200, 80, 14);
         jPanel3.add(jTextField3);
-        jTextField3.setBounds(190, 220, 150, 24);
+        jTextField3.setBounds(190, 220, 150, 20);
 
         jTextField4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -373,9 +378,9 @@ public class organizacionDialog extends java.awt.Dialog {
             }
         });
         jPanel3.add(jTextField4);
-        jTextField4.setBounds(370, 160, 150, 24);
+        jTextField4.setBounds(370, 160, 150, 20);
         jPanel3.add(jTextField5);
-        jTextField5.setBounds(20, 220, 150, 24);
+        jTextField5.setBounds(20, 220, 150, 20);
 
         jTextField6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -383,23 +388,23 @@ public class organizacionDialog extends java.awt.Dialog {
             }
         });
         jPanel3.add(jTextField6);
-        jTextField6.setBounds(370, 220, 150, 24);
+        jTextField6.setBounds(370, 220, 150, 20);
 
         jLabel7.setText("S6/ G6");
         jPanel3.add(jLabel7);
-        jLabel7.setBounds(370, 200, 120, 16);
+        jLabel7.setBounds(370, 200, 120, 14);
         jPanel3.add(jTextField7);
-        jTextField7.setBounds(20, 280, 150, 24);
+        jTextField7.setBounds(20, 280, 150, 20);
 
         jLabel8.setText("S7/ G7");
         jPanel3.add(jLabel8);
-        jLabel8.setBounds(20, 260, 80, 16);
+        jLabel8.setBounds(20, 260, 80, 14);
         jPanel3.add(jTextField8);
-        jTextField8.setBounds(190, 280, 150, 24);
+        jTextField8.setBounds(190, 280, 150, 20);
 
         jLabel9.setText("S8/ G8");
         jPanel3.add(jLabel9);
-        jLabel9.setBounds(190, 260, 140, 16);
+        jLabel9.setBounds(190, 260, 140, 14);
 
         jTextField17.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -407,17 +412,17 @@ public class organizacionDialog extends java.awt.Dialog {
             }
         });
         jPanel3.add(jTextField17);
-        jTextField17.setBounds(20, 160, 150, 24);
+        jTextField17.setBounds(20, 160, 150, 20);
 
         jLabel18.setText("S1/ G1");
         jPanel3.add(jLabel18);
-        jLabel18.setBounds(20, 140, 120, 16);
+        jLabel18.setBounds(20, 140, 120, 14);
         jPanel3.add(jTextField18);
-        jTextField18.setBounds(190, 160, 150, 24);
+        jTextField18.setBounds(190, 160, 150, 20);
 
         jLabel19.setText("S2/ G2");
         jPanel3.add(jLabel19);
-        jLabel19.setBounds(190, 140, 140, 16);
+        jLabel19.setBounds(190, 140, 140, 14);
 
         javax.swing.GroupLayout jPanelCoordinacionLayout = new javax.swing.GroupLayout(jPanelCoordinacion);
         jPanelCoordinacion.setLayout(jPanelCoordinacionLayout);
@@ -458,7 +463,7 @@ public class organizacionDialog extends java.awt.Dialog {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, 505, Short.MAX_VALUE)
+                .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, 505, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -533,6 +538,10 @@ public class organizacionDialog extends java.awt.Dialog {
     private void jTextField17ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField17ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField17ActionPerformed
+
+    private void jRadioButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton7ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jRadioButton7ActionPerformed
 
     /**
      * @param args the command line arguments

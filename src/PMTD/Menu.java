@@ -81,9 +81,7 @@ public class Menu extends javax.swing.JFrame {
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMaximumSize(new java.awt.Dimension(765, 580));
         setMinimumSize(new java.awt.Dimension(765, 580));
-        setPreferredSize(new java.awt.Dimension(765, 580));
         setResizable(false);
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
@@ -223,7 +221,7 @@ public class Menu extends javax.swing.JFrame {
                 jButton4ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(645, 15, 30, 30));
+        jPanel1.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 20, 30, 30));
 
         jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/gif/ezgif.com-gif-maker (5).gif"))); // NOI18N
         jPanel1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 0, -1, 60));
@@ -240,7 +238,7 @@ public class Menu extends javax.swing.JFrame {
                 jButton3ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(705, 15, 30, 30));
+        jPanel1.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 20, 30, 30));
 
         jLabel1.setBackground(new java.awt.Color(86, 96, 62));
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 20)); // NOI18N
@@ -248,11 +246,11 @@ public class Menu extends javax.swing.JFrame {
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("PROCESO MILITAR DE TOMA DE DECISIONES");
         jLabel1.setOpaque(true);
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 765, 60));
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 810, 60));
 
         jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Menu/Fondo/fondo_menu_modificado.jpeg"))); // NOI18N
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 60, 765, 510));
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/menu/fondo_menu.jpeg"))); // NOI18N
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 60, 810, 560));
 
         getContentPane().add(jPanel1, java.awt.BorderLayout.CENTER);
 
@@ -285,12 +283,12 @@ public class Menu extends javax.swing.JFrame {
     }
     private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
         // TODO add your handling code here:
-       mostrarEtapa("etapa 1");
+       mostrarEtapa("etapa 2");
     }//GEN-LAST:event_jButton10ActionPerformed
 
     private void recMisionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_recMisionActionPerformed
         // TODO add your handling code here:
-       mostrarEtapa("etapa 2");
+       mostrarEtapa("etapa 1");
     }//GEN-LAST:event_recMisionActionPerformed
 
     private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed

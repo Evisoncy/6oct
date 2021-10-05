@@ -212,7 +212,7 @@ public class Etapa2 extends javax.swing.JPanel {
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
         //Etapa1 dialo2 = new JDialog(new requerimientos(),true);
-        PlanElonSup PES = new PlanElonSup(null,true);
+        Actividad1 PES = new Actividad1(null,true);
         PES.setLocationRelativeTo(null);
         PES.setVisible(true);
 
@@ -240,6 +240,7 @@ public class Etapa2 extends javax.swing.JPanel {
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
         Identificar_hechos_criticos_y_suposiciones i = new Identificar_hechos_criticos_y_suposiciones(null,true);
+         i.setLocationRelativeTo(null);
         i.setVisible(true);
     }//GEN-LAST:event_jButton5ActionPerformed
 
@@ -251,9 +252,9 @@ public class Etapa2 extends javax.swing.JPanel {
     }//GEN-LAST:event_jButton8ActionPerformed
 
     private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
-        RevSituacion RS = new RevSituacion(null,true);
-        RS.setLocationRelativeTo(null);
-        RS.setVisible(true);
+        ActSit actsit = new ActSit(null,true);
+        actsit.setLocationRelativeTo(null);
+        actsit.setVisible(true);
     }//GEN-LAST:event_jButton9ActionPerformed
 
     private void jButton2MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MouseEntered

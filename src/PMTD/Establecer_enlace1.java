@@ -16,32 +16,7 @@ import javax.swing.table.DefaultTableModel;
  */
 
 public class Establecer_enlace1 extends javax.swing.JDialog {
-   /* 
-    public class Imagen extends javax.swing.JPanel {
-
-        public Imagen() {
-            this.setSize(929, 515); //se selecciona el tamaño del panel
-        }
-
-        //Se crea un método cuyo parámetro debe ser un objeto Graphics
-
-        @Override
-        public void paint(Graphics grafico) {
-        Dimension height = getSize();
-
-        //Se selecciona la imagen que tenemos en el paquete de la //ruta del programa
-
-        ImageIcon Img = new ImageIcon(getClass().getResource("/img/fondo_claro.jpg")); 
-
-        //se dibuja la imagen que tenemos en el paquete Images //dentro de un panel
-
-        grafico.drawImage(Img.getImage(), 0, 0, height.width, height.height, null);
-
-        setOpaque(false);
-        super.paintComponent(grafico);
-        }
-    }
-*/
+  
     List<Soldado> lista = new ArrayList();
     
     public Establecer_enlace1(java.awt.Frame parent, boolean modal) {

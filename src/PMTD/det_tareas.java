@@ -16,32 +16,7 @@ import javax.swing.table.DefaultTableModel;
  */
 
 public class det_tareas extends javax.swing.JDialog {
-   /* 
-    public class Imagen extends javax.swing.JPanel {
 
-        public Imagen() {
-            this.setSize(929, 515); //se selecciona el tamaño del panel
-        }
-
-        //Se crea un método cuyo parámetro debe ser un objeto Graphics
-
-        @Override
-        public void paint(Graphics grafico) {
-        Dimension height = getSize();
-
-        //Se selecciona la imagen que tenemos en el paquete de la //ruta del programa
-
-        ImageIcon Img = new ImageIcon(getClass().getResource("/img/fondo_claro.jpg")); 
-
-        //se dibuja la imagen que tenemos en el paquete Images //dentro de un panel
-
-        grafico.drawImage(Img.getImage(), 0, 0, height.width, height.height, null);
-
-        setOpaque(false);
-        super.paintComponent(grafico);
-        }
-    }
-*/
     List<Soldado> lista = new ArrayList();
     
     public det_tareas(java.awt.Frame parent, boolean modal) {
@@ -69,13 +44,13 @@ public class det_tareas extends javax.swing.JDialog {
         text_nombre = new javax.swing.JTextField();
         text_telefono = new javax.swing.JTextField();
         text_unidad = new javax.swing.JTextField();
-        jComboBox2 = new javax.swing.JComboBox<>();
-        jComboBox1 = new javax.swing.JComboBox<>();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
         jTable2 = new javax.swing.JTable();
+        jTextField1 = new javax.swing.JTextField();
+        jTextField2 = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         addWindowListener(new java.awt.event.WindowAdapter() {
@@ -111,18 +86,6 @@ public class det_tareas extends javax.swing.JDialog {
             }
         });
 
-        jComboBox2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBox2ActionPerformed(evt);
-            }
-        });
-
-        jComboBox1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBox1ActionPerformed(evt);
-            }
-        });
-
         jButton1.setText("GRABAR");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -137,7 +100,7 @@ public class det_tareas extends javax.swing.JDialog {
             }
         });
 
-        jButton3.setText("IMPRIMIR");
+        jButton3.setText("MOSTRAR");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton3ActionPerformed(evt);
@@ -181,11 +144,11 @@ public class det_tareas extends javax.swing.JDialog {
                             .addComponent(jLabel2))
                         .addGap(14, 14, 14)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(text_nombre)
+                            .addComponent(text_nombre, javax.swing.GroupLayout.DEFAULT_SIZE, 557, Short.MAX_VALUE)
                             .addComponent(text_telefono, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jComboBox2, javax.swing.GroupLayout.Alignment.TRAILING, 0, 557, Short.MAX_VALUE)
-                            .addComponent(jComboBox1, javax.swing.GroupLayout.Alignment.TRAILING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(text_unidad))
+                            .addComponent(text_unidad)
+                            .addComponent(jTextField1)
+                            .addComponent(jTextField2))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -210,20 +173,20 @@ public class det_tareas extends javax.swing.JDialog {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel6)
-                    .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton2))
+                    .addComponent(jButton2)
+                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(3, 3, 3)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(text_unidad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel5))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel3)
-                    .addComponent(jButton3))
+                    .addComponent(jButton3)
+                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 209, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(22, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -240,7 +203,7 @@ public class det_tareas extends javax.swing.JDialog {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(22, Short.MAX_VALUE))
         );
 
         pack();
@@ -261,16 +224,16 @@ public class det_tareas extends javax.swing.JDialog {
         //leo datos de usuario
         String nom=text_nombre.getText().toUpperCase();
         String telef=text_telefono.getText().toUpperCase();
-        String tipoenlace=String.valueOf(jComboBox1.getSelectedItem());
+        String tipoenlace=jTextField1.getText().toLowerCase();
         String unidad=text_unidad.getText().toUpperCase();
         //String grado=text_puesto.getText().toUpperCase();
-        String grado=String.valueOf(jComboBox2.getSelectedItem());
+        String grado=jTextField2.getText().toLowerCase();
         //crear el objeto empleado
         Soldado e = new Soldado(nom,telef,tipoenlace,unidad,grado);
         //adiciono objeto soldado e a la lista
         lista.add(e);
         //mensajito de grabado
-        JOptionPane.showMessageDialog(null,"Usuario Grabado");
+        JOptionPane.showMessageDialog(null,"Se guardo de manera exitosa");
 
     }//GEN-LAST:event_jButton1ActionPerformed
 
@@ -279,8 +242,8 @@ public class det_tareas extends javax.swing.JDialog {
         text_nombre.setText(null);
         text_telefono.setText(null);
         text_unidad.setText(null);
-        jComboBox1.setSelectedIndex(0);
-        jComboBox2.setSelectedIndex(0);
+        jTextField1.setText(null);
+        jTextField2.setText(null);
 
     }//GEN-LAST:event_jButton2ActionPerformed
 
@@ -304,27 +267,8 @@ public class det_tareas extends javax.swing.JDialog {
     }//GEN-LAST:event_jButton3ActionPerformed
     
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
-      /*  Imagen Imagen = new Imagen();
-        jPanel1.add(Imagen);
-        jPanel1.repaint();*/
-        // TODO add your handling code here:
-        //llenamos combo de areas de ENLACE
-        /*jComboBox1.addItem("------------------------------------------------------SELECCIONE -----------------------------------------------------");
-        jComboBox1.addItem("GDP ELON SUPERIOR");
-        jComboBox1.addItem("GDP UNIDADES VECINAS");
-        jComboBox1.addItem("GDP UNIDADES SUBORDINADAS");
-        jComboBox1.addItem("OTROS SECTORES");
-        //llenamos combo de areas de GRADO
-        jComboBox2.addItem("------------------------------------------------------SELECCIONE ------------------------------------------------------");
-        jComboBox2.addItem("GENERAL DEL EJERCITO");
-        jComboBox2.addItem("GENERAL DE DIVISION");
-        jComboBox2.addItem("GENERAL DE BRIGADA");
-        jComboBox2.addItem("CORONEL");
-        jComboBox2.addItem("TENIENTE CORONEL");
-        jComboBox2.addItem("MAYOR");
-        jComboBox2.addItem("CAPITAN");
-        jComboBox2.addItem("TENIENTE");
-        jComboBox2.addItem("SUB-TENIENTE O ALFEREZ");*/
+      //  Imagen Imagen = new Imagen();
+      
         
         //asignar columnas al modelo
         modelo.addColumn("T. Explicita");
@@ -335,14 +279,6 @@ public class det_tareas extends javax.swing.JDialog {
         //ASIGNAR modelo a la tabla
         jTable2.setModel(modelo);
     }//GEN-LAST:event_formWindowOpened
-
-    private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jComboBox1ActionPerformed
-
-    private void jComboBox2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jComboBox2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -391,8 +327,6 @@ public class det_tareas extends javax.swing.JDialog {
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
-    private javax.swing.JComboBox<String> jComboBox1;
-    private javax.swing.JComboBox<String> jComboBox2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -402,6 +336,8 @@ public class det_tareas extends javax.swing.JDialog {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTable jTable2;
+    private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField text_nombre;
     private javax.swing.JTextField text_telefono;
     private javax.swing.JTextField text_unidad;

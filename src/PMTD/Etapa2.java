@@ -259,7 +259,7 @@ public class Etapa2 extends javax.swing.JPanel {
 
     private void jButton2MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MouseEntered
         // TODO add your handling code here:
-        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/2da etapa/botones/Etapa 2 - Actividad 1 - Seleccionable.png")));
+        //jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/2da etapa/botones/Etapa 2 - Actividad 1 - Seleccionable.png")));
 
     }//GEN-LAST:event_jButton2MouseEntered
 
@@ -271,7 +271,7 @@ public class Etapa2 extends javax.swing.JPanel {
 
     private void jButton9MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton9MouseEntered
         // TODO add your handling code here:
-        jButton9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/2da etapa/botones/Etapa 2 - Actividad 2 - Seleccionable.png")));
+        //jButton9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/2da etapa/botones/Etapa 2 - Actividad 2 - Seleccionable.png")));
     }//GEN-LAST:event_jButton9MouseEntered
 
     private void jButton9MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton9MouseExited
@@ -282,7 +282,7 @@ public class Etapa2 extends javax.swing.JPanel {
 
     private void jButton1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseEntered
         // TODO add your handling code here:
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/2da etapa/botones/Etapa 2 - Actividad 3 - Seleccionable.png")));
+        //jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/2da etapa/botones/Etapa 2 - Actividad 3 - Seleccionable.png")));
     }//GEN-LAST:event_jButton1MouseEntered
 
     private void jButton1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseExited
@@ -298,7 +298,7 @@ public class Etapa2 extends javax.swing.JPanel {
 
     private void jButton3MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton3MouseEntered
         // TODO add your handling code here:
-        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/2da etapa/botones/Etapa 2 - Actividad 4 - Seleccionable.png")));
+        //jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/2da etapa/botones/Etapa 2 - Actividad 4 - Seleccionable.png")));
     }//GEN-LAST:event_jButton3MouseEntered
 
     private void jButton4MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton4MouseExited
@@ -313,7 +313,7 @@ public class Etapa2 extends javax.swing.JPanel {
 
     private void jButton5MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton5MouseEntered
         // TODO add your handling code here:
-        jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/2da etapa/botones/Etapa 2 - Actividad 6 - Seleccionable.png")));
+        //jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/2da etapa/botones/Etapa 2 - Actividad 6 - Seleccionable.png")));
     }//GEN-LAST:event_jButton5MouseEntered
 
     private void jButton5MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton5MouseExited
@@ -323,7 +323,7 @@ public class Etapa2 extends javax.swing.JPanel {
 
     private void jButton8MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton8MouseEntered
         // TODO add your handling code here:
-        jButton8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/2da etapa/botones/Etapa 2 - Actividad 7 - Seleccionable.png")));
+        //jButton8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/2da etapa/botones/Etapa 2 - Actividad 7 - Seleccionable.png")));
     }//GEN-LAST:event_jButton8MouseEntered
 
     private void jButton8MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton8MouseExited

@@ -289,7 +289,7 @@ public class Etapa1 extends javax.swing.JPanel {
 
     private void jButton1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseEntered
         // TODO add your handling code here:
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/1ra etapa/botones/Etapa 1 - Actividad 1 - Seleccionable.png")));
+        //jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/1ra etapa/botones/Etapa 1 - Actividad 1 - Seleccionable.png")));
         
     }//GEN-LAST:event_jButton1MouseEntered
 
@@ -299,7 +299,7 @@ public class Etapa1 extends javax.swing.JPanel {
 
     private void jButton3MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton3MouseEntered
         // TODO add your handling code here:
-        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/1ra etapa/botones/Etapa 1 - Actividad 2 - Seleccionable.png"))); // NOI18N
+        //jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/1ra etapa/botones/Etapa 1 - Actividad 2 - Seleccionable.png"))); // NOI18N
     }//GEN-LAST:event_jButton3MouseEntered
 
     private void jButton3MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton3MouseExited
@@ -313,12 +313,12 @@ public class Etapa1 extends javax.swing.JPanel {
 
     private void jButton4MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton4MouseEntered
         // TODO add your handling code here:
-        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/1ra etapa/botones/Etapa 1 - Actividad 3.png"))); // NOI18N
+        //jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/1ra etapa/botones/Etapa 1 - Actividad 3.png"))); // NOI18N
     }//GEN-LAST:event_jButton4MouseEntered
 
     private void jButton5MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton5MouseEntered
         // TODO add your handling code here:
-        jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/1ra etapa/botones/Etapa 1 - Actividad 4 - Seleccionable.png"))); // NOI18N
+        //jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/1ra etapa/botones/Etapa 1 - Actividad 4 - Seleccionable.png"))); // NOI18N
 
     }//GEN-LAST:event_jButton5MouseEntered
 
@@ -329,7 +329,7 @@ public class Etapa1 extends javax.swing.JPanel {
 
     private void jButton6MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton6MouseEntered
         // TODO add your handling code here:
-        jButton6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/1ra etapa/botones/Etapa 1 - Actividad 5 - Seleccionable.png"))); // NOI18N
+        //jButton6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/1ra etapa/botones/Etapa 1 - Actividad 5 - Seleccionable.png"))); // NOI18N
     }//GEN-LAST:event_jButton6MouseEntered
 
     private void jButton6MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton6MouseExited
@@ -339,7 +339,7 @@ public class Etapa1 extends javax.swing.JPanel {
 
     private void jButton2MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MouseEntered
         // TODO add your handling code here:
-        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/1ra etapa/botones/Etapa 1 - Salida 1 - Seleccionable.png"))); // NOI18N
+         //jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/1ra etapa/botones/Etapa 1 - Salida 1 - Seleccionable.png"))); // NOI18N
     }//GEN-LAST:event_jButton2MouseEntered
 
     private void jButton2MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MouseExited
@@ -349,7 +349,7 @@ public class Etapa1 extends javax.swing.JPanel {
 
     private void jButton7MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton7MouseEntered
         // TODO add your handling code here:
-        jButton7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/1ra etapa/botones/Etapa 1 - Salida 2 - Seleccionable.png"))); // NOI18N
+        //jButton7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/1ra etapa/botones/Etapa 1 - Salida 2 - Seleccionable.png"))); // NOI18N
 
     }//GEN-LAST:event_jButton7MouseEntered
 

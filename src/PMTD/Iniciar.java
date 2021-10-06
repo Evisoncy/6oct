@@ -8,6 +8,8 @@ package PMTD;
 import Visual.MostrarPDF;
 import Visual.PDF;
 import java.applet.AudioClip;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 import javax.swing.JOptionPane;
 
@@ -16,7 +18,7 @@ import javax.swing.JOptionPane;
  * @author Argenis
  */
 public class Iniciar extends javax.swing.JFrame {
-
+    
     /**
      * Creates new form NewJFrame
      */
@@ -24,14 +26,16 @@ public class Iniciar extends javax.swing.JFrame {
         initComponents();
         setLocationRelativeTo(null);
         setVisible(true);
-        //audio();
+        try{
+        
+        MusicaFondo.inicializarMusica(getClass().getResource("/Audio/audio.wav"));
+        MusicaFondo.reproducirMusica();
+        }catch(Exception e){
+            JOptionPane.showMessageDialog(rootPane, e);
+        }
     }
     
-    public void audio(){
-        AudioClip sonido;
-        sonido = java.applet.Applet.newAudioClip(getClass().getResource("/PMTD/audio1.wav"));
-        sonido.play();
-    }
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -109,6 +113,11 @@ public class Iniciar extends javax.swing.JFrame {
                 jButton3MouseClicked(evt);
             }
         });
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
         jPanel1.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 300, -1, -1));
 
         jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/simbolo-de-interfaz-de-sonido-dibujado-a-mano-de-un-altavoz.png"))); // NOI18N
@@ -116,6 +125,11 @@ public class Iniciar extends javax.swing.JFrame {
         jButton4.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jButton4MouseClicked(evt);
+            }
+        });
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
             }
         });
         jPanel1.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 300, -1, -1));
@@ -168,16 +182,20 @@ public class Iniciar extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextField1ActionPerformed
 
     private void jButton3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton3MouseClicked
-        AudioClip sonido;
-        sonido = java.applet.Applet.newAudioClip(getClass().getResource("/PMTD/audio1.wav"));
-        sonido.stop();
+
     }//GEN-LAST:event_jButton3MouseClicked
 
     private void jButton4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton4MouseClicked
-        AudioClip sonido;
-        sonido = java.applet.Applet.newAudioClip(getClass().getResource("/PMTD/audio1.wav"));
-        sonido.play();
+
     }//GEN-LAST:event_jButton4MouseClicked
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        MusicaFondo.detenerMusica();
+    }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        MusicaFondo.reproducirMusica();
+    }//GEN-LAST:event_jButton4ActionPerformed
 
     /**
      * @param args the command line arguments

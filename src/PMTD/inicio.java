@@ -18,7 +18,6 @@ public class inicio {
         // TODO code application logic here
         Iniciar sid = new Iniciar();
         sid.setVisible(true);
-        sid.audio();
         
     }
     

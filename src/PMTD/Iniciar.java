@@ -10,6 +10,8 @@ import Visual.PDF;
 import java.applet.AudioClip;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.ImageIcon;
+import javax.swing.JLabel;
 
 import javax.swing.JOptionPane;
 
@@ -17,13 +19,29 @@ import javax.swing.JOptionPane;
  *
  * @author Argenis
  */
-public class Iniciar extends javax.swing.JFrame {
+public class Iniciar extends javax.swing.JFrame implements Runnable{
     
     /**
      * Creates new form NewJFrame
      */
+    static int contador=1;
+     static  JLabel imagenk;
+     static ImageIcon icono;
+     Thread hilo;
     public Iniciar() {
+        
+        hilo = new Thread(this);
+        hilo.start();
+//        setLayout(null);
+//        imagen = new JLabel();
+//        icono = new ImageIcon("src/PMTD/1.jpeg");
+//        imagen.setIcon(icono);
+//        imagen.setBounds(300, 50, 200, 200);
+//        imagen.setSize(500, 500);
+//        
+//        add(imagen);
         initComponents();
+        
         setLocationRelativeTo(null);
         setVisible(true);
         try{
@@ -60,6 +78,9 @@ public class Iniciar extends javax.swing.JFrame {
         jButton3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
         VistaCarrusel = new javax.swing.JPanel();
+        prev = new javax.swing.JButton();
+        next = new javax.swing.JButton();
+        imagen = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -99,7 +120,6 @@ public class Iniciar extends javax.swing.JFrame {
 
         documentacion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Inicio/Login/Botones/Registrar Documentación.png"))); // NOI18N
         documentacion.setContentAreaFilled(false);
-        documentacion.setOpaque(false);
         documentacion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 documentacionActionPerformed(evt);
@@ -124,7 +144,6 @@ public class Iniciar extends javax.swing.JFrame {
         titulo.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         titulo.setForeground(new java.awt.Color(255, 255, 255));
         titulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        titulo.setText("Luchemos contra el COVID-19");
         pieDePagina.add(titulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 320, 100));
 
         jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/sin-sonido.png"))); // NOI18N
@@ -161,7 +180,29 @@ public class Iniciar extends javax.swing.JFrame {
 
         VistaCarrusel.setBackground(new java.awt.Color(46, 146, 160));
         VistaCarrusel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        getContentPane().add(VistaCarrusel, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 0, 660, 460));
+
+        prev.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Inicio/Login/Botones/left-chevron (2).png"))); // NOI18N
+        prev.setContentAreaFilled(false);
+        prev.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                prevActionPerformed(evt);
+            }
+        });
+        VistaCarrusel.add(prev, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 220, -1, -1));
+
+        next.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Inicio/Login/Botones/right-arrow (1).png"))); // NOI18N
+        next.setContentAreaFilled(false);
+        next.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                nextActionPerformed(evt);
+            }
+        });
+        VistaCarrusel.add(next, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 220, -1, -1));
+
+        imagen.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Inicio/Fondo/1.jpeg"))); // NOI18N
+        VistaCarrusel.add(imagen, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 610, 470));
+
+        getContentPane().add(VistaCarrusel, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 0, 600, 460));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -193,6 +234,31 @@ public class Iniciar extends javax.swing.JFrame {
         PDF f = new PDF(null,true);
         f.setVisible(true);
     }//GEN-LAST:event_documentacionActionPerformed
+
+    private void prevActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_prevActionPerformed
+       if(evt.getSource() == prev){
+            if(contador <=1){
+                contador=3;
+            }else{
+                contador--;
+            }
+        }
+        imagen.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Inicio/Fondo/"+contador+".jpeg")));
+
+    }//GEN-LAST:event_prevActionPerformed
+
+    private void nextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nextActionPerformed
+        if(evt.getSource() == next){
+            if(contador >=3){
+                contador=1;
+            }else{
+                contador++;
+            }
+        }
+        imagen.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Inicio/Fondo/"+contador+".jpeg")));
+        
+
+    }//GEN-LAST:event_nextActionPerformed
 
     /**
      * @param args the command line arguments
@@ -236,6 +302,7 @@ public class Iniciar extends javax.swing.JFrame {
     private javax.swing.JPanel VistaCarrusel;
     private javax.swing.JButton documentacion;
     private javax.swing.JPanel encabezado;
+    private javax.swing.JLabel imagen;
     private javax.swing.JButton ingresar;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
@@ -243,9 +310,26 @@ public class Iniciar extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField2;
     private javax.swing.JPanel login;
     private javax.swing.JLabel logo;
+    private javax.swing.JButton next;
     private javax.swing.JPanel pieDePagina;
+    private javax.swing.JButton prev;
     private javax.swing.JLabel titulo;
     private javax.swing.JLabel titulo1;
     private javax.swing.JPanel vistaLogin;
     // End of variables declaration//GEN-END:variables
+
+    @Override
+    public void run() {
+        while (hilo!= null) {
+        try {
+            for (int i = 1; i <= 3; i++) {
+                //imagen.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/menu/"+i+".jpeg")));
+                imagen.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Inicio/Fondo/"+i+".jpeg"))); 
+                Thread.sleep(2000);
+            }
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+        }
+    }
 }

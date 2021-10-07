@@ -71,8 +71,8 @@ public class Iniciar extends javax.swing.JFrame implements Runnable{
         login = new javax.swing.JPanel();
         ingresar = new javax.swing.JButton();
         documentacion = new javax.swing.JButton();
-        jLabel8 = new javax.swing.JLabel();
         jTextField2 = new javax.swing.JTextField();
+        jLabel8 = new javax.swing.JLabel();
         pieDePagina = new javax.swing.JPanel();
         titulo = new javax.swing.JLabel();
         jButton3 = new javax.swing.JButton();
@@ -127,14 +127,14 @@ public class Iniciar extends javax.swing.JFrame implements Runnable{
         });
         login.add(documentacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(24, 110, 272, 32));
 
-        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Inicio/Login/Input/Usuario.png"))); // NOI18N
-        jLabel8.setText("jLabel8");
-        login.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(24, 10, 272, 32));
-
         jTextField2.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jTextField2.setBorder(null);
         jTextField2.setOpaque(false);
         login.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(24, 10, 240, 32));
+
+        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Inicio/Login/Input/Usuario.png"))); // NOI18N
+        jLabel8.setText("jLabel8");
+        login.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(24, 10, 272, 32));
 
         vistaLogin.add(login, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 200, 320, 160));
 
@@ -200,7 +200,9 @@ public class Iniciar extends javax.swing.JFrame implements Runnable{
         VistaCarrusel.add(next, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 220, -1, -1));
 
         imagen.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Inicio/Fondo/1.jpeg"))); // NOI18N
-        VistaCarrusel.add(imagen, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 610, 470));
+        imagen.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
+        imagen.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
+        VistaCarrusel.add(imagen, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 600, 460));
 
         getContentPane().add(VistaCarrusel, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 0, 600, 460));
 

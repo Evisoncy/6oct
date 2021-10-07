@@ -34,7 +34,7 @@ public class OrdenP extends javax.swing.JDialog {
     }
 
     public void Generar(String nombre) throws FileNotFoundException, DocumentException{
-        if(!(operacion.getText().isEmpty() || (Aopera.getText().isEmpty()) || (fecha.getText().isEmpty()) || (mov.getText().isEmpty())||(act.getText().isEmpty()))){
+        if(!(operacion.getText().isEmpty() || (Aopera.getText().isEmpty()) || (fecha.getText().isEmpty()) || (operacion.getText().isEmpty())||(act.getText().isEmpty()))){
             FileOutputStream archivo = new FileOutputStream(nombre + ".pdf"); 
             Document documento = new Document();
             PdfWriter.getInstance(documento, archivo);
@@ -47,7 +47,7 @@ public class OrdenP extends javax.swing.JDialog {
             documento.add(new Paragraph("1. Tipo de operacion a realizar: \n" + "    " + operacion.getText() + "\n"));
             documento.add(new Paragraph("2. Area de operaciones: \n" + "    -" + Aopera.getText() + "\n"));
             documento.add(new Paragraph("3. Fecha de inicio de operacion: \n" + "    " + fecha.getText() + "\n"));
-            documento.add(new Paragraph("4. Movimientos a realizar: \n" + "    -" + mov.getText() + "\n"));
+            documento.add(new Paragraph("4. Movimientos a realizar: \n" + "    -" + operacion.getText() + "\n"));
             documento.add(new Paragraph("5. Actividades IVR por realizar: \n" + "    " + act.getText() + "\n"));
 
             //documento.add(new Paragraph("asdsad: " + xd))
@@ -76,47 +76,66 @@ public class OrdenP extends javax.swing.JDialog {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        ordenPreparatoriaN1 = new javax.swing.JPanel();
         jLabel9 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
-        operacion = new javax.swing.JTextField();
-        Aopera = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        fecha = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
-        mov = new javax.swing.JTextArea();
+        operacion = new javax.swing.JTextArea();
         jLabel4 = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
         act = new javax.swing.JTextArea();
         jLabel5 = new javax.swing.JLabel();
         jButton2 = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
+        jScrollPane5 = new javax.swing.JScrollPane();
+        Aopera = new javax.swing.JTextArea();
+        jScrollPane6 = new javax.swing.JScrollPane();
+        fecha = new javax.swing.JTextArea();
+        jScrollPane7 = new javax.swing.JScrollPane();
+        mov = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
-        jPanel1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        ordenPreparatoriaN1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        ordenPreparatoriaN1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel9.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel9.setText("ORDEN PREPARATORIA N° 1");
+        ordenPreparatoriaN1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 650, 40));
 
         jLabel1.setText("Tipo de operación por realizar:");
+        ordenPreparatoriaN1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 40, -1, -1));
 
         jLabel2.setText("Area de operaciones: ");
+        ordenPreparatoriaN1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 180, -1, -1));
 
         jLabel3.setText("Fecha de inicio de operación:");
+        ordenPreparatoriaN1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 320, -1, -1));
 
-        mov.setColumns(20);
-        mov.setRows(5);
-        jScrollPane1.setViewportView(mov);
+        operacion.setColumns(20);
+        operacion.setLineWrap(true);
+        operacion.setRows(5);
+        operacion.setText("Se llevará a cabo una operación defensiva (retrograda) (acción retardatriz), La 2a Brig Cab inicialmente  retardará a los CCEE del adversario desde la PI (L/F) hasta la (LFM) la cual se encuentra materializada por el río  Camaná, posteriormente proporcionará protección a la zona de retaguardia con el propósito de permitia que el CTe asegure la ZGESB.\n\n");
+        jScrollPane1.setViewportView(operacion);
+
+        ordenPreparatoriaN1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, 610, 110));
 
         jLabel4.setText("Movimientos a realizar:");
+        ordenPreparatoriaN1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 460, -1, -1));
 
         act.setColumns(20);
         act.setRows(5);
+        act.setText("a. Inteligencia\n\nLos elementos de inteligencia proporcionaran permanentemente informaciones sobre posibles  desplazamientos del enemigo, indicando la cantidad de efectivos, composición y ejes de  itinerarios enemigos.\n\nLos elementos de inteligencia determinaran los posibles puntos de aplicación de los refuerzos\nde unidades del enemigo.\n\nLos elementos de inteligencia permanentemente proporcionarán información sobre las actitudes de la población en nuestro sector de responsabilidad.\n\nb. Vigilancia\n\nRealizar vigilancia sobre la línea de frontera quebrada RIO OCOÑA\n\nc. Reconocimiento\n\nReconocimiento sobre los ejes de progresión \"Azul\" materializado por la Panamericana Sur y eje de  progresión “Rojo” pampa Cunocuno y pampa Ceniceros Rojos.\n\nReconocimiento de la ubicación de las posiciones de los posibles refuerzos del enemigo.\nInformar sobre la ubicación exacta del sector de sembrado de minas en la línea de Frontera (Río\nOcoña).\n\nIdentificar los emplazamientos de las Armas de Apoyo de Fuegos (Artillería) enemiga, calibres y\nalcances de la misma\n\nIdentificar la ubicación de los medios de GE del Enemigo y sus capacidades.");
         jScrollPane2.setViewportView(act);
 
+        ordenPreparatoriaN1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 620, 610, -1));
+
         jLabel5.setText("Actividades IVR por realizar:");
+        ordenPreparatoriaN1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 600, -1, -1));
 
         jButton2.setText("Abrir");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -124,6 +143,7 @@ public class OrdenP extends javax.swing.JDialog {
                 jButton2ActionPerformed(evt);
             }
         });
+        ordenPreparatoriaN1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 750, -1, -1));
 
         jButton1.setText("Generar PDF");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -131,86 +151,47 @@ public class OrdenP extends javax.swing.JDialog {
                 jButton1ActionPerformed(evt);
             }
         });
+        ordenPreparatoriaN1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 750, -1, -1));
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(22, 22, 22)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel2)
-                    .addComponent(jLabel1)
-                    .addComponent(jLabel3)
-                    .addComponent(jLabel4)
-                    .addComponent(jLabel5))
-                .addGap(40, 40, 40)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(operacion)
-                    .addComponent(jScrollPane2)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 223, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(fecha)
-                    .addComponent(Aopera))
-                .addGap(40, 40, 40))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(110, 110, 110)
-                        .addComponent(jButton1)
-                        .addGap(45, 45, 45)
-                        .addComponent(jButton2))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(108, 108, 108)
-                        .addComponent(jLabel9)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel9)
-                .addGap(32, 32, 32)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
-                    .addComponent(operacion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(Aopera, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3)
-                    .addComponent(fecha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel4)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(12, 12, 12)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel5)
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton2)
-                    .addComponent(jButton1))
-                .addContainerGap(19, Short.MAX_VALUE))
-        );
+        Aopera.setColumns(20);
+        Aopera.setLineWrap(true);
+        Aopera.setRows(5);
+        Aopera.setText("-Por el Norte: Jalonada por la cortadura de  la Quebrada Parca SE de C° Chutana,  pendiente S de C° Dos Rayas,  pendiente SO de C° Pacayacu.\n\n- Por el Sur: Hasta la ubicacions del A/S, jalonada por C° Vincho, pendiente S C° Marquesa, pendiente  N C° cueva de León.\n\n- Por el Este: Límite con la II DE,  jalonada por pendiente SO de C°  Pacayacu, C° los Cuellanos,  pendiente N C° Cueva de León. \n\n- Por el Oeste: Límite con la 2ª Brig.  Blind(-), jalonada por pendiente SE  de C° Chutana, C° San Julian, C°  Vincho.");
+        jScrollPane5.setViewportView(Aopera);
+
+        ordenPreparatoriaN1.add(jScrollPane5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 200, 610, 110));
+
+        fecha.setColumns(20);
+        fecha.setLineWrap(true);
+        fecha.setRows(5);
+        fecha.setText("El planeamiento y preparación de las operaciones se iniciaran a partir del (D-250) y  la defensa se realizar el D (0600), disponiendo de\tun total de ……. para el planeamiento y preparación de las operaciones.");
+        jScrollPane6.setViewportView(fecha);
+
+        ordenPreparatoriaN1.add(jScrollPane6, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 340, 610, 110));
+
+        mov.setColumns(20);
+        mov.setLineWrap(true);
+        mov.setRows(5);
+        mov.setText("- Movimientos y Desplazamientos De Preferencia Nocturnos\n\n- Establecer El Sistema De Vigilancia De Nuestras Instalaciones.\n\n- Todas Las Unidades Se Desplazaran Desde La Zona  De Reunion En Rg Mala Hacia Las Posiciones Defensivas En Qda. Parca.");
+        jScrollPane7.setViewportView(mov);
+
+        ordenPreparatoriaN1.add(jScrollPane7, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 480, 610, 110));
+
+        jScrollPane3.setViewportView(ordenPreparatoriaN1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 670, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 287, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         pack();
@@ -276,9 +257,9 @@ public class OrdenP extends javax.swing.JDialog {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextField Aopera;
+    private javax.swing.JTextArea Aopera;
     private javax.swing.JTextArea act;
-    private javax.swing.JTextField fecha;
+    private javax.swing.JTextArea fecha;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
@@ -287,10 +268,14 @@ public class OrdenP extends javax.swing.JDialog {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JScrollPane jScrollPane5;
+    private javax.swing.JScrollPane jScrollPane6;
+    private javax.swing.JScrollPane jScrollPane7;
     private javax.swing.JTextArea mov;
-    private javax.swing.JTextField operacion;
+    private javax.swing.JTextArea operacion;
+    private javax.swing.JPanel ordenPreparatoriaN1;
     // End of variables declaration//GEN-END:variables
 }

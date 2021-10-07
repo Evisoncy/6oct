@@ -79,6 +79,7 @@ public class GuiaIni extends javax.swing.JDialog {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jScrollPane7 = new javax.swing.JScrollPane();
         jPanel1 = new javax.swing.JPanel();
         jLabel9 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
@@ -102,44 +103,73 @@ public class GuiaIni extends javax.swing.JDialog {
         jLabel7 = new javax.swing.JLabel();
         metodo = new javax.swing.JComboBox<>();
         jLabel8 = new javax.swing.JLabel();
-        lugar = new javax.swing.JTextField();
         jLabel10 = new javax.swing.JLabel();
-        fecha = new javax.swing.JTextField();
+        jScrollPane5 = new javax.swing.JScrollPane();
+        lugar = new javax.swing.JTextArea();
+        jScrollPane6 = new javax.swing.JScrollPane();
+        fecha = new javax.swing.JTextArea();
+        jLabel11 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jPanel1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel9.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel9.setText("GUIA DE INICIACIÓN");
+        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 670, 40));
 
         jLabel1.setText("Iniciar el diseño:");
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 50, -1, 20));
 
         jLabel2.setText("Coordinaciones por realizar:");
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, -1, -1));
 
         IniciarDiseño.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Si", "No" }));
+        jPanel1.add(IniciarDiseño, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 50, 40, -1));
+
+        jScrollPane3.setToolTipText("");
 
         Coord.setColumns(20);
+        Coord.setLineWrap(true);
         Coord.setRows(5);
         jScrollPane3.setViewportView(Coord);
 
+        jPanel1.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 100, 630, 120));
+
         jLabel3.setText("Movimientos autorizados de reconocimiento y vigilancia: ");
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 230, -1, 20));
 
         Mov.setColumns(20);
+        Mov.setLineWrap(true);
         Mov.setRows(5);
+        Mov.setText("- TODOS LOS MOVIMIENTOS SE  REALIZARAN CON ORDEN Y DE  PREFERENCIA EN HORAS DE OSCURIDAD.\n\n- G-2 REALIZAR EL ANALISIS DEL ESPECTRO  ELECTROMAGNETICO.\n\n- RECONOCIMIENTO DE RUTAS  PRINCIPALES Y ALTERNAS, APTAS PARA EL  DESPLAZAMIENTO DE NUESTRAS FUERZAS.\n\n- COORDINAR, CON EL ESCALON SUPERIOR EL  RESULTADO DEL CRUCE DE LOS VECTORES QUE  CONVERGEN EN NUESTRA ADR.\n\n- G-2, G-3 Y G-4, COORDINAR EL PLAN DE DESPLAZAMIIENTO.\n\n- BASES CONTRATERRORISTAS, REALIZAR  RECONOCIMIENTOS DE SECTORES Y DE  RUTAS.\n\n- G-5, G-2 Y G-3 COORDINAR CON  ENTIDADES CIVILES Y ARTICULAR  ESFUERZOS EN NUESTRA ADR\n\n- G-2 ORIENTAR SU ESFUERZO DE BUSQUEDA,  MEDIANTE SUS PLANES DE INTELIGENCIA  DISTRIBUIDOS EN EL SECTOR.CORDINAR C\n\n");
         jScrollPane1.setViewportView(Mov);
 
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 250, 630, 120));
+
         jLabel4.setText("Trabajos o tareas adicionales para el EM:");
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 380, -1, -1));
 
         Trab.setColumns(20);
+        Trab.setLineWrap(true);
         Trab.setRows(5);
+        Trab.setText("G-1: Dar cuenta de la situación de personal con respecto a  contagiados con COVID de las UU.\n\nG-2: Intensificar las medidas de contrainteligencia para  proteger la información pertinente de nuestras  operaciones y acciones militares.\n\nG-3: Intensificar el entrenamiento y ensayos nocturnos para las operaciones militares.\n\nG-4: Solicitar al escalón superior el completamiento de las necesidades para cumplir con las acciones militares.\n\nG-5: Realizar en coordinación con los demás miembros del  em, el planeamiento para las acciones militares.");
         jScrollPane2.setViewportView(Trab);
 
+        jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 400, 630, 120));
+
         Req.setColumns(20);
+        Req.setLineWrap(true);
         Req.setRows(5);
+        Req.setText("- Información detallada de las poblaciones con  mayor vulnerabilidad en el ADR.\n\n- Últimos movimientos de la OT-SL dentro de nuestra ADR.\n\n- Lugares probables para instalación de albergues temporales.\n\n- Capacidad operativa del material y equipo.\n\n- Información sobre puentes en el ADR.\n\n- Apoyo administrativo con lo que contamos.\n");
         jScrollPane4.setViewportView(Req);
 
+        jPanel1.add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 550, 630, 120));
+
         jLabel5.setText("Requerimientos de información:");
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 530, -1, -1));
 
         jButton1.setText("Generar PDF");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -147,6 +177,7 @@ public class GuiaIni extends javax.swing.JDialog {
                 jButton1ActionPerformed(evt);
             }
         });
+        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 1000, -1, -1));
 
         jButton2.setText("Abrir");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -154,127 +185,56 @@ public class GuiaIni extends javax.swing.JDialog {
                 jButton2ActionPerformed(evt);
             }
         });
+        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 1000, -1, -1));
 
-        jLabel6.setText("Asignacion del tiempo inicial:");
+        jLabel6.setText("Días");
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 50, -1, 20));
 
-        jLabel7.setText("Método de planeamiento");
+        time.setText("112");
+        jPanel1.add(time, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 50, 40, -1));
+
+        jLabel7.setText("Método de planeamiento:");
+        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 50, -1, 20));
 
         metodo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Paralelo", "Secuencial" }));
+        jPanel1.add(metodo, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 50, 80, -1));
 
         jLabel8.setText("Lugar de planeamiento");
+        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 840, -1, -1));
 
         jLabel10.setText("Fecha de planeamiento");
+        jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 680, -1, -1));
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(35, 35, 35)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel2)
-                    .addComponent(jLabel1)
-                    .addComponent(jLabel3)
-                    .addComponent(jLabel4)
-                    .addComponent(jLabel5)
-                    .addComponent(jLabel6)
-                    .addComponent(jLabel7)
-                    .addComponent(jLabel8)
-                    .addComponent(lugar, javax.swing.GroupLayout.PREFERRED_SIZE, 246, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane4)
-                    .addComponent(jScrollPane2)
-                    .addComponent(jScrollPane1)
-                    .addComponent(time)
-                    .addComponent(IniciarDiseño, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(metodo, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 194, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel10)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addComponent(fecha))
-                .addGap(160, 160, 160))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(177, 177, 177)
-                        .addComponent(jLabel9))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(182, 182, 182)
-                        .addComponent(jButton1)
-                        .addGap(44, 44, 44)
-                        .addComponent(jButton2)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel9)
-                .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel6)
-                    .addComponent(time, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel7)
-                    .addComponent(metodo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(7, 7, 7)
-                        .addComponent(jLabel1)
-                        .addGap(18, 18, 18)
-                        .addComponent(jLabel2))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(IniciarDiseño, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel3)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(8, 8, 8)
-                        .addComponent(jLabel4))
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel5)
-                    .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(19, 19, 19)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel8)
-                    .addComponent(jLabel10))
-                .addGap(8, 8, 8)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(fecha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lugar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton2)
-                    .addComponent(jButton1))
-                .addGap(83, 83, 83))
-        );
+        lugar.setColumns(20);
+        lugar.setLineWrap(true);
+        lugar.setRows(5);
+        lugar.setText("SE REUNIRAN EN LA SALA DE OPERACIONES DEL PUESTO DE COMANDO DE LA 2° BRIG INF QUE  SE ENCUENTRA EN LA LOCALIDAD DE PICHARI BAJO A PARTIR DEL DIA (D-112) SEGÚN LO  ESPECIFICADO POR EL JEMA Y EN SITUACIONES ESPECIALES CON ORDEN.");
+        jScrollPane5.setViewportView(lugar);
+
+        jPanel1.add(jScrollPane5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 860, 630, 120));
+
+        fecha.setColumns(20);
+        fecha.setLineWrap(true);
+        fecha.setRows(5);
+        fecha.setText("1. D-112 ( RECEPCION DE LA MISION )\n2. D-105 ( ANALISIS DE  LA MISION )\n3. D-101 ( DESARROLLO DEL CONOPs )\n4. D-94  ( DECISION DEL CMDTE )\n5. D-91  ( DISTRIBUCION DE LA  ORDEN DE OPERACIONES A LAS UU SUBORDINADAS )");
+        jScrollPane6.setViewportView(fecha);
+
+        jPanel1.add(jScrollPane6, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 700, 630, 120));
+
+        jLabel11.setText("Asignacion del tiempo inicial:");
+        jPanel1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, -1, -1));
+
+        jScrollPane7.setViewportView(jPanel1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 597, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+            .addComponent(jScrollPane7, javax.swing.GroupLayout.DEFAULT_SIZE, 685, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 619, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 399, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
@@ -345,11 +305,12 @@ public class GuiaIni extends javax.swing.JDialog {
     private javax.swing.JTextArea Mov;
     private javax.swing.JTextArea Req;
     private javax.swing.JTextArea Trab;
-    private javax.swing.JTextField fecha;
+    private javax.swing.JTextArea fecha;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -363,7 +324,10 @@ public class GuiaIni extends javax.swing.JDialog {
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
-    private javax.swing.JTextField lugar;
+    private javax.swing.JScrollPane jScrollPane5;
+    private javax.swing.JScrollPane jScrollPane6;
+    private javax.swing.JScrollPane jScrollPane7;
+    private javax.swing.JTextArea lugar;
     private javax.swing.JComboBox<String> metodo;
     private javax.swing.JTextField time;
     // End of variables declaration//GEN-END:variables

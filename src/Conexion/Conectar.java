@@ -3,6 +3,7 @@ package Conexion;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import javax.swing.JOptionPane;
 
 public class Conectar {
 
@@ -15,10 +16,13 @@ public class Conectar {
     Connection connection = null;
 
     public Conectar() {
+        
         try {
+            JOptionPane.showMessageDialog(null, "Cargando datos, espere un momento...");
             Class.forName("com.mysql.jdbc.Driver");
             connection = DriverManager.getConnection(url, login, password);
             if (connection != null) {
+                JOptionPane.showMessageDialog(null, "Conexión exitosa");
                 System.out.println("Conexión a base de datos " + bd + " OK\n");
             }
         } catch (SQLException ex) {

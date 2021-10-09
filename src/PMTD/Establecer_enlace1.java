@@ -7,6 +7,7 @@ package PMTD;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Vector;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
@@ -292,12 +293,12 @@ public class Establecer_enlace1 extends javax.swing.JDialog {
         jPanel1.add(Imagen);
         jPanel1.repaint();*/
         // TODO add your handling code here:
-        //llenamos combo de areas de ENLACE
-        jComboBox1.addItem("------------------------------------------------------SELECCIONE ENLACE-----------------------------------------------------");
-        jComboBox1.addItem("GDP ELON SUPERIOR");
-        jComboBox1.addItem("GDP UNIDADES VECINAS");
-        jComboBox1.addItem("GDP UNIDADES SUBORDINADAS");
-        jComboBox1.addItem("OTROS SECTORES");
+            //llenamos combo de areas de ENLACE
+            jComboBox1.addItem("------------------------------------------------------SELECCIONE ENLACE-----------------------------------------------------");
+            jComboBox1.addItem("GDP ELON SUPERIOR");
+            jComboBox1.addItem("GDP UNIDADES VECINAS");
+            jComboBox1.addItem("GDP UNIDADES SUBORDINADAS");
+            jComboBox1.addItem("OTROS SECTORES");
         //llenamos combo de areas de GRADO
         jComboBox2.addItem("------------------------------------------------------SELECCIONE GRADO------------------------------------------------------");
         jComboBox2.addItem("GENERAL DEL EJERCITO");
@@ -316,6 +317,14 @@ public class Establecer_enlace1 extends javax.swing.JDialog {
         modelo.addColumn("GRADO");
         modelo.addColumn("UNIDAD");
         modelo.addColumn("TIPO DE ENLACE");
+        
+        Object [] fila = new Object[5];
+        fila[0] = "ALARCON CANOVA PIERO";
+        fila[1] = "987767593";
+        fila[2] = "TENIENTE";
+        fila[3] = "BCT 34";
+        fila[4] = "GDP UNIDADES SUBORDINADAS";
+        modelo.addRow(fila);
         //ASIGNAR modelo a la tabla
         jTable2.setModel(modelo);
     }//GEN-LAST:event_formWindowOpened

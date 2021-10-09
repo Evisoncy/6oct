@@ -19,6 +19,7 @@ import java.text.DecimalFormat;
 import java.text.DecimalFormatSymbols;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.DefaultComboBoxModel;
 import javax.swing.JOptionPane;
 
 /**
@@ -31,11 +32,32 @@ public class evaInicial extends javax.swing.JDialog {
      * Creates new form evaInicial
      */
     String nombre="EvaInicial";
+    
+    
     public evaInicial(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
         this.setLocationRelativeTo(null);
         seleccion();
+    }
+
+    public String getTimeincial(){
+        if(paraleloRadioButton.isSelected()){
+            return tiempoTotalParaleloTextField.getText();
+        }
+        return tiempoTotalSecuencialTextField.getText();
+        
+    }
+    
+    public int getIndexMetodo(){
+        if(paraleloRadioButton.isSelected()){
+            return 0;
+        }
+        return 1;
+    }
+    
+    public DefaultComboBoxModel getModeloMetodo(){
+        return new DefaultComboBoxModel<>(new String[]{"Paralelo", "Secuencial"});
     }
     
     public void seleccion() {
@@ -46,7 +68,7 @@ public class evaInicial extends javax.swing.JDialog {
     }
     
     public void Generar1(String nombre) throws FileNotFoundException, DocumentException{
-        if(!(jTextField1.getText().isEmpty() || (jTextField38.getText().isEmpty()) || (jTextField21.getText().isEmpty()))){
+        if(!(jTextField1.getText().isEmpty() || (tiempoTotalSecuencialTextField.getText().isEmpty()) || (jTextField21.getText().isEmpty()))){
             FileOutputStream archivo = new FileOutputStream(nombre + ".pdf"); 
             Document documento = new Document();
             PdfWriter.getInstance(documento, archivo);
@@ -57,7 +79,7 @@ public class evaInicial extends javax.swing.JDialog {
             documento.add(parrafo);
             
             documento.add(new Paragraph("Planteamiento Paralelo \n" + "Regla de 1/5" + "\n"));
-            documento.add(new Paragraph("Tiempo Total Disponible \n" + jTextField38.getText() + "\n"));
+            documento.add(new Paragraph("Tiempo Total Disponible \n" + tiempoTotalSecuencialTextField.getText() + "\n"));
             documento.add(new Paragraph("Tiempo Asignado \n" + " Días: " + jTextField1.getText() + "\n" + " Horas: " + jTextField21.getText() + "\n"));
             documento.add(new Paragraph("Etapas y pasos del PMTD \n"));
             documento.add(new Paragraph("Análisis de la misión \n" + " %Planteamiento: " + jTextField2.getText() + "\n" + "Tiempo en Días: " + jTextField3.getText() + "\n" + "Tiempo en Horas: " + jTextField33.getText() + "\n"));
@@ -78,7 +100,7 @@ public class evaInicial extends javax.swing.JDialog {
     }
     
     public void Generar2(String nombre) throws FileNotFoundException, DocumentException{
-        if(!(jTextField32.getText().isEmpty() || (jTextField22.getText().isEmpty()) || (jTextField12.getText().isEmpty()))){
+        if(!(tiempoTotalParaleloTextField.getText().isEmpty() || (jTextField22.getText().isEmpty()) || (jTextField12.getText().isEmpty()))){
             FileOutputStream archivo = new FileOutputStream(nombre + ".pdf"); 
             Document documento = new Document();
             PdfWriter.getInstance(documento, archivo);
@@ -89,7 +111,7 @@ public class evaInicial extends javax.swing.JDialog {
             documento.add(parrafo);
             
             documento.add(new Paragraph("Planteamiento Secuencial \n" + "Regla de 1/3" + "\n"));
-            documento.add(new Paragraph("Tiempo Total Disponible \n" + jTextField32.getText() + "\n"));
+            documento.add(new Paragraph("Tiempo Total Disponible \n" + tiempoTotalParaleloTextField.getText() + "\n"));
             documento.add(new Paragraph("Tiempo Asignado \n" + " Días: " + jTextField12.getText() + "\n" + " Horas: " + jTextField22.getText() + "\n"));
             documento.add(new Paragraph("Etapas y pasos del PMTD \n"));
             documento.add(new Paragraph("Análisis de la misión \n" + " %Planteamiento: " + jTextField16.getText() + "\n" + "Tiempo en Días: " + jTextField13.getText() + "\n" + "Tiempo en Horas: " + jTextField28.getText() + "\n"));
@@ -130,8 +152,8 @@ public class evaInicial extends javax.swing.JDialog {
         jCheckBoxMenuItem1 = new javax.swing.JCheckBoxMenuItem();
         jCheckBoxMenuItem2 = new javax.swing.JCheckBoxMenuItem();
         jLabel9 = new javax.swing.JLabel();
-        jRadioButton1 = new javax.swing.JRadioButton();
-        jRadioButton2 = new javax.swing.JRadioButton();
+        secuencialRadioiButton = new javax.swing.JRadioButton();
+        paraleloRadioButton = new javax.swing.JRadioButton();
         jPanel3 = new javax.swing.JPanel();
         panelPlaneamientoSecuencial = new javax.swing.JPanel();
         jLabel11 = new javax.swing.JLabel();
@@ -167,7 +189,7 @@ public class evaInicial extends javax.swing.JDialog {
         jTextField30 = new javax.swing.JTextField();
         jTextField31 = new javax.swing.JTextField();
         jLabel28 = new javax.swing.JLabel();
-        jTextField32 = new javax.swing.JTextField();
+        tiempoTotalParaleloTextField = new javax.swing.JTextField();
         jLabel29 = new javax.swing.JLabel();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
@@ -208,7 +230,7 @@ public class evaInicial extends javax.swing.JDialog {
         jTextField36 = new javax.swing.JTextField();
         jTextField37 = new javax.swing.JTextField();
         jLabel30 = new javax.swing.JLabel();
-        jTextField38 = new javax.swing.JTextField();
+        tiempoTotalSecuencialTextField = new javax.swing.JTextField();
         jLabel31 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
@@ -230,22 +252,22 @@ public class evaInicial extends javax.swing.JDialog {
         jLabel9.setText("EVALUACIÓN INICIAL ");
         getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 550, 50));
 
-        jRadioButton1.setText("Secuencial");
-        jRadioButton1.addActionListener(new java.awt.event.ActionListener() {
+        secuencialRadioiButton.setText("Secuencial");
+        secuencialRadioiButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRadioButton1ActionPerformed(evt);
+                secuencialRadioiButtonActionPerformed(evt);
             }
         });
-        getContentPane().add(jRadioButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 60, -1, -1));
+        getContentPane().add(secuencialRadioiButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 60, -1, -1));
 
-        jRadioButton2.setSelected(true);
-        jRadioButton2.setText("Paralelo");
-        jRadioButton2.addActionListener(new java.awt.event.ActionListener() {
+        paraleloRadioButton.setSelected(true);
+        paraleloRadioButton.setText("Paralelo");
+        paraleloRadioButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRadioButton2ActionPerformed(evt);
+                paraleloRadioButtonActionPerformed(evt);
             }
         });
-        getContentPane().add(jRadioButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 60, 92, -1));
+        getContentPane().add(paraleloRadioButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 60, 92, -1));
 
         jPanel3.setLayout(new java.awt.CardLayout());
 
@@ -353,13 +375,13 @@ public class evaInicial extends javax.swing.JDialog {
         jLabel28.setText("Tiempo Total Disponible");
         panelPlaneamientoSecuencial.add(jLabel28, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 30, 140, 20));
 
-        jTextField32.setText("112");
-        jTextField32.addActionListener(new java.awt.event.ActionListener() {
+        tiempoTotalParaleloTextField.setText("112");
+        tiempoTotalParaleloTextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField32ActionPerformed(evt);
+                tiempoTotalParaleloTextFieldActionPerformed(evt);
             }
         });
-        panelPlaneamientoSecuencial.add(jTextField32, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 30, 40, -1));
+        panelPlaneamientoSecuencial.add(tiempoTotalParaleloTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 30, 40, -1));
 
         jLabel29.setText("Dias");
         panelPlaneamientoSecuencial.add(jLabel29, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 30, -1, 20));
@@ -490,13 +512,13 @@ public class evaInicial extends javax.swing.JDialog {
         jLabel30.setText("Tiempo Total Disponible");
         panelPlaneamientoParalelo.add(jLabel30, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 30, 140, 20));
 
-        jTextField38.setText("112");
-        jTextField38.addActionListener(new java.awt.event.ActionListener() {
+        tiempoTotalSecuencialTextField.setText("112");
+        tiempoTotalSecuencialTextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField38ActionPerformed(evt);
+                tiempoTotalSecuencialTextFieldActionPerformed(evt);
             }
         });
-        panelPlaneamientoParalelo.add(jTextField38, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 30, 40, -1));
+        panelPlaneamientoParalelo.add(tiempoTotalSecuencialTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 30, 40, -1));
 
         jLabel31.setText("Dias");
         panelPlaneamientoParalelo.add(jLabel31, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 30, -1, 20));
@@ -543,33 +565,33 @@ public class evaInicial extends javax.swing.JDialog {
         // TODO add your handling code here:
     }//GEN-LAST:event_jComboBox1ActionPerformed
 
-    private void jRadioButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton2ActionPerformed
+    private void paraleloRadioButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_paraleloRadioButtonActionPerformed
         ((CardLayout) jPanel3.getLayout()).show(jPanel3, "Planteamiento Paralelo");
         jPanel3.removeAll();
         jPanel3.add(panelPlaneamientoParalelo);
         jPanel3.repaint();
         jPanel3.revalidate();
 
-        if (jRadioButton2.isSelected() == true) {
-            jRadioButton1.setSelected(false);
+        if (paraleloRadioButton.isSelected() == true) {
+            secuencialRadioiButton.setSelected(false);
         }
-    }//GEN-LAST:event_jRadioButton2ActionPerformed
+    }//GEN-LAST:event_paraleloRadioButtonActionPerformed
 
-    private void jRadioButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton1ActionPerformed
+    private void secuencialRadioiButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_secuencialRadioiButtonActionPerformed
     ((CardLayout) jPanel3.getLayout()).show(jPanel3, "Planteamiento Secuencial");
         jPanel3.removeAll();
         jPanel3.add(panelPlaneamientoSecuencial);
         jPanel3.repaint();
         jPanel3.revalidate();
 
-        if (jRadioButton1.isSelected() == true) {
-            jRadioButton2.setSelected(false);
+        if (secuencialRadioiButton.isSelected() == true) {
+            paraleloRadioButton.setSelected(false);
         }
-    }//GEN-LAST:event_jRadioButton1ActionPerformed
+    }//GEN-LAST:event_secuencialRadioiButtonActionPerformed
 
-    private void jTextField32ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField32ActionPerformed
+    private void tiempoTotalParaleloTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tiempoTotalParaleloTextFieldActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField32ActionPerformed
+    }//GEN-LAST:event_tiempoTotalParaleloTextFieldActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         try {
@@ -602,7 +624,7 @@ public class evaInicial extends javax.swing.JDialog {
 
         DecimalFormat formato1 = new DecimalFormat("#.00", separadoresPersonalizados);
         
-        float diasA = Float.parseFloat(jTextField32.getText());
+        float diasA = Float.parseFloat(tiempoTotalParaleloTextField.getText());
         diasA=(diasA/3);
         float diasAM= (diasA*3)/10;
         float diasAE= (diasA*2)/10;
@@ -639,9 +661,9 @@ public class evaInicial extends javax.swing.JDialog {
         }
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void jTextField38ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField38ActionPerformed
+    private void tiempoTotalSecuencialTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tiempoTotalSecuencialTextFieldActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField38ActionPerformed
+    }//GEN-LAST:event_tiempoTotalSecuencialTextFieldActionPerformed
 
     private void jTextField21ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField21ActionPerformed
         // TODO add your handling code here:
@@ -661,7 +683,7 @@ public class evaInicial extends javax.swing.JDialog {
 
         DecimalFormat formato1 = new DecimalFormat("#.00", separadoresPersonalizados);
         
-        float diasA = Float.parseFloat(jTextField38.getText());
+        float diasA = Float.parseFloat(tiempoTotalSecuencialTextField.getText());
         diasA=(diasA/5);
         float diasAM= (diasA*3)/10;
         float diasAE= (diasA*2)/10;
@@ -798,8 +820,6 @@ public class evaInicial extends javax.swing.JDialog {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JRadioButton jRadioButton1;
-    private javax.swing.JRadioButton jRadioButton2;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField10;
     private javax.swing.JTextField jTextField11;
@@ -825,13 +845,11 @@ public class evaInicial extends javax.swing.JDialog {
     private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField jTextField30;
     private javax.swing.JTextField jTextField31;
-    private javax.swing.JTextField jTextField32;
     private javax.swing.JTextField jTextField33;
     private javax.swing.JTextField jTextField34;
     private javax.swing.JTextField jTextField35;
     private javax.swing.JTextField jTextField36;
     private javax.swing.JTextField jTextField37;
-    private javax.swing.JTextField jTextField38;
     private javax.swing.JTextField jTextField4;
     private javax.swing.JTextField jTextField5;
     private javax.swing.JTextField jTextField6;
@@ -840,5 +858,9 @@ public class evaInicial extends javax.swing.JDialog {
     private javax.swing.JTextField jTextField9;
     private javax.swing.JPanel panelPlaneamientoParalelo;
     private javax.swing.JPanel panelPlaneamientoSecuencial;
+    private javax.swing.JRadioButton paraleloRadioButton;
+    private javax.swing.JRadioButton secuencialRadioiButton;
+    private javax.swing.JTextField tiempoTotalParaleloTextField;
+    private javax.swing.JTextField tiempoTotalSecuencialTextField;
     // End of variables declaration//GEN-END:variables
 }

@@ -6,7 +6,6 @@
 package PMTD;
 
 import PMTD.CRM.CRM;
-import PMTD.EvalRecursos.tarea;
 
 /**
  *
@@ -20,6 +19,14 @@ public class Etapa2 extends javax.swing.JPanel {
     public Etapa2() {
         initComponents();
     }
+    
+    private Actividad1 actividad_1;
+    private ActSit actividad_2;
+    private det_tareas actividad_3;
+    private Desarrollar_sect actividad_4;
+    private limitacionesDialog actividad_5;
+    private Identificar_hechos_criticos_y_suposiciones actividad_6;
+    private CRM actividad_7;
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -208,7 +215,7 @@ public class Etapa2 extends javax.swing.JPanel {
         jLabel5.setPreferredSize(new java.awt.Dimension(340, 600));
         add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 60, 340, 400));
     }// </editor-fold>//GEN-END:initComponents
-
+   
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
         //Etapa1 dialo2 = new JDialog(new requerimientos(),true);
@@ -331,6 +338,7 @@ public class Etapa2 extends javax.swing.JPanel {
         jButton8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/2da etapa/botones/Etapa 2 - Actividad 7.png")));
     }//GEN-LAST:event_jButton8MouseExited
 
+     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;

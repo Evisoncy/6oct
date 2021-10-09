@@ -97,8 +97,6 @@ public class OrdenP extends javax.swing.JDialog {
         jScrollPane7 = new javax.swing.JScrollPane();
         mov = new javax.swing.JTextArea();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-
         ordenPreparatoriaN1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         ordenPreparatoriaN1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 

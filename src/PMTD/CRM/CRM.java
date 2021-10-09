@@ -5,7 +5,6 @@
  */
 package PMTD.CRM;
 
-import PMTD.EValInicial.EvalRiesgo;
 import PMTD.GuiaIni;
 import com.itextpdf.*;
 import com.itextpdf.text.*;
@@ -601,7 +600,7 @@ public class CRM extends javax.swing.JDialog {
             cat.setText("La categoria del riesgo es "+resultadoAnalisis);
             clips.reset();
         } catch (Exception ex) {
-            Logger.getLogger(EvalRiesgo.class.getName()).log(Level.SEVERE, null, ex);
+            System.out.println(ex);
         }
     }//GEN-LAST:event_btnProcesarActionPerformed
 

@@ -359,8 +359,6 @@ public class Menu extends javax.swing.JFrame {
 
     private void jButton10MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton10MouseExited
         // TODO add your handling code here:
-        System.out.println(getClass().getResource("/imagenes/Menu/botones/Etapa/Etapa 2.png") +" - " + new javax.swing.ImageIcon(getClass().getResource("/imagenes/Menu/botones/Etapa/Etapa 2.png")));
-
         jButton10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Menu/botones/Etapa/Etapa 2.png")));
     }//GEN-LAST:event_jButton10MouseExited
 
@@ -372,7 +370,7 @@ public class Menu extends javax.swing.JFrame {
         // TODO add your handling code here:
         inicio.setLocationRelativeTo(null);
         inicio.setVisible(true);
-        this.dispose();
+        this.setVisible(false);
     }//GEN-LAST:event_jButton4ActionPerformed
 
     /**

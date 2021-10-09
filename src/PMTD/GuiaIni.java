@@ -5,6 +5,7 @@
  */
 package PMTD;
 
+import Herramientas.HelpContainers;
 import com.itextpdf.text.Document;
 import com.itextpdf.text.DocumentException;
 import com.itextpdf.text.Paragraph;
@@ -15,7 +16,10 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.DefaultComboBoxModel;
+import javax.swing.JComboBox;
 import javax.swing.JOptionPane;
+import javax.swing.JTextField;
 
 /**
  *
@@ -27,11 +31,19 @@ public class GuiaIni extends javax.swing.JDialog {
      * Creates new form GuiaIni
      */
     String nombre = "Guia";
+    int tiempoInicial = 0;
     public GuiaIni(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
         this.setLocationRelativeTo(null);
     }
+    
+    public void setValoresIniciales(String tiempoInicial,DefaultComboBoxModel modeloPLaneamiento, int indexPlaneamiento){
+        HelpContainers.setListaComboBox(metodo, modeloPLaneamiento, indexPlaneamiento);
+        HelpContainers.setValorTextField(time, tiempoInicial);
+    }
+    
+    
 
      public void Generar(String nombre) throws FileNotFoundException, DocumentException{
         if(!(Coord.getText().isEmpty() || (Trab.getText().isEmpty()) || (Mov.getText().isEmpty()) || (Req.getText().isEmpty()))){
@@ -127,6 +139,11 @@ public class GuiaIni extends javax.swing.JDialog {
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, -1, -1));
 
         IniciarDiseño.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Si", "No" }));
+        IniciarDiseño.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                IniciarDiseñoActionPerformed(evt);
+            }
+        });
         jPanel1.add(IniciarDiseño, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 50, 40, -1));
 
         jScrollPane3.setToolTipText("");
@@ -191,12 +208,24 @@ public class GuiaIni extends javax.swing.JDialog {
         jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 50, -1, 20));
 
         time.setText("112");
+        time.setEnabled(false);
+        time.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                timeActionPerformed(evt);
+            }
+        });
         jPanel1.add(time, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 50, 40, -1));
 
         jLabel7.setText("Método de planeamiento:");
         jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 50, -1, 20));
 
         metodo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Paralelo", "Secuencial" }));
+        metodo.setEnabled(false);
+        metodo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                metodoActionPerformed(evt);
+            }
+        });
         jPanel1.add(metodo, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 50, 80, -1));
 
         jLabel8.setText("Lugar de planeamiento");
@@ -256,6 +285,18 @@ public class GuiaIni extends javax.swing.JDialog {
         else
             JOptionPane.showMessageDialog(null, "no se encuentra ese archivo con ese nombre","Atencion",2);
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void metodoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_metodoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_metodoActionPerformed
+
+    private void timeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_timeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_timeActionPerformed
+
+    private void IniciarDiseñoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IniciarDiseñoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_IniciarDiseñoActionPerformed
 
     /**
      * @param args the command line arguments

@@ -6,10 +6,12 @@
 package PMTD;
 
 
+import Herramientas.HelpConstructor;
 import PMTD.EValInicial.evaInicial;
 import Visual.MostrarPDF;
 import Visual.PDF;
 import java.awt.Menu;
+import javax.swing.DefaultComboBoxModel;
 
 /**
  *
@@ -24,6 +26,15 @@ public class Etapa1 extends javax.swing.JPanel {
         
         initComponents();
     }
+    private Class<?>[] typeParametter = HelpConstructor.getTypeParameter(java.awt.Frame.class, boolean.class );
+    private organizacionDialog actividad_2;
+    private PDF actividad_3;
+    private ActSit actividad_4;
+    private Establecer_enlace1 actividad_5;
+    private evaInicial actividad_6;
+    private GuiaIni guiaIniciacion;
+    private OrdenP ordenPreparatoria_1;
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -237,9 +248,9 @@ public class Etapa1 extends javax.swing.JPanel {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         //jButton1.setLocation(0,0);
-        organizacionDialog org = new organizacionDialog(null,true);
-        org.setLocationRelativeTo(null);
-        org.setVisible(true);
+        actividad_2 =  (organizacionDialog) HelpConstructor.objectCreator(actividad_2,organizacionDialog.class,typeParametter, null,true);
+        actividad_2.setLocationRelativeTo(null);
+        actividad_2.setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
@@ -247,10 +258,9 @@ public class Etapa1 extends javax.swing.JPanel {
         /*ReunirHe r = new ReunirHe(null,true);
         r.setLocationRelativeTo(null);
         r.setVisible(true);*/
-        
-        PDF f = new PDF(null,true);
-        f.setVisible(true);
-        f.setLocationRelativeTo(null);
+        actividad_3 =  (PDF) HelpConstructor.objectCreator(guiaIniciacion,PDF.class,typeParametter, null,true);
+        actividad_3.setLocationRelativeTo(null);
+        actividad_3.setVisible(true);
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
@@ -259,32 +269,40 @@ public class Etapa1 extends javax.swing.JPanel {
         asap.setVisible(true);*/
         
         //agregado al menu principal
-        ActSit actsit = new ActSit(null,true);
-        actsit.setLocationRelativeTo(null);
-        actsit.setVisible(true);
+        actividad_4 =  (ActSit) HelpConstructor.objectCreator(actividad_4,ActSit.class,typeParametter, null,true);
+        actividad_4.setLocationRelativeTo(null);
+        actividad_4.setVisible(true);
         
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
         // TODO add your handling code here:
-        Establecer_enlace1 Ee = new Establecer_enlace1(null,true);
-        Ee.setVisible(true);
+        actividad_5 =  (Establecer_enlace1) HelpConstructor.objectCreator(actividad_5,Establecer_enlace1.class,typeParametter, null,true);
+        actividad_5.setLocationRelativeTo(null);
+        actividad_5.setVisible(true);
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
-        evaInicial ei = new evaInicial(null, true);
-        ei.setVisible(true);
+       actividad_6 =  (evaInicial) HelpConstructor.objectCreator(actividad_6,evaInicial.class,typeParametter, null,true);
+       actividad_6.setLocationRelativeTo(null);
+       actividad_6.setVisible(true);
         
     }//GEN-LAST:event_jButton6ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-       GuiaIni gi = new GuiaIni(null,true);
-       gi.setVisible(true);
+       actividad_6 =  (evaInicial) HelpConstructor.objectCreator(actividad_6,evaInicial.class,typeParametter, null,true);
+       guiaIniciacion =  (GuiaIni) HelpConstructor.objectCreator(guiaIniciacion,GuiaIni.class,typeParametter, null,true);
+       guiaIniciacion.setLocationRelativeTo(null);
+       guiaIniciacion.setValoresIniciales(actividad_6.getTimeincial(),actividad_6.getModeloMetodo(), actividad_6.getIndexMetodo());
+       guiaIniciacion.setVisible(true);
+       
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
-        OrdenP o = new OrdenP(null,true);
-        o.setVisible(true);
+        Class<?>[] typeParametter = HelpConstructor.getTypeParameter(java.awt.Frame.class, boolean.class );
+        ordenPreparatoria_1 =  (OrdenP) HelpConstructor.objectCreator(ordenPreparatoria_1,OrdenP.class,typeParametter, null,true);
+        ordenPreparatoria_1.setLocationRelativeTo(null);
+        ordenPreparatoria_1.setVisible(true);
     }//GEN-LAST:event_jButton7ActionPerformed
 
     private void jButton1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseEntered

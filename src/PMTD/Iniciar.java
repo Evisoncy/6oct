@@ -5,6 +5,7 @@
  */
 package PMTD;
 
+import Herramientas.HelpConstructor;
 import Visual.MostrarPDF;
 import Visual.PDF;
 import java.applet.AudioClip;
@@ -28,6 +29,7 @@ public class Iniciar extends javax.swing.JFrame implements Runnable{
      static  JLabel imagenk;
      static ImageIcon icono;
      Thread hilo;
+     Menu menu;
     public Iniciar() {
         
         hilo = new Thread(this);
@@ -226,9 +228,9 @@ public class Iniciar extends javax.swing.JFrame implements Runnable{
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void ingresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ingresarActionPerformed
-        Menu me = new Menu(this);
-        this.dispose();
-        me.setVisible(true);
+        menu = (Menu)HelpConstructor.objectCreator(menu, Menu.class, HelpConstructor.getTypeParameter(Iniciar.class), this);
+        this.setVisible(false);
+        menu.setVisible(true);
         JOptionPane.showMessageDialog(this, "Bienvenido Comandante");
     }//GEN-LAST:event_ingresarActionPerformed
 

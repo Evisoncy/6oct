@@ -293,7 +293,7 @@ public class Etapa1 extends javax.swing.JPanel {
        actividad_6 =  (evaInicial) HelpConstructor.objectCreator(actividad_6,evaInicial.class,typeParametter, null,true);
        guiaIniciacion =  (GuiaIni) HelpConstructor.objectCreator(guiaIniciacion,GuiaIni.class,typeParametter, null,true);
        guiaIniciacion.setLocationRelativeTo(null);
-       guiaIniciacion.setValoresIniciales(actividad_6.getTimeincial(),actividad_6.getModeloMetodo(), actividad_6.getIndexMetodo());
+       guiaIniciacion.setValoresIniciales(actividad_6.getTiempoInicial(),actividad_6.getModeloMetodo(), actividad_6.getIndexMetodo());
        guiaIniciacion.setVisible(true);
        
     }//GEN-LAST:event_jButton2ActionPerformed

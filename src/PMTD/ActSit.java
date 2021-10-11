@@ -5,11 +5,15 @@
  */
 package PMTD;
 
+import PDF.ActualizarApreciacion;
+import PDF.PDF_Generator;
 import com.itextpdf.text.Document;
 import com.itextpdf.text.DocumentException;
 import com.itextpdf.text.Paragraph;
 import com.itextpdf.text.pdf.PdfWriter;
+import java.awt.Desktop;
 import java.awt.Dimension;
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.util.logging.Level;
@@ -123,6 +127,7 @@ public class ActSit extends java.awt.Dialog {
         jScrollPane16 = new javax.swing.JScrollPane();
         jTextArea12 = new javax.swing.JTextArea();
         btnFin1 = new javax.swing.JButton();
+        btnFin2 = new javax.swing.JButton();
 
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowClosing(java.awt.event.WindowEvent evt) {
@@ -141,6 +146,12 @@ public class ActSit extends java.awt.Dialog {
         jLabel21.setText("Lugar");
 
         jLabel22.setText("Fecha: Formato dd/mm/aaaa");
+
+        txtUnidad3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtUnidad3ActionPerformed(evt);
+            }
+        });
 
         jLabel23.setText("Apreciacion de situacion de ");
 
@@ -591,10 +602,17 @@ public class ActSit extends java.awt.Dialog {
         jTextArea12.setRows(5);
         jScrollPane16.setViewportView(jTextArea12);
 
-        btnFin1.setText("Finalizar");
+        btnFin1.setText("Generar PDF");
         btnFin1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnFin1ActionPerformed(evt);
+            }
+        });
+
+        btnFin2.setText("Abrir PDF");
+        btnFin2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnFin2ActionPerformed(evt);
             }
         });
 
@@ -603,26 +621,32 @@ public class ActSit extends java.awt.Dialog {
         jPanel8Layout.setHorizontalGroup(
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel8Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(btnFin1)
+                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel8Layout.createSequentialGroup()
-                        .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addContainerGap()
+                        .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel7)
                             .addComponent(jLabel8)
-                            .addComponent(jScrollPane12, javax.swing.GroupLayout.DEFAULT_SIZE, 240, Short.MAX_VALUE)
-                            .addComponent(jScrollPane13))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jLabel10)
-                            .addComponent(jLabel9)
-                            .addComponent(jScrollPane14)
-                            .addComponent(jScrollPane15, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jScrollPane13, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(jScrollPane12, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jLabel10)
+                    .addComponent(jLabel9)
+                    .addComponent(jScrollPane14)
+                    .addComponent(jScrollPane15, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(jPanel8Layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel11)
-                            .addComponent(jScrollPane16, javax.swing.GroupLayout.PREFERRED_SIZE, 241, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(jScrollPane16, javax.swing.GroupLayout.PREFERRED_SIZE, 241, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jPanel8Layout.createSequentialGroup()
+                        .addGap(43, 43, 43)
+                        .addComponent(btnFin1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnFin2)))
+                .addContainerGap(30, Short.MAX_VALUE))
         );
         jPanel8Layout.setVerticalGroup(
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -645,12 +669,14 @@ public class ActSit extends java.awt.Dialog {
                                 .addComponent(jLabel10)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jScrollPane15, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(btnFin1)))
+                            .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(btnFin1)
+                                .addComponent(btnFin2))))
                     .addGroup(jPanel8Layout.createSequentialGroup()
                         .addComponent(jLabel7)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGap(11, 11, 11)
                         .addComponent(jScrollPane12, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jLabel8)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jScrollPane13, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -779,10 +805,51 @@ public class ActSit extends java.awt.Dialog {
     }//GEN-LAST:event_jButton10ActionPerformed
 
     private void btnFin1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFin1ActionPerformed
-        NuloTodos();
+ 
         try {
             // TODO add your handling code here:
-            Generar("ApreciaciondeSituacion");
+            ActualizarApreciacion.Encabezado encabezado = new ActualizarApreciacion.Encabezado(txtUnidad3.getText(),txtLugar7.getText(),txtLugar6.getText(), (String)cmb.getSelectedItem());
+            ActualizarApreciacion.AreaInteres[] areaInteres = new ActualizarApreciacion.AreaInteres[jTable1.getModel().getRowCount()];
+            
+            for(int i = 0; i < jTable1.getModel().getRowCount(); i+=1){
+                System.out.println((String)((DefaultTableModel)jTable1.getModel()).getValueAt(i, 0) + " - "+(String)((DefaultTableModel)jTable1.getModel()).getValueAt(i, 1));
+                areaInteres[i]= new ActualizarApreciacion.AreaInteres((String)((DefaultTableModel)jTable1.getModel()).getValueAt(i, 0),(String)((DefaultTableModel)jTable1.getModel()).getValueAt(i, 1));
+            }
+            ActualizarApreciacion.AreaOperaciones areaOperaciones = new ActualizarApreciacion.AreaOperaciones(jTextArea3.getText(), jTextArea4.getText(), jTextArea5.getText());
+            
+            String fuerzasEnemigas=jTextArea1.getText();
+            
+             ActualizarApreciacion.FuerzasAmigas.RecusosDisponibles[] recursosDisponibles= new ActualizarApreciacion.FuerzasAmigas.RecusosDisponibles[jTable3.getModel().getRowCount()];
+            
+            for(int i = 0; i < jTable3.getModel().getRowCount(); i+=1){
+                recursosDisponibles[i]= new ActualizarApreciacion.FuerzasAmigas.RecusosDisponibles((String)((DefaultTableModel)jTable3.getModel()).getValueAt(i, 0),(String)((DefaultTableModel)jTable3.getModel()).getValueAt(i, 1));
+            }
+            
+             ActualizarApreciacion.FuerzasAmigas.RecursosAdicionales[] recursosAdicionales = new ActualizarApreciacion.FuerzasAmigas.RecursosAdicionales[jTable2.getModel().getRowCount()];
+            
+            for(int i = 0; i < jTable2.getModel().getRowCount(); i+=1){
+                recursosAdicionales[i]= new ActualizarApreciacion.FuerzasAmigas.RecursosAdicionales((String)((DefaultTableModel)jTable2.getModel()).getValueAt(i, 0),(String)((DefaultTableModel)jTable2.getModel()).getValueAt(i, 1),(String)((DefaultTableModel)jTable2.getModel()).getValueAt(i, 2));
+            }
+            
+            String[] capacidadesDisponibles= new String[jTable4.getModel().getRowCount()];
+            
+            for(int i = 0; i < jTable4.getModel().getRowCount(); i+=1){
+                capacidadesDisponibles[i]=(String)((DefaultTableModel)jTable4.getModel()).getValueAt(i, 0);
+            }
+            
+            ActualizarApreciacion.FuerzasAmigas fuerzasAmigas = new ActualizarApreciacion.FuerzasAmigas(recursosDisponibles, capacidadesDisponibles, recursosAdicionales, fuerzasEnemigas);
+            
+            String facPoliticos = jTextArea8.getText();
+            String factBiologicos = jTextArea10.getText();
+            String infraestructura = jTextArea12.getText();
+            String factEconomicos = jTextArea9.getText();
+            String factPsicologicos = jTextArea11.getText();
+            
+            ActualizarApreciacion.ConsideracionesCiviles consideracionesCiviles= new ActualizarApreciacion.ConsideracionesCiviles(facPoliticos,factBiologicos, infraestructura, factEconomicos, factPsicologicos);
+            
+            ActualizarApreciacion actApreciacion = new ActualizarApreciacion(encabezado, areaInteres, areaOperaciones, fuerzasEnemigas, fuerzasAmigas, consideracionesCiviles);
+            
+            PDF_Generator.GenerarActualizarApreciacionSituacion("Actualizar_Apreciacion",actApreciacion);
             //va a modificar el documento
         } catch (FileNotFoundException ex) {
             Logger.getLogger(ActSit.class.getName()).log(Level.SEVERE, null, ex);
@@ -792,6 +859,18 @@ public class ActSit extends java.awt.Dialog {
 
         JOptionPane.showMessageDialog(null, "Cambios guardados, documento generado");
     }//GEN-LAST:event_btnFin1ActionPerformed
+
+    private void txtUnidad3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtUnidad3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtUnidad3ActionPerformed
+
+    private void btnFin2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFin2ActionPerformed
+        // TODO add your handling code here:
+        if(!"Actualizar_Apreciacion".isEmpty())
+            abrir("Actualizar_Apreciacion");
+        else
+            JOptionPane.showMessageDialog(null, "no se encuentra ese archivo con ese nombre","Atencion",2);
+    }//GEN-LAST:event_btnFin2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -814,6 +893,7 @@ public class ActSit extends java.awt.Dialog {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAgregarfactor;
     private javax.swing.JButton btnFin1;
+    private javax.swing.JButton btnFin2;
     private javax.swing.JButton btnQuitarfactor;
     private javax.swing.JComboBox<String> cmb;
     private javax.swing.JButton jButton10;
@@ -880,234 +960,31 @@ public class ActSit extends java.awt.Dialog {
     private javax.swing.JTextField txtLugar7;
     private javax.swing.JTextField txtUnidad3;
     // End of variables declaration//GEN-END:variables
-void agregaFila(JTable tabla){
-    DefaultTableModel tm = new DefaultTableModel();
-    tm = (DefaultTableModel) tabla.getModel();
-    tm.setRowCount(tabla.getRowCount()+1);
-    tabla.setModel(tm);
-    
-}
+    void agregaFila(JTable tabla){
+        DefaultTableModel tm = new DefaultTableModel();
+        tm = (DefaultTableModel) tabla.getModel();
+        tm.setRowCount(tabla.getRowCount()+1);
+        tabla.setModel(tm);
 
-void quitaFila(JTable tabla){
-    DefaultTableModel tm = new DefaultTableModel();
-    tm = (DefaultTableModel) tabla.getModel();
-    //tm.setRowCount(tabla.getRowCount()-1);
-    try{
-        tm.removeRow(tm.getRowCount()-1);
-    }catch(Exception e){
-        System.out.println("Ya no puede quitar filas");
-    }
-    tabla.setModel(tm);
-}
-
-public void Generar(String nombre) throws FileNotFoundException, DocumentException{
-        if(!(txtUnidad3.getText().isEmpty() || (txtLugar6.getText().isEmpty()) || (txtLugar7.getText().isEmpty()) )){
-            
-            FileOutputStream archivo = new FileOutputStream(nombre + ".pdf"); 
-            Document documento = new Document();
-            PdfWriter.getInstance(documento, archivo);
-            documento.open();
-            
-            Paragraph parrafo1 = new Paragraph("APRECIACION DE SITUACION\n\n");
-            parrafo1.setAlignment(1);
-            documento.add(parrafo1);
-            
-            Paragraph parrafo2 = new Paragraph(
-                    "Unidad: "+txtUnidad3.getText()+
-                    "\nLugar: "+txtLugar7.getText()+
-                    "\nFecha: "+txtLugar6.getText()+
-                    "\nApreciacion de situacion de: "+cmb.getSelectedItem());
-            //parrafo2.setAlignment(1);
-            documento.add(parrafo2);
-            
-            Paragraph parrafo3 = new Paragraph(
-                    "\n\ta. AREA DE INTERÉS" +
-                    "\n");
-            documento.add(parrafo3);
-            
-            for(int k=0; k<jTable1.getRowCount();k++){
-                Paragraph paraf = new Paragraph("");
-                if(jTable1.getValueAt(k,0)==null){
-                    jTable1.setValueAt("", k, 0);
-                }
-                if(jTable1.getValueAt(k,1)==null){
-                    jTable1.setValueAt("", k, 1);
-                }
-                    /*paraf = (
-                "  "+jTable1.getValueAt(k, 0) + " : "+
-                "  "+jTable1.getValueAt(k, 1)
-                );*/
-                paraf.add("  "+jTable1.getValueAt(k, 0) + " : "+
-                "  "+jTable1.getValueAt(k, 1));
-                
-                documento.add(paraf);
-            }
-            
-            Paragraph parrafo4 = new Paragraph(
-                    "\n\tb. CARACTERISTICAS DEL AREA DE COMUNICACIONES" +
-                    "\n"+
-                     "Condiciones metereologicas\n  "+ jTextArea3.getText()+"\n"+
-                     "Terreno\n  "+ jTextArea4.getText()+"\n"+
-                     "Otros hechos\n  " + jTextArea5.getText()+"\n");
-            documento.add(parrafo4);
-            
-            Paragraph parrafo5 = new Paragraph(
-                    "\n\tc. FUERZAS ENEMIGAS" +
-                    "\n"+
-                            jTextArea1.getText());
-            documento.add(parrafo5);
-            
-            
-            Paragraph parrafo6 = new Paragraph(
-                    "\n\td. FUERZAS AMIGAS" +
-                    "\n"+
-                     "Recursos disponibles\n  ");
-            documento.add(parrafo6);
-            
-            
-            for(int k=0; k<jTable3.getRowCount();k++){
-                Paragraph paraf = new Paragraph("");
-                if(jTable3.getValueAt(k,0)==null ){
-                    jTable3.setValueAt("", k, 0);
-                }
-                if(jTable3.getValueAt(k,1)==null){
-                    jTable3.setValueAt("", k, 1);
-                }
-                    paraf.add("  "+jTable3.getValueAt(k, 0) + " : "+
-                "  "+jTable3.getValueAt(k, 1));
-                
-                /*Paragraph paraf = new Paragraph(
-                "  "+jTable3.getValueAt(k, 0) + " : "+
-                "  "+jTable3.getValueAt(k, 1)
-                );*/
-                
-                documento.add(paraf);
-            }
-            
-            Paragraph parrafo7 = new Paragraph(
-                    "Capacidades disponibles\n");
-            documento.add(parrafo7);
-            
-            for(int k=0; k<jTable4.getRowCount();k++){
-                Paragraph paraf = new Paragraph("");
-                
-                if(jTable4.getValueAt(k,0)!=null ){
-                    paraf.add( "  "+jTable4.getValueAt(k, 0)+" ");
-                }
-
-                /*Paragraph paraf = new Paragraph(
-                "  "+jTable4.getValueAt(k, 0)+" "
-                );*/
-                documento.add(paraf);
-            }
-            
-            Paragraph parrafo8 = new Paragraph(
-                    "Recursos adicionales\n");
-            documento.add(parrafo8);
-            
-            Paragraph parrafo9 = new Paragraph(
-                    "Escalon superior\n");
-            documento.add(parrafo9);
-            
-            for(int k=0; k<jTable2.getRowCount();k++){
-                Paragraph paraf = new Paragraph("");
-                
-                if(jTable2.getValueAt(k,0)!=null ){
-                    paraf.add( "  "+jTable2.getValueAt(k, 0)+" ");
-                }
-                /*Paragraph paraf = new Paragraph(
-                "  "+jTable2.getValueAt(k, 0)+" "
-                );*/
-                documento.add(paraf);
-            }
-            
-            Paragraph parrafo10 = new Paragraph(
-                    "Unidades Vecinas\n");
-            documento.add(parrafo10);
-            for(int k=0; k<jTable2.getRowCount();k++){
-                Paragraph paraf = new Paragraph("");
-                
-                if(jTable2.getValueAt(k,1)!=null ){
-                    paraf.add( "  "+jTable2.getValueAt(k, 1)+" ");
-                }
-                
-                /*Paragraph paraf = new Paragraph(
-                "  "+jTable2.getValueAt(k, 1)+" "
-                );*/
-                documento.add(paraf);
-            }
-            
-            Paragraph parrafo11 = new Paragraph(
-                    "Otros\n");
-            documento.add(parrafo11);
-            for(int k=0; k<jTable2.getRowCount();k++){
-                Paragraph paraf = new Paragraph("");
-                
-                if(jTable2.getValueAt(k,2)!=null ){
-                    paraf.add( "  "+jTable2.getValueAt(k, 2)+" ");
-                }
-                /*Paragraph paraf = new Paragraph(
-                "  "+jTable2.getValueAt(k, 2)+" "
-                );*/
-                documento.add(paraf);
-            }
-            
-            Paragraph parrafo12 = new Paragraph(
-                    "Necesidades vs. capacidades\n  "+jTextArea2.getText());
-            documento.add(parrafo12);
-            
-            Paragraph parrafo13 = new Paragraph(
-                    "\n\te. CONSIDERACIONES CIVILES" +
-                    "\n");
-            documento.add(parrafo13);
-            
-            Paragraph parrafo14 = new Paragraph(
-                    "Factores políticos\n  "+jTextArea8.getText());
-            documento.add(parrafo14);
-            
-            Paragraph parrafo15 = new Paragraph(
-                    "Factores económicos\n  "+jTextArea9.getText());
-            documento.add(parrafo15);
-            
-            Paragraph parrafo16 = new Paragraph(
-                    "Factores sociologicos\n  "+jTextArea10.getText());
-            documento.add(parrafo16);
-            
-            Paragraph parrafo17 = new Paragraph(
-                    "Factores psicologicos\n  "+jTextArea11.getText());
-            documento.add(parrafo17);
-            
-            Paragraph parrafo18 = new Paragraph(
-                    "Infraestructura\n  "+jTextArea12.getText());
-            documento.add(parrafo18);
-           
-            documento.close();
-            JOptionPane.showMessageDialog(null, "El archivo pdf fue creado correctamente");
-        }
-        else{
-            JOptionPane.showMessageDialog(null, "Llenar los campos");    
-        }
     }
 
-//-------------------------------------
-
-void Nulo(JTable jt){
-    for(int i=0; i<jt.getRowCount();i++){
-        for(int j=0; j<jt.getColumnCount();j++){
-            if(jt.getValueAt(i, j)==null){
-                jt.setValueAt("",i,j);
-            }
+    void quitaFila(JTable tabla){
+        DefaultTableModel tm = new DefaultTableModel();
+        tm = (DefaultTableModel) tabla.getModel();
+        //tm.setRowCount(tabla.getRowCount()-1);
+        try{
+            tm.removeRow(tm.getRowCount()-1);
+        }catch(Exception e){
+            System.out.println("Ya no puede quitar filas");
+        }
+        tabla.setModel(tm);
+    }//-------------------------------------
+    public void abrir(String nombre){
+        try {
+            File path = new File(nombre + ".pdf");
+            Desktop.getDesktop().open(path);
+        } catch (Exception ex) {
+            JOptionPane.showMessageDialog(null, ex,"atencion",2);
         }
     }
-}
-
-void NuloTodos(){
-    Nulo(jTable1);
-    Nulo(jTable2);
-    Nulo(jTable3);
-    Nulo(jTable4);
-}
-
-
-
 }

@@ -38,15 +38,13 @@ public class evaInicial extends javax.swing.JDialog {
         super(parent, modal);
         initComponents();
         this.setLocationRelativeTo(null);
-        seleccion();
     }
-
-    public String getTimeincial(){
-        if(paraleloRadioButton.isSelected()){
-            return tiempoTotalParaleloTextField.getText();
-        }
-        return tiempoTotalSecuencialTextField.getText();
-        
+    
+    int cocientePlaneamiento = 5;
+    String tituloCarta = "Planeamiento Paralelo / Regla 1/5";
+    
+    public String getTiempoInicial(){
+        return tiempoTotalParaleloTextField.getText();
     }
     
     public int getIndexMetodo(){
@@ -60,46 +58,7 @@ public class evaInicial extends javax.swing.JDialog {
         return new DefaultComboBoxModel<>(new String[]{"Paralelo", "Secuencial"});
     }
     
-    public void seleccion() {
-        jPanel3.removeAll();
-        jPanel3.add(panelPlaneamientoParalelo);
-        jPanel3.repaint();
-        jPanel3.revalidate();
-    }
-    
-    public void Generar1(String nombre) throws FileNotFoundException, DocumentException{
-        if(!(jTextField1.getText().isEmpty() || (tiempoTotalSecuencialTextField.getText().isEmpty()) || (jTextField21.getText().isEmpty()))){
-            FileOutputStream archivo = new FileOutputStream(nombre + ".pdf"); 
-            Document documento = new Document();
-            PdfWriter.getInstance(documento, archivo);
-            documento.open();
-            
-            Paragraph parrafo = new Paragraph("ORDEN PREPARATORIA N°1 \n\n");
-            parrafo.setAlignment(1);
-            documento.add(parrafo);
-            
-            documento.add(new Paragraph("Planteamiento Paralelo \n" + "Regla de 1/5" + "\n"));
-            documento.add(new Paragraph("Tiempo Total Disponible \n" + tiempoTotalSecuencialTextField.getText() + "\n"));
-            documento.add(new Paragraph("Tiempo Asignado \n" + " Días: " + jTextField1.getText() + "\n" + " Horas: " + jTextField21.getText() + "\n"));
-            documento.add(new Paragraph("Etapas y pasos del PMTD \n"));
-            documento.add(new Paragraph("Análisis de la misión \n" + " %Planteamiento: " + jTextField2.getText() + "\n" + "Tiempo en Días: " + jTextField3.getText() + "\n" + "Tiempo en Horas: " + jTextField33.getText() + "\n"));
-            documento.add(new Paragraph("Elaboración de los cursos \n" + " %Planteamiento: " + jTextField4.getText() + "\n" + "Tiempo en Días: " + jTextField10.getText() + "\n" + "Tiempo en Horas: " + jTextField36.getText() + "\n"));
-            documento.add(new Paragraph("Análisis/Comparación \n" + " %Planteamiento: " + jTextField5.getText() + "\n" + "Tiempo en Días: " + jTextField9.getText() + "\n" + "Tiempo en Horas: " + jTextField35.getText() + "\n"));
-            documento.add(new Paragraph("Desarrollo del Plan \n" + " %Planteamiento: " + jTextField6.getText() + "\n" + "Tiempo en Días: " + jTextField8.getText() + "\n" + "Tiempo en Horas: " + jTextField34.getText() + "\n"));
-            documento.add(new Paragraph("Tiempo Total \n" + " %Planteamiento: " + jTextField7.getText() + "\n" + "Tiempo en Días: " + jTextField11.getText() + "\n" + "Tiempo en Horas: " + jTextField37.getText() + "\n"));
-            documento.add(new Paragraph("Reducit el PMTD: " + jComboBox2.getSelectedItem().toString() + "\n"));
-            documento.add(new Paragraph("Organizaciones a Integrar \n" + jTextField19.getText() + "\n"));
-            
-            //documento.add(new Paragraph("asdsad: " + xd))
-            documento.close();
-            JOptionPane.showMessageDialog(null, "El archivo pdf fue creado correctamente");
-        }
-        else{
-            JOptionPane.showMessageDialog(null, "Llenar los campos");    
-        }
-    }
-    
-    public void Generar2(String nombre) throws FileNotFoundException, DocumentException{
+    public void Generar(String nombre) throws FileNotFoundException, DocumentException{
         if(!(tiempoTotalParaleloTextField.getText().isEmpty() || (jTextField22.getText().isEmpty()) || (jTextField12.getText().isEmpty()))){
             FileOutputStream archivo = new FileOutputStream(nombre + ".pdf"); 
             Document documento = new Document();
@@ -151,11 +110,12 @@ public class evaInicial extends javax.swing.JDialog {
 
         jCheckBoxMenuItem1 = new javax.swing.JCheckBoxMenuItem();
         jCheckBoxMenuItem2 = new javax.swing.JCheckBoxMenuItem();
+        buttonGroup1 = new javax.swing.ButtonGroup();
         jLabel9 = new javax.swing.JLabel();
         secuencialRadioiButton = new javax.swing.JRadioButton();
         paraleloRadioButton = new javax.swing.JRadioButton();
         jPanel3 = new javax.swing.JPanel();
-        panelPlaneamientoSecuencial = new javax.swing.JPanel();
+        panelPlaneamiento = new javax.swing.JPanel();
         jLabel11 = new javax.swing.JLabel();
         jTextField12 = new javax.swing.JTextField();
         jLabel12 = new javax.swing.JLabel();
@@ -191,58 +151,20 @@ public class evaInicial extends javax.swing.JDialog {
         jLabel28 = new javax.swing.JLabel();
         tiempoTotalParaleloTextField = new javax.swing.JTextField();
         jLabel29 = new javax.swing.JLabel();
-        jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
-        jButton6 = new javax.swing.JButton();
         jLabel34 = new javax.swing.JLabel();
         jLabel35 = new javax.swing.JLabel();
-        panelPlaneamientoParalelo = new javax.swing.JPanel();
-        jLabel5 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
-        jTextField4 = new javax.swing.JTextField();
-        jTextField5 = new javax.swing.JTextField();
-        jTextField6 = new javax.swing.JTextField();
-        jTextField7 = new javax.swing.JTextField();
-        jTextField8 = new javax.swing.JTextField();
-        jTextField9 = new javax.swing.JTextField();
-        jTextField10 = new javax.swing.JTextField();
-        jTextField11 = new javax.swing.JTextField();
-        jLabel20 = new javax.swing.JLabel();
-        jComboBox2 = new javax.swing.JComboBox();
-        jLabel21 = new javax.swing.JLabel();
-        jTextField19 = new javax.swing.JTextField();
-        jLabel22 = new javax.swing.JLabel();
-        jTextField21 = new javax.swing.JTextField();
-        jLabel23 = new javax.swing.JLabel();
-        jTextField33 = new javax.swing.JTextField();
-        jTextField34 = new javax.swing.JTextField();
-        jTextField35 = new javax.swing.JTextField();
-        jTextField36 = new javax.swing.JTextField();
-        jTextField37 = new javax.swing.JTextField();
-        jLabel30 = new javax.swing.JLabel();
-        tiempoTotalSecuencialTextField = new javax.swing.JTextField();
-        jLabel31 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
-        jLabel32 = new javax.swing.JLabel();
-        jLabel33 = new javax.swing.JLabel();
+        jButton2 = new javax.swing.JButton();
+        jButton6 = new javax.swing.JButton();
 
         jCheckBoxMenuItem1.setSelected(true);
         jCheckBoxMenuItem1.setText("jCheckBoxMenuItem1");
 
         jCheckBoxMenuItem2.setSelected(true);
         jCheckBoxMenuItem2.setText("jCheckBoxMenuItem2");
+
+        buttonGroup1.add(secuencialRadioiButton);
+        buttonGroup1.add(paraleloRadioButton);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -271,41 +193,41 @@ public class evaInicial extends javax.swing.JDialog {
 
         jPanel3.setLayout(new java.awt.CardLayout());
 
-        panelPlaneamientoSecuencial.setBorder(javax.swing.BorderFactory.createTitledBorder("Planeamiento Secuencial / Regla 1/3"));
-        panelPlaneamientoSecuencial.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        panelPlaneamiento.setBorder(javax.swing.BorderFactory.createTitledBorder("Planeamiento Paralelo / Regla 1/5"));
+        panelPlaneamiento.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel11.setText("Tiempo Asignado:");
-        panelPlaneamientoSecuencial.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, 130, 20));
+        panelPlaneamiento.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, 130, 20));
 
         jTextField12.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField12ActionPerformed(evt);
             }
         });
-        panelPlaneamientoSecuencial.add(jTextField12, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 60, 40, -1));
+        panelPlaneamiento.add(jTextField12, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 60, 40, -1));
 
         jLabel12.setText("Analisis de la mision");
-        panelPlaneamientoSecuencial.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 130, 133, 20));
+        panelPlaneamiento.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 130, 133, 20));
 
         jLabel13.setText("Elaboracion de los cursos");
-        panelPlaneamientoSecuencial.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, 155, 20));
+        panelPlaneamiento.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, 155, 20));
 
         jLabel14.setText("Total Tiempo");
-        panelPlaneamientoSecuencial.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 250, 106, 20));
-        panelPlaneamientoSecuencial.add(jTextField13, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 130, 60, -1));
-        panelPlaneamientoSecuencial.add(jTextField14, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 250, 60, -1));
+        panelPlaneamiento.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 250, 106, 20));
+        panelPlaneamiento.add(jTextField13, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 130, 60, -1));
+        panelPlaneamiento.add(jTextField14, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 250, 60, -1));
 
         jTextField15.setText("20%");
-        panelPlaneamientoSecuencial.add(jTextField15, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 160, 90, -1));
+        panelPlaneamiento.add(jTextField15, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 160, 90, -1));
 
         jLabel15.setText("Etapas y pasos del PMTD");
-        panelPlaneamientoSecuencial.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 110, -1, -1));
+        panelPlaneamiento.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 110, -1, -1));
 
         jLabel16.setText("% Planeamiento");
-        panelPlaneamientoSecuencial.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 110, 100, -1));
+        panelPlaneamiento.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 110, 100, -1));
 
         jLabel17.setText("En horas");
-        panelPlaneamientoSecuencial.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 110, -1, -1));
+        panelPlaneamiento.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 110, -1, -1));
 
         jTextField16.setText("30%");
         jTextField16.addActionListener(new java.awt.event.ActionListener() {
@@ -313,14 +235,14 @@ public class evaInicial extends javax.swing.JDialog {
                 jTextField16ActionPerformed(evt);
             }
         });
-        panelPlaneamientoSecuencial.add(jTextField16, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 130, 90, 22));
-        panelPlaneamientoSecuencial.add(jTextField17, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 220, 60, -1));
+        panelPlaneamiento.add(jTextField16, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 130, 90, 22));
+        panelPlaneamiento.add(jTextField17, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 220, 60, -1));
 
         jTextField18.setText("100%");
-        panelPlaneamientoSecuencial.add(jTextField18, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 250, 90, -1));
+        panelPlaneamiento.add(jTextField18, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 250, 90, -1));
 
         jLabel18.setText("Organizaciones a integrar");
-        panelPlaneamientoSecuencial.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 310, 158, 20));
+        panelPlaneamiento.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 310, 158, 20));
 
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Si", "No" }));
         jComboBox1.addActionListener(new java.awt.event.ActionListener() {
@@ -328,52 +250,52 @@ public class evaInicial extends javax.swing.JDialog {
                 jComboBox1ActionPerformed(evt);
             }
         });
-        panelPlaneamientoSecuencial.add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 280, 90, -1));
+        panelPlaneamiento.add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 280, 90, -1));
 
         jLabel19.setText("Reducir el PMTD");
-        panelPlaneamientoSecuencial.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 280, 106, 20));
-        panelPlaneamientoSecuencial.add(jTextField20, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 310, 260, 40));
+        panelPlaneamiento.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 280, 106, 20));
+        panelPlaneamiento.add(jTextField20, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 310, 260, 40));
 
         jLabel24.setText("Dias");
-        panelPlaneamientoSecuencial.add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 60, -1, 20));
-        panelPlaneamientoSecuencial.add(jTextField22, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 60, 60, -1));
+        panelPlaneamiento.add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 60, -1, 20));
+        panelPlaneamiento.add(jTextField22, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 60, 60, -1));
 
         jLabel25.setText("Horas");
-        panelPlaneamientoSecuencial.add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 60, -1, 20));
+        panelPlaneamiento.add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 60, -1, 20));
 
         jTextField23.setText("30%");
-        panelPlaneamientoSecuencial.add(jTextField23, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 190, 90, -1));
+        panelPlaneamiento.add(jTextField23, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 190, 90, -1));
 
         jTextField24.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField24ActionPerformed(evt);
             }
         });
-        panelPlaneamientoSecuencial.add(jTextField24, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 160, 60, -1));
+        panelPlaneamiento.add(jTextField24, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 160, 60, -1));
 
         jTextField25.setText("20%");
-        panelPlaneamientoSecuencial.add(jTextField25, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 220, 90, -1));
-        panelPlaneamientoSecuencial.add(jTextField26, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 190, 60, -1));
+        panelPlaneamiento.add(jTextField25, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 220, 90, -1));
+        panelPlaneamiento.add(jTextField26, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 190, 60, -1));
 
         jLabel26.setText("Analisis /Comparacion");
-        panelPlaneamientoSecuencial.add(jLabel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 190, 155, 20));
+        panelPlaneamiento.add(jLabel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 190, 155, 20));
 
         jLabel27.setText("Desarrollo del plan");
-        panelPlaneamientoSecuencial.add(jLabel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 220, 155, 20));
-        panelPlaneamientoSecuencial.add(jTextField27, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 220, 70, -1));
-        panelPlaneamientoSecuencial.add(jTextField28, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 130, 70, -1));
-        panelPlaneamientoSecuencial.add(jTextField29, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 250, 70, -1));
-        panelPlaneamientoSecuencial.add(jTextField30, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 190, 70, -1));
+        panelPlaneamiento.add(jLabel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 220, 155, 20));
+        panelPlaneamiento.add(jTextField27, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 220, 70, -1));
+        panelPlaneamiento.add(jTextField28, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 130, 70, -1));
+        panelPlaneamiento.add(jTextField29, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 250, 70, -1));
+        panelPlaneamiento.add(jTextField30, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 190, 70, -1));
 
         jTextField31.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField31ActionPerformed(evt);
             }
         });
-        panelPlaneamientoSecuencial.add(jTextField31, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 160, 70, -1));
+        panelPlaneamiento.add(jTextField31, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 160, 70, -1));
 
         jLabel28.setText("Tiempo Total Disponible");
-        panelPlaneamientoSecuencial.add(jLabel28, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 30, 140, 20));
+        panelPlaneamiento.add(jLabel28, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 30, 140, 20));
 
         tiempoTotalParaleloTextField.setText("112");
         tiempoTotalParaleloTextField.addActionListener(new java.awt.event.ActionListener() {
@@ -381,18 +303,10 @@ public class evaInicial extends javax.swing.JDialog {
                 tiempoTotalParaleloTextFieldActionPerformed(evt);
             }
         });
-        panelPlaneamientoSecuencial.add(tiempoTotalParaleloTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 30, 40, -1));
+        panelPlaneamiento.add(tiempoTotalParaleloTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 30, 40, -1));
 
         jLabel29.setText("Dias");
-        panelPlaneamientoSecuencial.add(jLabel29, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 30, -1, 20));
-
-        jButton2.setText("Generar informe");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
-            }
-        });
-        panelPlaneamientoSecuencial.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 360, -1, -1));
+        panelPlaneamiento.add(jLabel29, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 30, -1, 20));
 
         jButton3.setText("Calcular");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
@@ -400,7 +314,27 @@ public class evaInicial extends javax.swing.JDialog {
                 jButton3ActionPerformed(evt);
             }
         });
-        panelPlaneamientoSecuencial.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 30, 150, 50));
+        panelPlaneamiento.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 30, 150, 50));
+
+        jLabel34.setText("Tiempo Acumulado ");
+        panelPlaneamiento.add(jLabel34, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 80, -1, 30));
+
+        jLabel35.setText("En días");
+        panelPlaneamiento.add(jLabel35, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 110, -1, -1));
+
+        jPanel3.add(panelPlaneamiento, "card3");
+        panelPlaneamiento.getAccessibleContext().setAccessibleName("");
+        panelPlaneamiento.getAccessibleContext().setAccessibleDescription("");
+
+        getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 94, 530, 400));
+
+        jButton2.setText("Generar informe");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 510, -1, -1));
 
         jButton6.setText("Abrir");
         jButton6.addActionListener(new java.awt.event.ActionListener() {
@@ -408,155 +342,7 @@ public class evaInicial extends javax.swing.JDialog {
                 jButton6ActionPerformed(evt);
             }
         });
-        panelPlaneamientoSecuencial.add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 360, -1, -1));
-
-        jLabel34.setText("Tiempo Acumulado ");
-        panelPlaneamientoSecuencial.add(jLabel34, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 80, -1, 30));
-
-        jLabel35.setText("En días");
-        panelPlaneamientoSecuencial.add(jLabel35, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 110, -1, -1));
-
-        jPanel3.add(panelPlaneamientoSecuencial, "card3");
-        panelPlaneamientoSecuencial.getAccessibleContext().setAccessibleParent(panelPlaneamientoSecuencial);
-
-        panelPlaneamientoParalelo.setBorder(javax.swing.BorderFactory.createTitledBorder("Planeamiento Paralelo/ Regla de 1/5"));
-        panelPlaneamientoParalelo.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel5.setText("Tiempo Asignado:");
-        panelPlaneamientoParalelo.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, 140, 20));
-
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
-            }
-        });
-        panelPlaneamientoParalelo.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 60, 40, -1));
-
-        jLabel1.setText("Etapas y pasos del PMTD ");
-        panelPlaneamientoParalelo.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 110, -1, -1));
-
-        jLabel2.setText("En horas");
-        panelPlaneamientoParalelo.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 110, -1, -1));
-
-        jLabel3.setText("% Planeamiento");
-        panelPlaneamientoParalelo.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 110, 90, -1));
-
-        jLabel4.setText("Analisis de la mision");
-        panelPlaneamientoParalelo.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 130, -1, 20));
-
-        jLabel6.setText("Analisis/ comparacion");
-        panelPlaneamientoParalelo.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 190, -1, 20));
-
-        jLabel7.setText("Elaboracion de los cursos");
-        panelPlaneamientoParalelo.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, -1, 20));
-
-        jLabel8.setText("Desarrollo del plan");
-        panelPlaneamientoParalelo.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 220, -1, 20));
-
-        jLabel10.setText("Tiempo total");
-        panelPlaneamientoParalelo.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 250, -1, 20));
-
-        jTextField2.setText("30%");
-        panelPlaneamientoParalelo.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 130, 90, -1));
-        panelPlaneamientoParalelo.add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 130, 60, -1));
-
-        jTextField4.setText("20%");
-        panelPlaneamientoParalelo.add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 160, 90, -1));
-
-        jTextField5.setText("30%");
-        panelPlaneamientoParalelo.add(jTextField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 190, 90, -1));
-
-        jTextField6.setText("20%");
-        panelPlaneamientoParalelo.add(jTextField6, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 220, 90, -1));
-
-        jTextField7.setText("100%");
-        panelPlaneamientoParalelo.add(jTextField7, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 250, 90, -1));
-        panelPlaneamientoParalelo.add(jTextField8, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 220, 60, -1));
-        panelPlaneamientoParalelo.add(jTextField9, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 190, 60, -1));
-        panelPlaneamientoParalelo.add(jTextField10, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 160, 60, -1));
-        panelPlaneamientoParalelo.add(jTextField11, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 250, 60, -1));
-
-        jLabel20.setText("Reducir el PMTD");
-        panelPlaneamientoParalelo.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 280, 106, -1));
-
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Si", "No" }));
-        jComboBox2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBox2ActionPerformed(evt);
-            }
-        });
-        panelPlaneamientoParalelo.add(jComboBox2, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 280, 90, -1));
-
-        jLabel21.setText("Organizaciones a integrar");
-        panelPlaneamientoParalelo.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 310, 158, -1));
-        panelPlaneamientoParalelo.add(jTextField19, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 310, 260, 40));
-
-        jLabel22.setText("Dias");
-        panelPlaneamientoParalelo.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 60, -1, 20));
-
-        jTextField21.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField21ActionPerformed(evt);
-            }
-        });
-        panelPlaneamientoParalelo.add(jTextField21, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 60, 60, -1));
-
-        jLabel23.setText("Horas");
-        panelPlaneamientoParalelo.add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 60, -1, 20));
-        panelPlaneamientoParalelo.add(jTextField33, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 130, 70, -1));
-        panelPlaneamientoParalelo.add(jTextField34, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 220, 70, -1));
-        panelPlaneamientoParalelo.add(jTextField35, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 190, 70, -1));
-        panelPlaneamientoParalelo.add(jTextField36, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 160, 70, -1));
-        panelPlaneamientoParalelo.add(jTextField37, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 250, 70, -1));
-
-        jLabel30.setText("Tiempo Total Disponible");
-        panelPlaneamientoParalelo.add(jLabel30, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 30, 140, 20));
-
-        tiempoTotalSecuencialTextField.setText("112");
-        tiempoTotalSecuencialTextField.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                tiempoTotalSecuencialTextFieldActionPerformed(evt);
-            }
-        });
-        panelPlaneamientoParalelo.add(tiempoTotalSecuencialTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 30, 40, -1));
-
-        jLabel31.setText("Dias");
-        panelPlaneamientoParalelo.add(jLabel31, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 30, -1, 20));
-
-        jButton1.setText("Generar Reporte");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
-        panelPlaneamientoParalelo.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 360, -1, -1));
-
-        jButton4.setText("Calcular");
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
-            }
-        });
-        panelPlaneamientoParalelo.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 30, 150, 50));
-
-        jButton5.setText("Abrir");
-        jButton5.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton5ActionPerformed(evt);
-            }
-        });
-        panelPlaneamientoParalelo.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 360, -1, -1));
-
-        jLabel32.setText("Tiempo Acumulado ");
-        panelPlaneamientoParalelo.add(jLabel32, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 84, -1, 20));
-
-        jLabel33.setText("En dias");
-        panelPlaneamientoParalelo.add(jLabel33, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 110, -1, -1));
-
-        jPanel3.add(panelPlaneamientoParalelo, "card3");
-        panelPlaneamientoParalelo.getAccessibleContext().setAccessibleDescription("");
-
-        getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 94, 530, 400));
+        getContentPane().add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 510, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -566,27 +352,13 @@ public class evaInicial extends javax.swing.JDialog {
     }//GEN-LAST:event_jComboBox1ActionPerformed
 
     private void paraleloRadioButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_paraleloRadioButtonActionPerformed
-        ((CardLayout) jPanel3.getLayout()).show(jPanel3, "Planteamiento Paralelo");
-        jPanel3.removeAll();
-        jPanel3.add(panelPlaneamientoParalelo);
-        jPanel3.repaint();
-        jPanel3.revalidate();
-
-        if (paraleloRadioButton.isSelected() == true) {
-            secuencialRadioiButton.setSelected(false);
-        }
+        cocientePlaneamiento = 5;
+        panelPlaneamiento.setBorder(javax.swing.BorderFactory.createTitledBorder("Planeamiento Paralelo / Regla 1/5"));
     }//GEN-LAST:event_paraleloRadioButtonActionPerformed
 
     private void secuencialRadioiButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_secuencialRadioiButtonActionPerformed
-    ((CardLayout) jPanel3.getLayout()).show(jPanel3, "Planteamiento Secuencial");
-        jPanel3.removeAll();
-        jPanel3.add(panelPlaneamientoSecuencial);
-        jPanel3.repaint();
-        jPanel3.revalidate();
-
-        if (secuencialRadioiButton.isSelected() == true) {
-            paraleloRadioButton.setSelected(false);
-        }
+        cocientePlaneamiento = 3;
+        panelPlaneamiento.setBorder(javax.swing.BorderFactory.createTitledBorder("Planeamiento Secuencial / Regla 1/3"));
     }//GEN-LAST:event_secuencialRadioiButtonActionPerformed
 
     private void tiempoTotalParaleloTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tiempoTotalParaleloTextFieldActionPerformed
@@ -595,7 +367,7 @@ public class evaInicial extends javax.swing.JDialog {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         try {
-            Generar2(nombre);
+            Generar(nombre);
         } catch (FileNotFoundException ex) {
             Logger.getLogger(GuiaIni.class.getName()).log(Level.SEVERE, null,ex);
         } catch (DocumentException ex) {
@@ -625,7 +397,7 @@ public class evaInicial extends javax.swing.JDialog {
         DecimalFormat formato1 = new DecimalFormat("#.00", separadoresPersonalizados);
         
         float diasA = Float.parseFloat(tiempoTotalParaleloTextField.getText());
-        diasA=(diasA/3);
+        diasA=(diasA/cocientePlaneamiento);
         float diasAM= (diasA*3)/10;
         float diasAE= (diasA*2)/10;
         float diasH = diasA*24;
@@ -651,78 +423,12 @@ public class evaInicial extends javax.swing.JDialog {
         jTextField29.setText(diasHC);
     }//GEN-LAST:event_jButton3ActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        try {
-            Generar1(nombre);
-        } catch (FileNotFoundException ex) {
-            Logger.getLogger(GuiaIni.class.getName()).log(Level.SEVERE, null,ex);
-        } catch (DocumentException ex) {
-            Logger.getLogger(GuiaIni.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }//GEN-LAST:event_jButton1ActionPerformed
-
-    private void tiempoTotalSecuencialTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tiempoTotalSecuencialTextFieldActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_tiempoTotalSecuencialTextFieldActionPerformed
-
-    private void jTextField21ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField21ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField21ActionPerformed
-
-    private void jComboBox2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jComboBox2ActionPerformed
-
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
-
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        DecimalFormatSymbols separadoresPersonalizados = new DecimalFormatSymbols();
-        separadoresPersonalizados.setDecimalSeparator('.');
-
-        DecimalFormat formato1 = new DecimalFormat("#.00", separadoresPersonalizados);
-        
-        float diasA = Float.parseFloat(tiempoTotalSecuencialTextField.getText());
-        diasA=(diasA/5);
-        float diasAM= (diasA*3)/10;
-        float diasAE= (diasA*2)/10;
-        float diasH = diasA*24;
-        float diasAMH= diasAM*24;
-        float diasAEH= diasAE*24;
-        String diasAC = formato1.format(diasA);
-        String diasHC = formato1.format(diasH);
-        String diasAMC = formato1.format(diasAM);
-        String diasAMCH = formato1.format(diasAMH);
-        String diasAEC = formato1.format(diasAE);
-        String diasAECH = formato1.format(diasAEH);
-        jTextField1.setText(diasAC);
-        jTextField21.setText(diasHC);
-        jTextField3.setText(diasAMC);
-        jTextField9.setText(diasAMC);
-        jTextField33.setText(diasAMCH);
-        jTextField35.setText(diasAMCH);
-        jTextField10.setText(diasAEC);
-        jTextField8.setText(diasAEC);
-        jTextField36.setText(diasAECH);
-        jTextField34.setText(diasAECH);
-        jTextField11.setText(diasAC);
-        jTextField37.setText(diasHC);
-    }//GEN-LAST:event_jButton4ActionPerformed
-
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
         if(!nombre.isEmpty())
             abrir(nombre);
         else
             JOptionPane.showMessageDialog(null, "no se encuentra ese archivo con ese nombre","Atencion",2);
     }//GEN-LAST:event_jButton6ActionPerformed
-
-    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-        if(!nombre.isEmpty())
-            abrir(nombre);
-        else
-            JOptionPane.showMessageDialog(null, "no se encuentra ese archivo con ese nombre","Atencion",2);
-    }//GEN-LAST:event_jButton5ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -774,18 +480,13 @@ public class evaInicial extends javax.swing.JDialog {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
+    private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
     private javax.swing.JCheckBoxMenuItem jCheckBoxMenuItem1;
     private javax.swing.JCheckBoxMenuItem jCheckBoxMenuItem2;
     private javax.swing.JComboBox jComboBox1;
-    private javax.swing.JComboBox jComboBox2;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
@@ -795,34 +496,16 @@ public class evaInicial extends javax.swing.JDialog {
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel20;
-    private javax.swing.JLabel jLabel21;
-    private javax.swing.JLabel jLabel22;
-    private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel24;
     private javax.swing.JLabel jLabel25;
     private javax.swing.JLabel jLabel26;
     private javax.swing.JLabel jLabel27;
     private javax.swing.JLabel jLabel28;
     private javax.swing.JLabel jLabel29;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel30;
-    private javax.swing.JLabel jLabel31;
-    private javax.swing.JLabel jLabel32;
-    private javax.swing.JLabel jLabel33;
     private javax.swing.JLabel jLabel34;
     private javax.swing.JLabel jLabel35;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField10;
-    private javax.swing.JTextField jTextField11;
     private javax.swing.JTextField jTextField12;
     private javax.swing.JTextField jTextField13;
     private javax.swing.JTextField jTextField14;
@@ -830,10 +513,7 @@ public class evaInicial extends javax.swing.JDialog {
     private javax.swing.JTextField jTextField16;
     private javax.swing.JTextField jTextField17;
     private javax.swing.JTextField jTextField18;
-    private javax.swing.JTextField jTextField19;
-    private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField20;
-    private javax.swing.JTextField jTextField21;
     private javax.swing.JTextField jTextField22;
     private javax.swing.JTextField jTextField23;
     private javax.swing.JTextField jTextField24;
@@ -842,25 +522,11 @@ public class evaInicial extends javax.swing.JDialog {
     private javax.swing.JTextField jTextField27;
     private javax.swing.JTextField jTextField28;
     private javax.swing.JTextField jTextField29;
-    private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField jTextField30;
     private javax.swing.JTextField jTextField31;
-    private javax.swing.JTextField jTextField33;
-    private javax.swing.JTextField jTextField34;
-    private javax.swing.JTextField jTextField35;
-    private javax.swing.JTextField jTextField36;
-    private javax.swing.JTextField jTextField37;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
-    private javax.swing.JTextField jTextField6;
-    private javax.swing.JTextField jTextField7;
-    private javax.swing.JTextField jTextField8;
-    private javax.swing.JTextField jTextField9;
-    private javax.swing.JPanel panelPlaneamientoParalelo;
-    private javax.swing.JPanel panelPlaneamientoSecuencial;
+    private javax.swing.JPanel panelPlaneamiento;
     private javax.swing.JRadioButton paraleloRadioButton;
     private javax.swing.JRadioButton secuencialRadioiButton;
     private javax.swing.JTextField tiempoTotalParaleloTextField;
-    private javax.swing.JTextField tiempoTotalSecuencialTextField;
     // End of variables declaration//GEN-END:variables
 }

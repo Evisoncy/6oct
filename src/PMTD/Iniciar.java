@@ -48,7 +48,7 @@ public class Iniciar extends javax.swing.JFrame implements Runnable{
         setVisible(true);
         try{
         
-        MusicaFondo.inicializarMusica(getClass().getResource("/Audio/audio.wav"));
+        MusicaFondo.inicializarMusica("musica/prueba.wav");
         MusicaFondo.reproducirMusica();
         }catch(Exception e){
             JOptionPane.showMessageDialog(rootPane, e);

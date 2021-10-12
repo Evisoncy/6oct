@@ -5,9 +5,9 @@
  */
 package PMTD;
 
-import java.applet.AudioClip;
-import java.net.URL;
+import java.nio.file.Paths;
 import java.util.ArrayList;
+import javafx.scene.media.AudioClip;
 
 /**
  *
@@ -20,8 +20,8 @@ public class MusicaFondo {
     private static EstadoMusica Seleccionado;
     public MusicaFondo(){
     }
-    public static void inicializarMusica(URL ruta){
-        MusicaFondo.sonido = java.applet.Applet.newAudioClip(ruta);
+    public static void inicializarMusica(String ruta){
+        MusicaFondo.sonido = new AudioClip(Paths.get(ruta).toUri().toString());
         Estados = new ArrayList<>();
         Estados.add(new EstadoMusica("/imagenes/Musica/Inicializado.png","Inicializado"));
         Estados.add(new EstadoMusica("/imagenes/Musica/Reproduciendo.png","Reproducciendo"));

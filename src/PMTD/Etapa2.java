@@ -140,7 +140,7 @@ public class Etapa2 extends javax.swing.JPanel {
         });
         add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 290, 280, 30));
 
-        jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/2da etapa/botones/Etapa 2 - Actividad 6.png"))); // NOI18N
+        jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/2da etapa/botones/Etapa_2_-_Actividad_6.png"))); // NOI18N
         jButton5.setBorder(null);
         jButton5.setContentAreaFilled(false);
         jButton5.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));

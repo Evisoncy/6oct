@@ -269,7 +269,7 @@ public class Establecer_enlace1 extends javax.swing.JDialog {
         // boton imprimir
 
         //limpio modelo de tabla
-        modelo.setRowCount(0);
+        modelo.setRowCount(1);
         //imprimo datos en modelo
         for(int i=0;i<lista.size();i++){
             String codx=lista.get(i).getNombre();

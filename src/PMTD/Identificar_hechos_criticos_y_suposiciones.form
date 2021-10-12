@@ -164,6 +164,9 @@
                 <Property name="rows" type="int" value="5"/>
                 <Property name="text" type="java.lang.String" value="Los Rios Oco&#xf1;a y Quilca que se encuentran&#xa;en nuestra AO incrementaran su caudal&#xa;por las lluvias en los meses de septiembre &#xa;a diciembre de forma muy frecuente."/>
                 <Property name="wrapStyleWord" type="boolean" value="true"/>
+                <Property name="margin" type="java.awt.Insets" editor="org.netbeans.beaninfo.editors.InsetsEditor">
+                  <Insets value="[3, 3, 3, 3]"/>
+                </Property>
               </Properties>
             </Component>
           </SubComponents>
@@ -182,6 +185,9 @@
                 <Property name="rows" type="int" value="5"/>
                 <Property name="text" type="java.lang.String" value="Que los rios Oca&#xf1;a y Quilca al incrementar su &#xa;caudal provocarian inundaciones y por ende&#xa;retrsararian nuestras operaciones en especial &#xa;el repliegue a traves de la posicion cuando &#xa;lleguemos al limite anterior de la Zona de &#xa;resistencia"/>
                 <Property name="wrapStyleWord" type="boolean" value="true"/>
+                <Property name="margin" type="java.awt.Insets" editor="org.netbeans.beaninfo.editors.InsetsEditor">
+                  <Insets value="[3, 3, 3, 3]"/>
+                </Property>
               </Properties>
             </Component>
           </SubComponents>
@@ -201,7 +207,7 @@
                 <Property name="text" type="java.lang.String" value="&#xa;Es factible esta suposicion debido a que el &#xa;sistema local de asistencia medica de la &#xa;poblaci&#xf3;n de MAJES esta por colapsar y en las &#xa;poblaciones de Quilca y Vitor la Gripe Aviar &#xa;se encuentra en grado de propagaci&#xf3;n alta."/>
                 <Property name="wrapStyleWord" type="boolean" value="true"/>
                 <Property name="margin" type="java.awt.Insets" editor="org.netbeans.beaninfo.editors.InsetsEditor">
-                  <Insets value="[4, 4, 4, 4]"/>
+                  <Insets value="[3, 3, 3, 3]"/>
                 </Property>
               </Properties>
             </Component>

@@ -186,6 +186,7 @@ public class Desarrollar_sect extends javax.swing.JDialog {
         jTextArea1.setColumns(20);
         jTextArea1.setRows(5);
         jTextArea1.setText("Bloquear al BIM 24 en\nRg Cruz de Hueso");
+        jTextArea1.setWrapStyleWord(true);
         jScrollPane1.setViewportView(jTextArea1);
 
         jTextArea2.setColumns(20);
@@ -205,6 +206,7 @@ public class Desarrollar_sect extends javax.swing.JDialog {
         jTextArea4.setColumns(20);
         jTextArea4.setRows(5);
         jTextArea4.setText("1 Cía de Fus");
+        jTextArea4.setWrapStyleWord(true);
         jScrollPane5.setViewportView(jTextArea4);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);

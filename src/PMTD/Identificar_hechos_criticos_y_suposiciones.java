@@ -187,6 +187,7 @@ public class Identificar_hechos_criticos_y_suposiciones extends javax.swing.JDia
         jTextArea1.setRows(5);
         jTextArea1.setText("Los Rios Ocoña y Quilca que se encuentran\nen nuestra AO incrementaran su caudal\npor las lluvias en los meses de septiembre \na diciembre de forma muy frecuente.");
         jTextArea1.setWrapStyleWord(true);
+        jTextArea1.setMargin(new java.awt.Insets(3, 3, 3, 3));
         jScrollPane3.setViewportView(jTextArea1);
 
         jTextArea2.setColumns(20);
@@ -194,6 +195,7 @@ public class Identificar_hechos_criticos_y_suposiciones extends javax.swing.JDia
         jTextArea2.setRows(5);
         jTextArea2.setText("Que los rios Ocaña y Quilca al incrementar su \ncaudal provocarian inundaciones y por ende\nretrsararian nuestras operaciones en especial \nel repliegue a traves de la posicion cuando \nlleguemos al limite anterior de la Zona de \nresistencia");
         jTextArea2.setWrapStyleWord(true);
+        jTextArea2.setMargin(new java.awt.Insets(3, 3, 3, 3));
         jScrollPane4.setViewportView(jTextArea2);
 
         jTextArea4.setColumns(20);
@@ -201,7 +203,7 @@ public class Identificar_hechos_criticos_y_suposiciones extends javax.swing.JDia
         jTextArea4.setRows(5);
         jTextArea4.setText("\nEs factible esta suposicion debido a que el \nsistema local de asistencia medica de la \npoblación de MAJES esta por colapsar y en las \npoblaciones de Quilca y Vitor la Gripe Aviar \nse encuentra en grado de propagación alta.");
         jTextArea4.setWrapStyleWord(true);
-        jTextArea4.setMargin(new java.awt.Insets(4, 4, 4, 4));
+        jTextArea4.setMargin(new java.awt.Insets(3, 3, 3, 3));
         jScrollPane6.setViewportView(jTextArea4);
 
         jLabel2.setText("Factor");

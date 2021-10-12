@@ -5,10 +5,25 @@
  */
 package PMTD;
 
+import com.itextpdf.text.Document;
+import com.itextpdf.text.DocumentException;
+import com.itextpdf.text.Element;
+import com.itextpdf.text.Font;
+import com.itextpdf.text.Paragraph;
+import com.itextpdf.text.Phrase;
+import com.itextpdf.text.pdf.PdfPCell;
+import com.itextpdf.text.pdf.PdfPTable;
+import com.itextpdf.text.pdf.PdfWriter;
+import java.awt.Desktop;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
@@ -22,10 +37,105 @@ public class limitacionesDialog extends javax.swing.JDialog {
     /**
      * Creates new form limitacionesDialog
      */
+    private static final Font normalFont = new Font(Font.FontFamily.TIMES_ROMAN, 10, Font.NORMAL);
+    String nombre="limitaciones";
     List<limitaciones> lista = new ArrayList();
     public limitacionesDialog(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
+    }
+    
+    public void Generar(String nombre) throws FileNotFoundException, DocumentException{
+        if(!(jTextArea2.getText().isEmpty() || (jTextArea4.getText().isEmpty())  )){
+            FileOutputStream archivo = new FileOutputStream(nombre + ".pdf");
+
+            Document documento = new Document();
+            PdfWriter.getInstance(documento, archivo);
+           
+            
+//            String probab=prob.getSelectedItem().toString();
+//            String impac =impacto.getSelectedItem().toString();
+//            
+            documento.open();
+
+            //Titulo
+            Paragraph parrafo = new Paragraph("IDENTIFICACIÓN DE LIMITACIONES \n\n");
+            parrafo.setAlignment(1);
+            documento.add(parrafo);
+            
+            //Tabla de tareas 
+            documento.add(new Paragraph("1. Limitaciones \n\n"));
+            
+            //Nro de filas y columnas
+            Integer numColumnsRiesgosDetectados = 4;
+            Integer numRowsRiesgosDetectados = 1;
+            
+            // Creacion de la tabla
+            PdfPTable tablaRiesgosDetectados = new PdfPTable(numColumnsRiesgosDetectados); 
+            //Lista de campos de la cabecera
+            ArrayList<String> camposRiesgosList =  new ArrayList<>();
+            camposRiesgosList.add("Nº");
+            camposRiesgosList.add("Tipo");
+            camposRiesgosList.add("Limitaciones");
+            camposRiesgosList.add("Implicancias");
+            
+           
+            //Lista de campos de la cabecera
+            ArrayList<String> valoresRiesgoList =  new ArrayList<>();
+            valoresRiesgoList.add("1");
+            valoresRiesgoList.add(jComboBox1.getSelectedItem().toString());
+            valoresRiesgoList.add(jTextArea2.getText());
+            valoresRiesgoList.add(jTextArea4.getText());
+            
+
+            
+            
+            //rellenamos los campos de la cabecera de la tabla
+            PdfPCell columnHeader;              
+            for (int column = 0; column < numColumnsRiesgosDetectados; column++) {
+                columnHeader = new PdfPCell(new Phrase(camposRiesgosList.get(column),normalFont));
+                columnHeader.setHorizontalAlignment(Element.ALIGN_CENTER);
+                columnHeader.setVerticalAlignment(Element.ALIGN_MIDDLE);
+                //columnHeader.setBackgroundColor(guinda);
+                tablaRiesgosDetectados.addCell(columnHeader);
+            }
+            tablaRiesgosDetectados.setWidths(new int[]{15,60,60,80});
+            tablaRiesgosDetectados.setHeaderRows(1);
+            
+            // Rellenamos las filas de la tabla.
+            PdfPCell cellContentRiesgos;           
+            for (int row = 0; row < numRowsRiesgosDetectados; row++) {
+                for (int column = 0; column < numColumnsRiesgosDetectados; column++) {
+                    cellContentRiesgos = new PdfPCell(new Phrase(valoresRiesgoList.get(column),normalFont));
+                    cellContentRiesgos.setVerticalAlignment(Element.ALIGN_MIDDLE);
+                    if(column==0||column==1){
+                        cellContentRiesgos.setHorizontalAlignment(Element.ALIGN_CENTER);                
+                    }
+                    cellContentRiesgos.setMinimumHeight(20);
+                    //cellContentRiesgos.setBackgroundColor(hueso);
+                    tablaRiesgosDetectados.addCell(cellContentRiesgos);
+                }
+            }
+            // We add the paragraph with the table (Añadimos el elemento con la tabla).
+            documento.add(tablaRiesgosDetectados);
+            
+            documento.add(new Paragraph("\n"));
+            documento.close();
+            JOptionPane.showMessageDialog(null, "El archivo pdf fue creado correctamente");
+        
+        }
+       else{
+            JOptionPane.showMessageDialog(null, "Llenar los campos");  
+        }
+    }
+    
+    public void abrir(String nombre){
+        try {
+            File path = new File(nombre + ".pdf");
+            Desktop.getDesktop().open(path);
+        } catch (Exception ex) {
+            JOptionPane.showMessageDialog(null, ex,"atencion",2);
+        }
     }
 
     /**
@@ -48,9 +158,6 @@ public class limitacionesDialog extends javax.swing.JDialog {
         jScrollPane6 = new javax.swing.JScrollPane();
         jTextArea4 = new javax.swing.JTextArea();
         jComboBox1 = new javax.swing.JComboBox<>();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
-        jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
 
@@ -130,34 +237,14 @@ public class limitacionesDialog extends javax.swing.JDialog {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {"", "", ""},
-                {"", "", ""},
-                {"", null, null},
-                {null, null, null}
-            },
-            new String [] {
-                "Tipo", "Limitaciones", "Implicancias"
-            }
-        ));
-        jScrollPane1.setViewportView(jTable1);
-
-        jButton2.setText("LIMPIAR");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
-            }
-        });
-
-        jButton3.setText("IMPRIMIR");
+        jButton3.setText("Abrir PDF");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton3ActionPerformed(evt);
             }
         });
 
-        jButton1.setText("GRABAR");
+        jButton1.setText("Generar PDF");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
@@ -171,23 +258,17 @@ public class limitacionesDialog extends javax.swing.JDialog {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(228, 228, 228)
-                                .addComponent(jButton1)
-                                .addGap(18, 18, 18)
-                                .addComponent(jButton3)
-                                .addGap(18, 18, 18)
-                                .addComponent(jButton2))
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 718, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(238, 238, 238)
+                        .addComponent(jButton1)
+                        .addGap(18, 18, 18)
+                        .addComponent(jButton3))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(201, 201, 201)
                         .addComponent(jLabel1))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(152, 152, 152)
                         .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 411, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(175, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -199,11 +280,8 @@ public class limitacionesDialog extends javax.swing.JDialog {
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton3)
-                    .addComponent(jButton2)
                     .addComponent(jButton1))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(29, Short.MAX_VALUE))
+                .addContainerGap(27, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -214,77 +292,35 @@ public class limitacionesDialog extends javax.swing.JDialog {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 3, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // BOTON LIMPIAR
-        //jTextArea1.setText(null);
-        jTextArea2.setText(null);
-        jTextArea4.setText(null);
-
-    }//GEN-LAST:event_jButton2ActionPerformed
-
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        // boton imprimir
-
-        //limpio modelo de tabla
-        modelo.setRowCount(1);
-        //imprimo datos en modelo
-        for(int i=0;i<lista.size();i++){
-            String codx=lista.get(i).getTipo();
-            if(codx!=null){
-
-                fila[0]=lista.get(i).getTipo();
-                fila[1]=lista.get(i).getLim();
-                fila[2]=lista.get(i).getImp();
-                modelo.addRow(fila);
-            }
-        }
+      if(!nombre.isEmpty())
+            abrir(nombre);
+        else
+            JOptionPane.showMessageDialog(null, "no se encuentra ese archivo con ese nombre","Atencion",2);
 
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // Boton GRABAR
-        //leo datos de suposicion
-        String tipo=String.valueOf(jComboBox1.getSelectedItem());;
-        String lim=jTextArea2.getText();
-        String imp=jTextArea4.getText();
-
-        //crear el objeto suposicion
-        limitaciones s = new limitaciones(tipo, lim,imp);
-        //adiciono objeto suposicion s a la lista
-        lista.add(s);
-        //mensajito de grabado
-        JOptionPane.showMessageDialog(null,"se guardo exitosamente");
+        try {
+            Generar(nombre);
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(GuiaIni.class.getName()).log(Level.SEVERE, null,ex);
+        } catch (DocumentException ex) {
+            Logger.getLogger(GuiaIni.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
-        //asignar columnas al modelo
-        modelo.addColumn("Tipo");
-        modelo.addColumn("Limitaciones");
-        modelo.addColumn("Implicancias");
-        Object [] fila = new Object[3];
-        fila[0] = "Impositiva";
-        fila[1] = "- Iniciar el desembarco el día D-1.\n" +
-                    "- Efectuar la neutralización de\n" +
-                    "sistemas de vigilancia\n" +
-                    "electrónica mediante\n" +
-                    "operaciones de GE.";
-        fila[2] = "- Limitación de tiempo para\n" +
-                    "ejecución operaciones.\n" +
-                    "- Limitación de libertad para\n" +
-                    "neutralización por medio de\n" +
-                    "bombardeo o destrucción\n" +
-                    "física.";
         
-        modelo.addRow(fila);
-       
-        //ASIGNAR modelo a la tabla
-        jTable1.setModel(modelo);
+        
     }//GEN-LAST:event_formWindowOpened
 
     /**
@@ -332,7 +368,6 @@ public class limitacionesDialog extends javax.swing.JDialog {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
@@ -341,15 +376,13 @@ public class limitacionesDialog extends javax.swing.JDialog {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane6;
-    private javax.swing.JTable jTable1;
     private javax.swing.JTextArea jTextArea2;
     private javax.swing.JTextArea jTextArea4;
     // End of variables declaration//GEN-END:variables
 
      DefaultTableModel modelo = new DefaultTableModel();
 //declarando la fila del modelo 
-   String fila[] = new String[3];
+   String fila[] = new String[4];
 }

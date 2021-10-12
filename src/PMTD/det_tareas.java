@@ -9,6 +9,7 @@ import com.itextpdf.text.Document;
 import com.itextpdf.text.DocumentException;
 import com.itextpdf.text.Element;
 import com.itextpdf.text.Font;
+import com.itextpdf.text.PageSize;
 import com.itextpdf.text.Paragraph;
 import com.itextpdf.text.Phrase;
 import com.itextpdf.text.pdf.PdfPCell;
@@ -47,8 +48,9 @@ public class det_tareas extends javax.swing.JDialog {
         if(!(text_nombre.getText().isEmpty() || (jTextArea1.getText().isEmpty()) || (jTextField1.getText().isEmpty()) || (jTextArea2.getText().isEmpty()) || (jTextField2.getText().isEmpty())|| (jTextArea3.getText().isEmpty()) )){
             FileOutputStream archivo = new FileOutputStream(nombre + ".pdf");
 
-            Document documento = new Document();
+            Document documento = new Document(PageSize.A4.rotate(), 10f, 10f, 10f, 0f);
             PdfWriter.getInstance(documento, archivo);
+           
             
 //            String probab=prob.getSelectedItem().toString();
 //            String impac =impacto.getSelectedItem().toString();
@@ -107,8 +109,8 @@ public class det_tareas extends javax.swing.JDialog {
                 for (int column = 0; column < numColumnsRiesgosDetectados; column++) {
                     cellContentRiesgos = new PdfPCell(new Phrase(valoresRiesgoList.get(column),normalFont));
                     cellContentRiesgos.setVerticalAlignment(Element.ALIGN_MIDDLE);
-                    if(column==0||column==1||column==2){
-                        cellContentRiesgos.setHorizontalAlignment(Element.ALIGN_MIDDLE);                
+                    if(column==0||column==1||column==2 ||column==3 ||column==4 ||column==5 ||column==6){
+                        cellContentRiesgos.setHorizontalAlignment(Element.ALIGN_CENTER);                
                     }
                     cellContentRiesgos.setMinimumHeight(20);
                     //cellContentRiesgos.setBackgroundColor(hueso);

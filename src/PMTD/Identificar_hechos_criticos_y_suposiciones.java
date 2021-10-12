@@ -5,8 +5,23 @@
  */
 package PMTD;
 
+import com.itextpdf.text.Document;
+import com.itextpdf.text.DocumentException;
+import com.itextpdf.text.Element;
+import com.itextpdf.text.Font;
+import com.itextpdf.text.Paragraph;
+import com.itextpdf.text.Phrase;
+import com.itextpdf.text.pdf.PdfPCell;
+import com.itextpdf.text.pdf.PdfPTable;
+import com.itextpdf.text.pdf.PdfWriter;
+import java.awt.Desktop;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
@@ -21,9 +36,106 @@ public class Identificar_hechos_criticos_y_suposiciones extends javax.swing.JDia
     /**
      * Creates new form Identificar_hechos_criticos_y_suposiciones
      */
+    private static final Font normalFont = new Font(Font.FontFamily.TIMES_ROMAN, 10, Font.NORMAL);
+    String nombre="Hechos";
     public Identificar_hechos_criticos_y_suposiciones(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
+    }
+    
+    public void Generar(String nombre) throws FileNotFoundException, DocumentException{
+        if(!(jTextField1.getText().isEmpty() || (jTextArea1.getText().isEmpty())|| (jTextArea2.getText().isEmpty())|| (jTextArea4.getText().isEmpty())  )){
+            FileOutputStream archivo = new FileOutputStream(nombre + ".pdf");
+
+            Document documento = new Document();
+            PdfWriter.getInstance(documento, archivo);
+           
+            
+//            String probab=prob.getSelectedItem().toString();
+//            String impac =impacto.getSelectedItem().toString();
+//            
+            documento.open();
+
+            //Titulo
+            Paragraph parrafo = new Paragraph("IDENTIFICAR HECHOS CRÍTICOS Y SUPOSICIONES \n\n");
+            parrafo.setAlignment(1);
+            documento.add(parrafo);
+            
+            //Tabla de tareas 
+            documento.add(new Paragraph("1. Hechos criticos y suposiciones \n\n"));
+            
+            //Nro de filas y columnas
+            Integer numColumnsRiesgosDetectados = 5;
+            Integer numRowsRiesgosDetectados = 1;
+            
+            // Creacion de la tabla
+            PdfPTable tablaRiesgosDetectados = new PdfPTable(numColumnsRiesgosDetectados); 
+            //Lista de campos de la cabecera
+            ArrayList<String> camposRiesgosList =  new ArrayList<>();
+            camposRiesgosList.add("Nº");
+            camposRiesgosList.add("Factor");
+            camposRiesgosList.add("Hechos críticos");
+            camposRiesgosList.add("Suposiciones");
+            camposRiesgosList.add("Justificación");
+            
+           
+            //Lista de campos de la cabecera
+            ArrayList<String> valoresRiesgoList =  new ArrayList<>();
+            valoresRiesgoList.add("1");
+            valoresRiesgoList.add(jTextField1.getText());
+            valoresRiesgoList.add(jTextArea1.getText());
+            valoresRiesgoList.add(jTextArea2.getText());
+            valoresRiesgoList.add(jTextArea4.getText());
+            
+
+            
+            
+            //rellenamos los campos de la cabecera de la tabla
+            PdfPCell columnHeader;              
+            for (int column = 0; column < numColumnsRiesgosDetectados; column++) {
+                columnHeader = new PdfPCell(new Phrase(camposRiesgosList.get(column),normalFont));
+                columnHeader.setHorizontalAlignment(Element.ALIGN_CENTER);
+                columnHeader.setVerticalAlignment(Element.ALIGN_MIDDLE);
+                //columnHeader.setBackgroundColor(guinda);
+                tablaRiesgosDetectados.addCell(columnHeader);
+            }
+            tablaRiesgosDetectados.setWidths(new int[]{15,60,60,80,80});
+            tablaRiesgosDetectados.setHeaderRows(1);
+            
+            // Rellenamos las filas de la tabla.
+            PdfPCell cellContentRiesgos;           
+            for (int row = 0; row < numRowsRiesgosDetectados; row++) {
+                for (int column = 0; column < numColumnsRiesgosDetectados; column++) {
+                    cellContentRiesgos = new PdfPCell(new Phrase(valoresRiesgoList.get(column),normalFont));
+                    cellContentRiesgos.setVerticalAlignment(Element.ALIGN_MIDDLE);
+                    if(column==0||column==1){
+                        cellContentRiesgos.setHorizontalAlignment(Element.ALIGN_CENTER);                
+                    }
+                    cellContentRiesgos.setMinimumHeight(20);
+                    //cellContentRiesgos.setBackgroundColor(hueso);
+                    tablaRiesgosDetectados.addCell(cellContentRiesgos);
+                }
+            }
+            // We add the paragraph with the table (Añadimos el elemento con la tabla).
+            documento.add(tablaRiesgosDetectados);
+            
+            documento.add(new Paragraph("\n"));
+            documento.close();
+            JOptionPane.showMessageDialog(null, "El archivo pdf fue creado correctamente");
+        
+        }
+       else{
+            JOptionPane.showMessageDialog(null, "Llenar los campos");  
+        }
+    }
+    
+    public void abrir(String nombre){
+        try {
+            File path = new File(nombre + ".pdf");
+            Desktop.getDesktop().open(path);
+        } catch (Exception ex) {
+            JOptionPane.showMessageDialog(null, ex,"atencion",2);
+        }
     }
 
     
@@ -38,11 +150,6 @@ public class Identificar_hechos_criticos_y_suposiciones extends javax.swing.JDia
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
         jPanel1 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
@@ -55,6 +162,8 @@ public class Identificar_hechos_criticos_y_suposiciones extends javax.swing.JDia
         jTextArea4 = new javax.swing.JTextArea();
         jLabel2 = new javax.swing.JLabel();
         jTextField1 = new javax.swing.JTextField();
+        jButton1 = new javax.swing.JButton();
+        jButton3 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         addWindowListener(new java.awt.event.WindowAdapter() {
@@ -64,37 +173,6 @@ public class Identificar_hechos_criticos_y_suposiciones extends javax.swing.JDia
         });
 
         jLabel1.setText("IDENTIFICAR HECHOS CRITICOS Y DESARROLLAR SUPOSICIONES");
-
-        jButton1.setText("GRABAR");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
-
-        jButton2.setText("LIMPIAR");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
-            }
-        });
-
-        jButton3.setText("IMPRIMIR");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
-            }
-        });
-
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-
-            },
-            new String [] {
-                "Factor", "Hechos críticos", "Suposiciones", "Justificación"
-            }
-        ));
-        jScrollPane1.setViewportView(jTable1);
 
         jPanel1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
@@ -126,7 +204,7 @@ public class Identificar_hechos_criticos_y_suposiciones extends javax.swing.JDia
         jTextArea4.setMargin(new java.awt.Insets(4, 4, 4, 4));
         jScrollPane6.setViewportView(jTextArea4);
 
-        jLabel2.setText("Factores");
+        jLabel2.setText("Factor");
 
         jTextField1.setText("Terreno");
 
@@ -173,12 +251,26 @@ public class Identificar_hechos_criticos_y_suposiciones extends javax.swing.JDia
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
+        jButton1.setText("Generar PDF");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
+        jButton3.setText("Abrir PDF");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
+                .addGap(0, 174, Short.MAX_VALUE)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(184, 184, 184))
             .addGroup(layout.createSequentialGroup()
@@ -187,16 +279,11 @@ public class Identificar_hechos_criticos_y_suposiciones extends javax.swing.JDia
                         .addGap(214, 214, 214)
                         .addComponent(jLabel1))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(248, 248, 248)
+                        .addGap(272, 272, 272)
                         .addComponent(jButton1)
                         .addGap(18, 18, 18)
-                        .addComponent(jButton3)
-                        .addGap(18, 18, 18)
-                        .addComponent(jButton2))
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 718, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(30, Short.MAX_VALUE))
+                        .addComponent(jButton3)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -208,78 +295,33 @@ public class Identificar_hechos_criticos_y_suposiciones extends javax.swing.JDia
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton3)
-                    .addComponent(jButton2)
                     .addComponent(jButton1))
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(27, 27, 27))
+                .addContainerGap())
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // Boton GRABAR
-        //leo datos de suposicion
-        String tipo =jTextField1.getText();
-        String hecho=jTextArea1.getText();
-        String sup=jTextArea2.getText();
-        String jus=jTextArea4.getText();
+    private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
+    
+    }//GEN-LAST:event_formWindowOpened
 
-        //crear el objeto suposicion
-        hechos s = new hechos(tipo,hecho, sup,jus);
-        //adiciono objeto suposicion s a la lista
-        lista.add(s);
-        //mensajito de grabado
-        JOptionPane.showMessageDialog(null,"Suposición Grabada");
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        try {
+            Generar(nombre);
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(GuiaIni.class.getName()).log(Level.SEVERE, null,ex);
+        } catch (DocumentException ex) {
+            Logger.getLogger(GuiaIni.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // BOTON LIMPIAR
-        jTextField1.setText(null);
-        jTextArea1.setText(null);
-        jTextArea2.setText(null);
-        jTextArea4.setText(null);
-       
-    }//GEN-LAST:event_jButton2ActionPerformed
-
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-            // boton imprimir
-
-        //limpio modelo de tabla
-        modelo.setRowCount(1);
-        //imprimo datos en modelo
-        for(int i=0;i<lista.size();i++){
-            String codx=lista.get(i).getTipo();
-            if(codx!=null){
-                
-                fila[0]=lista.get(i).getTipo();
-                fila[1]=lista.get(i).getHechos();
-                fila[2]=lista.get(i).getSupo();
-                fila[3]=lista.get(i).getJusti();
-                modelo.addRow(fila);
-            }
-        }
-     
+        if(!nombre.isEmpty())
+        abrir(nombre);
+        else
+        JOptionPane.showMessageDialog(null, "no se encuentra ese archivo con ese nombre","Atencion",2);
     }//GEN-LAST:event_jButton3ActionPerformed
-
-    private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
-        //asignar columnas al modelo
-        modelo.addColumn("Factor");
-        modelo.addColumn("Hechos criticos");
-        modelo.addColumn("Suposiciones");
-        modelo.addColumn("Justificación");
-        Object [] fila = new Object[4];
-        fila[0] = "Terreno";
-        fila[1] = "La poblacion de Majes viene desarrollando acciones de lucha contra la peste bubonica de reciente brote, asi como las poblaciones de Quilca y Vitor se han detectado casos de gripe Aviar. El sistema local de asistencia médica esta por colapsar.";
-        fila[2] = "Que se vuelva una epidemia y que no pueda ser controlada por el sector salud ni por nuestro servicio de sanidad.";
-        fila[3] = "Es factible debido a que el sistema local de asistencia médica de la población de Majes esta por colapsar y en las poblaciones de Quilva y Vitor la Gripe Aviar se encuentra en grado de propagación.";
-       
-        modelo.addRow(fila);
-       
-        //ASIGNAR modelo a la tabla
-        jTable1.setModel(modelo);
-    }//GEN-LAST:event_formWindowOpened
 
     /**
      * @param args the command line arguments
@@ -325,7 +367,6 @@ public class Identificar_hechos_criticos_y_suposiciones extends javax.swing.JDia
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
@@ -333,11 +374,9 @@ public class Identificar_hechos_criticos_y_suposiciones extends javax.swing.JDia
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane6;
-    private javax.swing.JTable jTable1;
     private javax.swing.JTextArea jTextArea1;
     private javax.swing.JTextArea jTextArea2;
     private javax.swing.JTextArea jTextArea4;

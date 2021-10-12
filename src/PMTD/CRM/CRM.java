@@ -57,21 +57,7 @@ public class CRM extends javax.swing.JDialog {
     String nombre ="riesgos";
     Environment clips;
     
-    /*
-    
-    
-    Environment clips;
-    //Compilar
-    //String categoriaRiesgoPath =  System.getProperty("user.dir")+"\\res\\clips\\cat_riesgo.CLP";
-    //Construido
-    String categoriaRiesgoPath =  System.getProperty("user.dir")+"\\clips\\cat_riesgo.CLP";
-    public CRM(java.awt.Frame parent, boolean modal) {
-        super(parent, modal);
-        //JOptionPane.showMessageDialog(null, categoriaRiesgoPath);
-        //System.out.println( categoriaRiesgoPath);
-        clips = new Environment();
-        clips.load("cat_riesgos.CLP");
-    */
+  
     public CRM(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         clips = new Environment();

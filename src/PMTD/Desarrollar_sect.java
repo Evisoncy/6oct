@@ -5,8 +5,24 @@
  */
 package PMTD;
 
+import com.itextpdf.text.Document;
+import com.itextpdf.text.DocumentException;
+import com.itextpdf.text.Element;
+import com.itextpdf.text.Font;
+import com.itextpdf.text.PageSize;
+import com.itextpdf.text.Paragraph;
+import com.itextpdf.text.Phrase;
+import com.itextpdf.text.pdf.PdfPCell;
+import com.itextpdf.text.pdf.PdfPTable;
+import com.itextpdf.text.pdf.PdfWriter;
+import java.awt.Desktop;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import javax.swing.JScrollPane;
 import javax.swing.table.DefaultTableModel;
@@ -20,6 +36,8 @@ public class Desarrollar_sect extends javax.swing.JDialog {
     /**
      * Creates new form Desarrollar_sect
      */
+    private static final Font normalFont = new Font(Font.FontFamily.TIMES_ROMAN, 10, Font.NORMAL);
+    String nombre="eval_recursos";
     List<desarrollar_sec> lista = new ArrayList();
     public Desarrollar_sect(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
@@ -28,6 +46,99 @@ public class Desarrollar_sect extends javax.swing.JDialog {
         
     }
 
+    public void Generar(String nombre) throws FileNotFoundException, DocumentException{
+        if(!(jTextArea1.getText().isEmpty() || (jTextArea2.getText().isEmpty()) || (jTextArea3.getText().isEmpty()) || (jTextArea4.getText().isEmpty())  )){
+            FileOutputStream archivo = new FileOutputStream(nombre + ".pdf");
+
+            Document documento = new Document();
+            PdfWriter.getInstance(documento, archivo);
+           
+            
+//            String probab=prob.getSelectedItem().toString();
+//            String impac =impacto.getSelectedItem().toString();
+//            
+            documento.open();
+
+            //Titulo
+            Paragraph parrafo = new Paragraph("EVALUACIÓN DE RECURSOS \n\n");
+            parrafo.setAlignment(1);
+            documento.add(parrafo);
+            
+            //Tabla de tareas 
+            documento.add(new Paragraph("1. recursos \n\n"));
+            
+            //Nro de filas y columnas
+            Integer numColumnsRiesgosDetectados = 5;
+            Integer numRowsRiesgosDetectados = 1;
+            
+            // Creacion de la tabla
+            PdfPTable tablaRiesgosDetectados = new PdfPTable(numColumnsRiesgosDetectados); 
+            //Lista de campos de la cabecera
+            ArrayList<String> camposRiesgosList =  new ArrayList<>();
+            camposRiesgosList.add("Nº");
+            camposRiesgosList.add("Tareas");
+            camposRiesgosList.add("Recursos disponibles");
+            camposRiesgosList.add("Juicio de valor");
+            camposRiesgosList.add("Requerimiento");
+           
+            //Lista de campos de la cabecera
+            ArrayList<String> valoresRiesgoList =  new ArrayList<>();
+            valoresRiesgoList.add("1");
+            valoresRiesgoList.add(jTextArea1.getText());
+            valoresRiesgoList.add(jTextArea2.getText());
+            valoresRiesgoList.add(jTextArea3.getText());
+            valoresRiesgoList.add(jTextArea4.getText());
+//            valoresRiesgoList.add(jTextField2.getText());
+//            valoresRiesgoList.add(jTextArea3.getText());
+            
+            
+            //rellenamos los campos de la cabecera de la tabla
+            PdfPCell columnHeader;              
+            for (int column = 0; column < numColumnsRiesgosDetectados; column++) {
+                columnHeader = new PdfPCell(new Phrase(camposRiesgosList.get(column),normalFont));
+                columnHeader.setHorizontalAlignment(Element.ALIGN_CENTER);
+                columnHeader.setVerticalAlignment(Element.ALIGN_MIDDLE);
+                //columnHeader.setBackgroundColor(guinda);
+                tablaRiesgosDetectados.addCell(columnHeader);
+            }
+            tablaRiesgosDetectados.setWidths(new int[]{15,60,60,80,60});
+            tablaRiesgosDetectados.setHeaderRows(1);
+            
+            // Rellenamos las filas de la tabla.
+            PdfPCell cellContentRiesgos;           
+            for (int row = 0; row < numRowsRiesgosDetectados; row++) {
+                for (int column = 0; column < numColumnsRiesgosDetectados; column++) {
+                    cellContentRiesgos = new PdfPCell(new Phrase(valoresRiesgoList.get(column),normalFont));
+                    cellContentRiesgos.setVerticalAlignment(Element.ALIGN_MIDDLE);
+                    if(column==0||column==1||column==2 ||column==3 ||column==4 ||column==5 ||column==6){
+                        cellContentRiesgos.setHorizontalAlignment(Element.ALIGN_CENTER);                
+                    }
+                    cellContentRiesgos.setMinimumHeight(20);
+                    //cellContentRiesgos.setBackgroundColor(hueso);
+                    tablaRiesgosDetectados.addCell(cellContentRiesgos);
+                }
+            }
+            // We add the paragraph with the table (Añadimos el elemento con la tabla).
+            documento.add(tablaRiesgosDetectados);
+            
+            documento.add(new Paragraph("\n"));
+            documento.close();
+            JOptionPane.showMessageDialog(null, "El archivo pdf fue creado correctamente");
+        
+        }
+       else{
+            JOptionPane.showMessageDialog(null, "Llenar los campos");  
+        }
+    }
+    
+    public void abrir(String nombre){
+        try {
+            File path = new File(nombre + ".pdf");
+            Desktop.getDesktop().open(path);
+        } catch (Exception ex) {
+            JOptionPane.showMessageDialog(null, ex,"atencion",2);
+        }
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -51,8 +162,6 @@ public class Desarrollar_sect extends javax.swing.JDialog {
         jScrollPane5 = new javax.swing.JScrollPane();
         jTextArea4 = new javax.swing.JTextArea();
         jLabel1 = new javax.swing.JLabel();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        jTable2 = new javax.swing.JTable();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
 
@@ -146,37 +255,14 @@ public class Desarrollar_sect extends javax.swing.JDialog {
 
         jLabel1.setText("EVALUACION DE RECURSOS DISPONIBLES");
 
-        jTable2.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {"asdas", "asdas", "asdas", "asdasd"},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "Tareas", "Recursos disponibles", "Juicio de valor", "Requerimiento"
-            }
-        ) {
-            Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
-            };
-
-            public Class getColumnClass(int columnIndex) {
-                return types [columnIndex];
-            }
-        });
-        jTable2.setPreferredSize(new java.awt.Dimension(300, 150));
-        jTable2.setRowHeight(20);
-        jScrollPane2.setViewportView(jTable2);
-
-        jButton1.setText("GRABAR");
+        jButton1.setText("Generar PDF");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
 
-        jButton2.setText("IMPRIMIR");
+        jButton2.setText("Abrir PDF");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
@@ -202,25 +288,19 @@ public class Desarrollar_sect extends javax.swing.JDialog {
                 .addGap(38, 38, 38)
                 .addComponent(jButton2)
                 .addGap(218, 218, 218))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane2)
-                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 12, Short.MAX_VALUE)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton2)
                     .addComponent(jButton1))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(124, Short.MAX_VALUE))
+                .addContainerGap(51, Short.MAX_VALUE))
         );
 
         getAccessibleContext().setAccessibleParent(null);
@@ -229,42 +309,20 @@ public class Desarrollar_sect extends javax.swing.JDialog {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-         // boton imprimir
-//         String test = "The lazy dog jumped over the quick brown fox";
-//      jTable2.getColumnModel().getColumn(0).setCellRenderer(
-//      new TextAreaRenderer());
-//       getContentPane().add(new JScrollPane(jTable2));
-//        jTable2.getModel().setValueAt(test, 0, 0);
-//    jTable2.getModel().setValueAt(test, 0, 1);
-        //limpio modelo de tabla
-       modelo.setRowCount(1);
-        
-        //imprimo datos en modelo
-        for(int i=0;i<lista.size();i++){
-            String codx=lista.get(i).getTareas();
-            if(codx!=null){
-                fila[0]=lista.get(i).getTareas();
-                fila[1]=lista.get(i).getRec_disp();
-                fila[2]=lista.get(i).getJuicio();
-                fila[3]=lista.get(i).getReq();
-                
-                modelo.addRow(fila);
-            }
-        }
+         if(!nombre.isEmpty())
+            abrir(nombre);
+        else
+            JOptionPane.showMessageDialog(null, "no se encuentra ese archivo con ese nombre","Atencion",2);
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        String tareas=jTextArea1.getText();
-        String rec=jTextArea2.getText();
-        String juicio=jTextArea3.getText();
-        String req=jTextArea4.getText();
-        
-        //crear el objeto empleado
-        desarrollar_sec e = new desarrollar_sec(tareas, rec, juicio, req);
-        //adiciono objeto soldado e a la lista
-        lista.add(e);
-        //mensajito de grabado
-        JOptionPane.showMessageDialog(null,"Se guardo exitosamente");
+         try {
+            Generar(nombre);
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(GuiaIni.class.getName()).log(Level.SEVERE, null,ex);
+        } catch (DocumentException ex) {
+            Logger.getLogger(GuiaIni.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
@@ -283,7 +341,7 @@ public class Desarrollar_sect extends javax.swing.JDialog {
         fila[3] = "";
        modelo.addRow(fila);
         //ASIGNAR modelo a la tabla
-        jTable2.setModel(modelo);
+        //jTable2.setModel(modelo);
     }//GEN-LAST:event_formWindowOpened
 
     /**
@@ -338,11 +396,9 @@ public class Desarrollar_sect extends javax.swing.JDialog {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
-    private javax.swing.JTable jTable2;
     private javax.swing.JTextArea jTextArea1;
     private javax.swing.JTextArea jTextArea2;
     private javax.swing.JTextArea jTextArea3;
@@ -352,5 +408,5 @@ public class Desarrollar_sect extends javax.swing.JDialog {
 //declarando el modelo de la tabla 
    DefaultTableModel modelo = new DefaultTableModel();
 //declarando la fila del modelo 
-   String fila[] = new String[7];
+   String fila[] = new String[5];
 }

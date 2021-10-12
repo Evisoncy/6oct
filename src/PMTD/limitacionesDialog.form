@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
-<Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JDialogFormInfo">
+<Form version="1.5" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JDialogFormInfo">
   <Properties>
     <Property name="defaultCloseOperation" type="int" value="2"/>
   </Properties>
@@ -118,14 +118,12 @@
                               <Component id="jLabel3" min="-2" pref="99" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="4" max="-2" attributes="0"/>
                           </Group>
-                          <Group type="102" alignment="0" attributes="0">
+                          <Group type="102" attributes="0">
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="32767" attributes="0"/>
-                          </Group>
-                          <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="jLabel6" min="-2" pref="57" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="jLabel4" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jLabel6" alignment="0" min="-2" pref="57" max="-2" attributes="0"/>
+                              </Group>
                               <EmptySpace max="32767" attributes="0"/>
                           </Group>
                       </Group>
@@ -187,7 +185,13 @@
                 <Component class="javax.swing.JTextArea" name="jTextArea2">
                   <Properties>
                     <Property name="columns" type="int" value="20"/>
+                    <Property name="lineWrap" type="boolean" value="true"/>
                     <Property name="rows" type="int" value="5"/>
+                    <Property name="text" type="java.lang.String" value="-No esta autorizado el empleo de&#xa;minado ofensivo en la isla&#xa;Charlie.&#xa;-No efectuar ataques sobre&#xa;instalaciones portuarias del&#xa;puerto de Charlie."/>
+                    <Property name="wrapStyleWord" type="boolean" value="true"/>
+                    <Property name="margin" type="java.awt.Insets" editor="org.netbeans.beaninfo.editors.InsetsEditor">
+                      <Insets value="[4, 4, 4, 4]"/>
+                    </Property>
                   </Properties>
                 </Component>
               </SubComponents>
@@ -202,7 +206,13 @@
                 <Component class="javax.swing.JTextArea" name="jTextArea4">
                   <Properties>
                     <Property name="columns" type="int" value="20"/>
+                    <Property name="lineWrap" type="boolean" value="true"/>
                     <Property name="rows" type="int" value="5"/>
+                    <Property name="text" type="java.lang.String" value="-Aceptar riesgo del no bloqueo&#xa;de puertos en la isla, para&#xa;impedir zarpar unidades&#xa;enemigas.&#xa;-Necesidad de planear&#xa;operaciones especiales o&#xa;submarinas para&#xa;neutralizaci&#xf3;n de unidades&#xa;enemigas en puerto."/>
+                    <Property name="wrapStyleWord" type="boolean" value="true"/>
+                    <Property name="margin" type="java.awt.Insets" editor="org.netbeans.beaninfo.editors.InsetsEditor">
+                      <Insets value="[4, 4, 4, 4]"/>
+                    </Property>
                   </Properties>
                 </Component>
               </SubComponents>
@@ -233,10 +243,25 @@
             <Component class="javax.swing.JTable" name="jTable1">
               <Properties>
                 <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-                  <Table columnCount="3" rowCount="0">
-                    <Column editable="true" title="Tipo" type="java.lang.Object"/>
-                    <Column editable="true" title="Limitaciones" type="java.lang.Object"/>
-                    <Column editable="true" title="Implicancias" type="java.lang.Object"/>
+                  <Table columnCount="3" rowCount="4">
+                    <Column editable="true" title="Tipo" type="java.lang.Object">
+                      <Data value=""/>
+                      <Data value=""/>
+                      <Data value=""/>
+                      <Data value="null"/>
+                    </Column>
+                    <Column editable="true" title="Limitaciones" type="java.lang.Object">
+                      <Data value=""/>
+                      <Data value=""/>
+                      <Data value="null"/>
+                      <Data value="null"/>
+                    </Column>
+                    <Column editable="true" title="Implicancias" type="java.lang.Object">
+                      <Data value=""/>
+                      <Data value=""/>
+                      <Data value="null"/>
+                      <Data value="null"/>
+                    </Column>
                   </Table>
                 </Property>
                 <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">

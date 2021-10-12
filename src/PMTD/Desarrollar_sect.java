@@ -8,6 +8,7 @@ package PMTD;
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.JOptionPane;
+import javax.swing.JScrollPane;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -22,7 +23,9 @@ public class Desarrollar_sect extends javax.swing.JDialog {
     List<desarrollar_sec> lista = new ArrayList();
     public Desarrollar_sect(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
+         
         initComponents();
+        
     }
 
     /**
@@ -73,18 +76,26 @@ public class Desarrollar_sect extends javax.swing.JDialog {
 
         jTextArea1.setColumns(20);
         jTextArea1.setRows(5);
+        jTextArea1.setText("Bloquear al BIM 24 en\nRg Cruz de Hueso");
         jScrollPane1.setViewportView(jTextArea1);
 
         jTextArea2.setColumns(20);
+        jTextArea2.setLineWrap(true);
         jTextArea2.setRows(5);
+        jTextArea2.setText("3 Compañías de Fusileros, 1 Cía de Morteros, 1 Sec Ing Comb en A/D");
+        jTextArea2.setWrapStyleWord(true);
         jScrollPane3.setViewportView(jTextArea2);
 
         jTextArea3.setColumns(20);
+        jTextArea3.setLineWrap(true);
         jTextArea3.setRows(5);
+        jTextArea3.setText("El frente en Rg Cruz de\nHueso es de 4 Km y la\nprofundidad es de 8 Km, los\nrecursos disponibles no son\nsuficientes para ocupar y\nBLOQUEAR toda el AO\nasignada.");
+        jTextArea3.setWrapStyleWord(true);
         jScrollPane4.setViewportView(jTextArea3);
 
         jTextArea4.setColumns(20);
         jTextArea4.setRows(5);
+        jTextArea4.setText("1 Cía de Fus");
         jScrollPane5.setViewportView(jTextArea4);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -137,7 +148,7 @@ public class Desarrollar_sect extends javax.swing.JDialog {
 
         jTable2.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
+                {"asdas", "asdas", "asdas", "asdasd"},
                 {null, null, null, null},
                 {null, null, null, null},
                 {null, null, null, null}
@@ -155,7 +166,7 @@ public class Desarrollar_sect extends javax.swing.JDialog {
             }
         });
         jTable2.setPreferredSize(new java.awt.Dimension(300, 150));
-        jTable2.setRowHeight(60);
+        jTable2.setRowHeight(20);
         jScrollPane2.setViewportView(jTable2);
 
         jButton1.setText("GRABAR");
@@ -201,13 +212,13 @@ public class Desarrollar_sect extends javax.swing.JDialog {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 10, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton2)
                     .addComponent(jButton1))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 22, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(124, Short.MAX_VALUE))
         );
@@ -219,9 +230,14 @@ public class Desarrollar_sect extends javax.swing.JDialog {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
          // boton imprimir
-
+//         String test = "The lazy dog jumped over the quick brown fox";
+//      jTable2.getColumnModel().getColumn(0).setCellRenderer(
+//      new TextAreaRenderer());
+//       getContentPane().add(new JScrollPane(jTable2));
+//        jTable2.getModel().setValueAt(test, 0, 0);
+//    jTable2.getModel().setValueAt(test, 0, 1);
         //limpio modelo de tabla
-        modelo.setRowCount(0);
+       modelo.setRowCount(1);
         
         //imprimo datos en modelo
         for(int i=0;i<lista.size();i++){
@@ -260,7 +276,12 @@ public class Desarrollar_sect extends javax.swing.JDialog {
         modelo.addColumn("Recursos disponibles");
         modelo.addColumn("Jucio de valor");
         modelo.addColumn("Requerimiento");
-       
+        Object [] fila = new Object[4];
+        fila[0] = "MHCNC";
+        fila[1] = "RCB 21, RCB 22, RCB 23, BTQ 20, Esc AT 2,GAB 2,GAAA 2,B Ing Blin 2 ";
+        fila[2] = "Los recursos con que disponemos son adecuados para cumplir la misión";
+        fila[3] = "";
+       modelo.addRow(fila);
         //ASIGNAR modelo a la tabla
         jTable2.setModel(modelo);
     }//GEN-LAST:event_formWindowOpened

@@ -66,14 +66,14 @@
           <Group type="102" alignment="1" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
               <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="10" max="32767" attributes="0"/>
+              <EmptySpace max="32767" attributes="0"/>
               <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jButton2" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="jButton1" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace pref="22" max="32767" attributes="0"/>
+              <EmptySpace max="32767" attributes="0"/>
               <Component id="jScrollPane2" min="-2" pref="115" max="-2" attributes="0"/>
               <EmptySpace pref="124" max="32767" attributes="0"/>
           </Group>
@@ -180,6 +180,7 @@
               <Properties>
                 <Property name="columns" type="int" value="20"/>
                 <Property name="rows" type="int" value="5"/>
+                <Property name="text" type="java.lang.String" value="Bloquear al BIM 24 en&#xa;Rg Cruz de Hueso"/>
               </Properties>
             </Component>
           </SubComponents>
@@ -194,7 +195,10 @@
             <Component class="javax.swing.JTextArea" name="jTextArea2">
               <Properties>
                 <Property name="columns" type="int" value="20"/>
+                <Property name="lineWrap" type="boolean" value="true"/>
                 <Property name="rows" type="int" value="5"/>
+                <Property name="text" type="java.lang.String" value="3 Compa&#xf1;&#xed;as de Fusileros, 1 C&#xed;a de Morteros, 1 Sec Ing Comb en A/D"/>
+                <Property name="wrapStyleWord" type="boolean" value="true"/>
               </Properties>
             </Component>
           </SubComponents>
@@ -209,7 +213,10 @@
             <Component class="javax.swing.JTextArea" name="jTextArea3">
               <Properties>
                 <Property name="columns" type="int" value="20"/>
+                <Property name="lineWrap" type="boolean" value="true"/>
                 <Property name="rows" type="int" value="5"/>
+                <Property name="text" type="java.lang.String" value="El frente en Rg Cruz de&#xa;Hueso es de 4 Km y la&#xa;profundidad es de 8 Km, los&#xa;recursos disponibles no son&#xa;suficientes para ocupar y&#xa;BLOQUEAR toda el AO&#xa;asignada."/>
+                <Property name="wrapStyleWord" type="boolean" value="true"/>
               </Properties>
             </Component>
           </SubComponents>
@@ -225,6 +232,7 @@
               <Properties>
                 <Property name="columns" type="int" value="20"/>
                 <Property name="rows" type="int" value="5"/>
+                <Property name="text" type="java.lang.String" value="1 C&#xed;a de Fus"/>
               </Properties>
             </Component>
           </SubComponents>
@@ -247,10 +255,30 @@
           <Properties>
             <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
               <Table columnCount="4" rowCount="4">
-                <Column editable="true" title="Tareas" type="java.lang.String"/>
-                <Column editable="true" title="Recursos disponibles" type="java.lang.String"/>
-                <Column editable="true" title="Juicio de valor" type="java.lang.String"/>
-                <Column editable="true" title="Requerimiento" type="java.lang.String"/>
+                <Column editable="true" title="Tareas" type="java.lang.String">
+                  <Data value="asdas"/>
+                  <Data value="null"/>
+                  <Data value="null"/>
+                  <Data value="null"/>
+                </Column>
+                <Column editable="true" title="Recursos disponibles" type="java.lang.String">
+                  <Data value="asdas"/>
+                  <Data value="null"/>
+                  <Data value="null"/>
+                  <Data value="null"/>
+                </Column>
+                <Column editable="true" title="Juicio de valor" type="java.lang.String">
+                  <Data value="asdas"/>
+                  <Data value="null"/>
+                  <Data value="null"/>
+                  <Data value="null"/>
+                </Column>
+                <Column editable="true" title="Requerimiento" type="java.lang.String">
+                  <Data value="asdasd"/>
+                  <Data value="null"/>
+                  <Data value="null"/>
+                  <Data value="null"/>
+                </Column>
               </Table>
             </Property>
             <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
@@ -280,7 +308,7 @@
             <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
               <Dimension value="[300, 150]"/>
             </Property>
-            <Property name="rowHeight" type="int" value="60"/>
+            <Property name="rowHeight" type="int" value="20"/>
             <Property name="tableHeader" type="javax.swing.table.JTableHeader" editor="org.netbeans.modules.form.editors2.JTableHeaderEditor">
               <TableHeader reorderingAllowed="true" resizingAllowed="true"/>
             </Property>

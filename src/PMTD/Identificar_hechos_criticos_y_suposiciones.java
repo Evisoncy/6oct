@@ -53,6 +53,8 @@ public class Identificar_hechos_criticos_y_suposiciones extends javax.swing.JDia
         jTextArea2 = new javax.swing.JTextArea();
         jScrollPane6 = new javax.swing.JScrollPane();
         jTextArea4 = new javax.swing.JTextArea();
+        jLabel2 = new javax.swing.JLabel();
+        jTextField1 = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         addWindowListener(new java.awt.event.WindowAdapter() {
@@ -89,7 +91,7 @@ public class Identificar_hechos_criticos_y_suposiciones extends javax.swing.JDia
 
             },
             new String [] {
-                "Hechos criticos", "Suposiciones", "Justificacion"
+                "Factor", "Hechos críticos", "Suposiciones", "Justificación"
             }
         ));
         jScrollPane1.setViewportView(jTable1);
@@ -103,39 +105,60 @@ public class Identificar_hechos_criticos_y_suposiciones extends javax.swing.JDia
         jLabel6.setText("Justificacion");
 
         jTextArea1.setColumns(20);
+        jTextArea1.setLineWrap(true);
         jTextArea1.setRows(5);
+        jTextArea1.setText("Los Rios Ocoña y Quilca que se encuentran\nen nuestra AO incrementaran su caudal\npor las lluvias en los meses de septiembre \na diciembre de forma muy frecuente.");
+        jTextArea1.setWrapStyleWord(true);
         jScrollPane3.setViewportView(jTextArea1);
 
         jTextArea2.setColumns(20);
+        jTextArea2.setLineWrap(true);
         jTextArea2.setRows(5);
+        jTextArea2.setText("Que los rios Ocaña y Quilca al incrementar su \ncaudal provocarian inundaciones y por ende\nretrsararian nuestras operaciones en especial \nel repliegue a traves de la posicion cuando \nlleguemos al limite anterior de la Zona de \nresistencia");
+        jTextArea2.setWrapStyleWord(true);
         jScrollPane4.setViewportView(jTextArea2);
 
         jTextArea4.setColumns(20);
+        jTextArea4.setLineWrap(true);
         jTextArea4.setRows(5);
+        jTextArea4.setText("\nEs factible esta suposicion debido a que el \nsistema local de asistencia medica de la \npoblación de MAJES esta por colapsar y en las \npoblaciones de Quilca y Vitor la Gripe Aviar \nse encuentra en grado de propagación alta.");
+        jTextArea4.setWrapStyleWord(true);
+        jTextArea4.setMargin(new java.awt.Insets(4, 4, 4, 4));
         jScrollPane6.setViewportView(jTextArea4);
+
+        jLabel2.setText("Factores");
+
+        jTextField1.setText("Terreno");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel4))
-                    .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel4))
+                        .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jScrollPane4)
                     .addComponent(jScrollPane3)
-                    .addComponent(jScrollPane6, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 259, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(56, 56, 56))
+                    .addComponent(jScrollPane6, javax.swing.GroupLayout.DEFAULT_SIZE, 259, Short.MAX_VALUE)
+                    .addComponent(jTextField1))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addGap(22, 22, 22)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel2)
+                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel3)
                     .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -154,43 +177,42 @@ public class Identificar_hechos_criticos_y_suposiciones extends javax.swing.JDia
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(248, 248, 248)
-                .addComponent(jButton1)
-                .addGap(18, 18, 18)
-                .addComponent(jButton3)
-                .addGap(18, 18, 18)
-                .addComponent(jButton2)
-                .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 414, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(164, 164, 164))
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(184, 184, 184))
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(214, 214, 214)
                         .addComponent(jLabel1))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(20, 20, 20)
+                        .addGap(248, 248, 248)
+                        .addComponent(jButton1)
+                        .addGap(18, 18, 18)
+                        .addComponent(jButton3)
+                        .addGap(18, 18, 18)
+                        .addComponent(jButton2))
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 718, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(20, Short.MAX_VALUE))
+                .addContainerGap(30, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel1)
-                .addGap(9, 9, 9)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton3)
                     .addComponent(jButton2)
                     .addComponent(jButton1))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 106, Short.MAX_VALUE)
-                .addContainerGap())
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(27, 27, 27))
         );
 
         pack();
@@ -199,12 +221,13 @@ public class Identificar_hechos_criticos_y_suposiciones extends javax.swing.JDia
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // Boton GRABAR
         //leo datos de suposicion
+        String tipo =jTextField1.getText();
         String hecho=jTextArea1.getText();
         String sup=jTextArea2.getText();
         String jus=jTextArea4.getText();
 
         //crear el objeto suposicion
-        hechos s = new hechos(hecho, sup,jus);
+        hechos s = new hechos(tipo,hecho, sup,jus);
         //adiciono objeto suposicion s a la lista
         lista.add(s);
         //mensajito de grabado
@@ -213,6 +236,7 @@ public class Identificar_hechos_criticos_y_suposiciones extends javax.swing.JDia
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // BOTON LIMPIAR
+        jTextField1.setText(null);
         jTextArea1.setText(null);
         jTextArea2.setText(null);
         jTextArea4.setText(null);
@@ -223,15 +247,16 @@ public class Identificar_hechos_criticos_y_suposiciones extends javax.swing.JDia
             // boton imprimir
 
         //limpio modelo de tabla
-        modelo.setRowCount(0);
+        modelo.setRowCount(1);
         //imprimo datos en modelo
         for(int i=0;i<lista.size();i++){
-            String codx=lista.get(i).getHechos();
+            String codx=lista.get(i).getTipo();
             if(codx!=null){
                 
-                fila[0]=lista.get(i).getHechos();
-                fila[1]=lista.get(i).getSupo();
-                fila[2]=lista.get(i).getJusti();
+                fila[0]=lista.get(i).getTipo();
+                fila[1]=lista.get(i).getHechos();
+                fila[2]=lista.get(i).getSupo();
+                fila[3]=lista.get(i).getJusti();
                 modelo.addRow(fila);
             }
         }
@@ -240,10 +265,17 @@ public class Identificar_hechos_criticos_y_suposiciones extends javax.swing.JDia
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
         //asignar columnas al modelo
+        modelo.addColumn("Factor");
         modelo.addColumn("Hechos criticos");
         modelo.addColumn("Suposiciones");
         modelo.addColumn("Justificación");
-        
+        Object [] fila = new Object[4];
+        fila[0] = "Terreno";
+        fila[1] = "La poblacion de Majes viene desarrollando acciones de lucha contra la peste bubonica de reciente brote, asi como las poblaciones de Quilca y Vitor se han detectado casos de gripe Aviar. El sistema local de asistencia médica esta por colapsar.";
+        fila[2] = "Que se vuelva una epidemia y que no pueda ser controlada por el sector salud ni por nuestro servicio de sanidad.";
+        fila[3] = "Es factible debido a que el sistema local de asistencia médica de la población de Majes esta por colapsar y en las poblaciones de Quilva y Vitor la Gripe Aviar se encuentra en grado de propagación.";
+       
+        modelo.addRow(fila);
        
         //ASIGNAR modelo a la tabla
         jTable1.setModel(modelo);
@@ -296,6 +328,7 @@ public class Identificar_hechos_criticos_y_suposiciones extends javax.swing.JDia
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel6;
@@ -308,9 +341,10 @@ public class Identificar_hechos_criticos_y_suposiciones extends javax.swing.JDia
     private javax.swing.JTextArea jTextArea1;
     private javax.swing.JTextArea jTextArea2;
     private javax.swing.JTextArea jTextArea4;
+    private javax.swing.JTextField jTextField1;
     // End of variables declaration//GEN-END:variables
 //declarando el modelo de la tabla 
    DefaultTableModel modelo = new DefaultTableModel();
 //declarando la fila del modelo 
-   String fila[] = new String[3];
+   String fila[] = new String[4];
 }

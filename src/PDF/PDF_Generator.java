@@ -56,7 +56,7 @@ public class PDF_Generator {
             documento.open();
 
             //Titulo
-            Paragraph parrafo = new Paragraph("Apreción de situacion\n\n",tittleBold);
+            Paragraph parrafo = new Paragraph("Apreciación de situacion\n\n",tittleBold);
             parrafo.setAlignment(1);
             documento.add(parrafo);
             
@@ -114,7 +114,7 @@ public class PDF_Generator {
             //Necesidades vs Capacidades
             añadirSubTituloConContenido(documento,"Necesidades vs Capacidades",apreciacion.fuerzasAmigas.nececidadesCapacidades);
             
-            //Concideraciones civiles
+            //Consideraciones civiles
             documento.add(new Paragraph("e. Consideraciones civiles: \n\n",titulo));
             añadirSubTituloConContenido(documento,"Factores Públicos",apreciacion.consideracionesCiviles.factoresPublicos);
             añadirSubTituloConContenido(documento,"Factores Sociológicos",apreciacion.consideracionesCiviles.factoresSociologicos);
@@ -253,5 +253,32 @@ public class PDF_Generator {
          
         
     }
+    
+//    public static void GenerarDetTareas(String ruta, DetTareas tareas) throws FileNotFoundException, DocumentException{
+//    //Area de interes
+//        if(true){
+//            FileOutputStream archivo = new FileOutputStream(ruta + ".pdf");
+//            Document documento = new Document();
+//            PdfWriter.getInstance(documento, archivo);
+//            
+//            documento.open();
+//
+//            //Titulo
+//            Paragraph parrafo = new Paragraph("Determinacion de tareas\n\n",tittleBold);
+//            parrafo.setAlignment(1);
+//            documento.add(parrafo);
+//            documento.add(new Paragraph("a. Tareas \n\n",titulo));
+//            // Tabla de area de interes
+//            String[][] valores = new String[tareas.areaInteres.length][];
+//            for(int fila= 0; fila< apreciacion.areaInteres.length;fila++){
+//                valores[fila] = new String []{apreciacion.areaInteres[fila].factor,apreciacion.areaInteres[fila].descripcion};
+//            }
+//            documento.add(generarTabla(apreciacion.areaInteres,new int[]{100,200},new String[]{"Factor","Descrpcion"},valores));
+//        }
+//        else{
+//            
+//        }
+//    }    
 }
+    
 

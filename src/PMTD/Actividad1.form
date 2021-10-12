@@ -24,14 +24,14 @@
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
+              <EmptySpace min="-2" pref="210" max="-2" attributes="0"/>
+              <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
+              <EmptySpace pref="259" max="32767" attributes="0"/>
+          </Group>
+          <Group type="102" alignment="0" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
               <Component id="jPanel1" max="32767" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
-          </Group>
-          <Group type="102" alignment="0" attributes="0">
-              <EmptySpace min="-2" pref="210" max="-2" attributes="0"/>
-              <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
-              <EmptySpace max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -62,52 +62,65 @@
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
-                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Component id="jLabel15" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="jLabel22" max="32767" attributes="0"/>
-                              <Component id="jTextField3" alignment="0" max="32767" attributes="0"/>
-                              <Component id="jTextField5" alignment="0" max="32767" attributes="0"/>
-                              <Component id="jScrollPane6" alignment="0" pref="0" max="32767" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                  <Component id="jLabel15" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jLabel22" max="32767" attributes="0"/>
+                                  <Component id="jTextField3" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="jTextField5" alignment="0" max="32767" attributes="0"/>
+                              </Group>
+                              <Component id="jScrollPane6" min="-2" pref="141" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Component id="jLabel18" alignment="0" max="32767" attributes="0"/>
-                              <Component id="jLabel16" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="jLabel17" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="jTextField13" alignment="0" max="32767" attributes="0"/>
-                              <Component id="jScrollPane1" alignment="0" pref="0" max="32767" attributes="0"/>
-                              <Component id="jTextField4" alignment="0" max="32767" attributes="0"/>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                  <Component id="jLabel18" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="jLabel16" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jLabel17" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jTextField13" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="jTextField4" alignment="0" max="32767" attributes="0"/>
+                              </Group>
+                              <Component id="jScrollPane1" min="-2" pref="145" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
                               <Group type="102" alignment="0" attributes="0">
-                                  <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                                      <Component id="jTextField16" max="32767" attributes="0"/>
-                                      <Component id="jLabel19" alignment="1" max="32767" attributes="0"/>
-                                      <Component id="jLabel23" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jLabel24" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jTextField8" alignment="1" max="32767" attributes="0"/>
-                                      <Component id="jScrollPane2" alignment="0" pref="0" max="32767" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                                          <Component id="jTextField16" max="32767" attributes="0"/>
+                                          <Component id="jLabel19" alignment="1" max="32767" attributes="0"/>
+                                          <Component id="jLabel23" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jLabel24" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jTextField8" alignment="1" max="32767" attributes="0"/>
+                                      </Group>
+                                      <Component id="jScrollPane2" min="-2" pref="133" max="-2" attributes="0"/>
                                   </Group>
-                                  <EmptySpace min="20" pref="20" max="-2" attributes="0"/>
+                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Component id="jLabel26" alignment="0" min="-2" max="-2" attributes="0"/>
                                       <Component id="jLabel25" min="-2" max="-2" attributes="0"/>
                                       <Group type="102" alignment="1" attributes="0">
-                                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                              <Component id="jLabel36" alignment="0" max="32767" attributes="0"/>
-                                              <Component id="jScrollPane3" pref="0" max="32767" attributes="0"/>
-                                              <Component id="jTextField18" alignment="0" max="32767" attributes="0"/>
-                                              <Component id="jTextField28" alignment="0" max="32767" attributes="0"/>
+                                          <Group type="103" groupAlignment="0" attributes="0">
+                                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                                  <Component id="jLabel36" alignment="0" max="32767" attributes="0"/>
+                                                  <Component id="jTextField18" alignment="0" max="32767" attributes="0"/>
+                                                  <Component id="jTextField28" alignment="0" max="32767" attributes="0"/>
+                                              </Group>
+                                              <Component id="jScrollPane3" min="-2" pref="145" max="-2" attributes="0"/>
                                           </Group>
-                                          <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
-                                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                              <Component id="jLabel27" alignment="0" min="-2" max="-2" attributes="0"/>
-                                              <Component id="jLabel28" alignment="0" min="-2" max="-2" attributes="0"/>
-                                              <Component id="jLabel4" alignment="0" max="32767" attributes="0"/>
-                                              <Component id="jTextField20" alignment="0" max="32767" attributes="0"/>
-                                              <Component id="jTextField35" alignment="0" max="32767" attributes="0"/>
+                                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="0" attributes="0">
+                                              <Component id="jTextField20" pref="132" max="32767" attributes="0"/>
                                               <Component id="jScrollPane4" alignment="0" pref="0" max="32767" attributes="0"/>
+                                              <Component id="jLabel4" alignment="0" max="32767" attributes="0"/>
+                                              <Group type="102" attributes="0">
+                                                  <Group type="103" groupAlignment="0" attributes="0">
+                                                      <Component id="jLabel27" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                      <Component id="jLabel28" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                      <Component id="jTextField35" alignment="0" min="-2" pref="122" max="-2" attributes="0"/>
+                                                  </Group>
+                                                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                                              </Group>
                                           </Group>
                                       </Group>
                                   </Group>
@@ -154,7 +167,7 @@
                       </Group>
                       <Component id="jLabel10" alignment="0" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace pref="45" max="32767" attributes="0"/>
+                  <EmptySpace max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -272,12 +285,12 @@
                       </Group>
                   </Group>
                   <EmptySpace max="32767" attributes="0"/>
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="jScrollPane4" alignment="0" min="-2" max="-2" attributes="0"/>
-                      <Component id="jScrollPane1" alignment="0" min="-2" max="-2" attributes="0"/>
-                      <Component id="jScrollPane2" alignment="0" min="-2" max="-2" attributes="0"/>
-                      <Component id="jScrollPane3" alignment="0" min="-2" max="-2" attributes="0"/>
-                      <Component id="jScrollPane6" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                      <Component id="jScrollPane4" alignment="0" max="32767" attributes="0"/>
+                      <Component id="jScrollPane6" alignment="0" max="32767" attributes="0"/>
+                      <Component id="jScrollPane2" alignment="0" max="32767" attributes="0"/>
+                      <Component id="jScrollPane1" alignment="0" max="32767" attributes="0"/>
+                      <Component id="jScrollPane3" alignment="0" max="32767" attributes="0"/>
                   </Group>
                   <EmptySpace pref="36" max="32767" attributes="0"/>
               </Group>
@@ -351,10 +364,19 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="jTextField3">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Brigada"/>
+          </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="jTextField4">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Escuadr&#xf3;n"/>
+          </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="jTextField5">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Fijar al eno"/>
+          </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel10">
           <Properties>
@@ -362,10 +384,25 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="jTextField8">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Brigada"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField8ActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JTextField" name="jTextField10">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Brigada"/>
+          </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="jTextField11">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Brigada"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField11ActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel15">
           <Properties>
@@ -373,6 +410,9 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="jTextField13">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Fijar al eno"/>
+          </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel16">
           <Properties>
@@ -390,6 +430,9 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="jTextField16">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Conquistar C&#xb0; &#x201c;A&#x201d;"/>
+          </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel24">
           <Properties>
@@ -402,6 +445,9 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="jTextField18">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Constituirse en Rsva"/>
+          </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel26">
           <Properties>
@@ -414,6 +460,9 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="jTextField20">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Protecci&#xf3;n del flanco &#x201c;E&#x201d;"/>
+          </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel28">
           <Properties>
@@ -426,6 +475,9 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="jTextField24">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Conquistar Obj 1 (C&#xb0; &#x201c;A&#x201d;)"/>
+          </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel32">
           <Properties>
@@ -438,6 +490,9 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="jTextField26">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Asegurar el AV Mala&#x201d;"/>
+          </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel34">
           <Properties>
@@ -445,6 +500,9 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="jTextField28">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Escuadr&#xf3;n"/>
+          </Properties>
         </Component>
         <Container class="javax.swing.JScrollPane" name="jScrollPane1">
           <AuxValues>
@@ -456,7 +514,9 @@
             <Component class="javax.swing.JTextArea" name="jTextArea1">
               <Properties>
                 <Property name="columns" type="int" value="20"/>
+                <Property name="lineWrap" type="boolean" value="true"/>
                 <Property name="rows" type="int" value="5"/>
+                <Property name="text" type="java.lang.String" value="Facilitar que el BIM&#xa;3 conquiste C&#xb0; &#x201c;A&#x201d;"/>
               </Properties>
             </Component>
           </SubComponents>
@@ -471,7 +531,9 @@
             <Component class="javax.swing.JTextArea" name="jTextArea2">
               <Properties>
                 <Property name="columns" type="int" value="20"/>
+                <Property name="lineWrap" type="boolean" value="true"/>
                 <Property name="rows" type="int" value="5"/>
+                <Property name="text" type="java.lang.String" value="Permitir que la 1a&#xa;Brig Inf conquiste Obj&#xa;1."/>
               </Properties>
             </Component>
           </SubComponents>
@@ -486,7 +548,9 @@
             <Component class="javax.swing.JTextArea" name="jTextArea3">
               <Properties>
                 <Property name="columns" type="int" value="20"/>
+                <Property name="lineWrap" type="boolean" value="true"/>
                 <Property name="rows" type="int" value="5"/>
+                <Property name="text" type="java.lang.String" value="Contribuir que las&#xa;UU del el&#xf3;n de Atq&#xa;cumplan su misi&#xf3;n."/>
               </Properties>
             </Component>
           </SubComponents>
@@ -501,7 +565,9 @@
             <Component class="javax.swing.JTextArea" name="jTextArea4">
               <Properties>
                 <Property name="columns" type="int" value="20"/>
+                <Property name="lineWrap" type="boolean" value="true"/>
                 <Property name="rows" type="int" value="5"/>
+                <Property name="text" type="java.lang.String" value="Facilitar que el BIM&#xa;1 fije al eno."/>
               </Properties>
             </Component>
           </SubComponents>
@@ -517,6 +583,7 @@
               <Properties>
                 <Property name="columns" type="int" value="20"/>
                 <Property name="rows" type="int" value="5"/>
+                <Property name="text" type="java.lang.String" value="Permitir que la CT asegur&#xe9;&#xa;la zona geoecon&#xf3;mica del N"/>
               </Properties>
             </Component>
           </SubComponents>
@@ -531,7 +598,9 @@
             <Component class="javax.swing.JTextArea" name="jTextArea6">
               <Properties>
                 <Property name="columns" type="int" value="20"/>
+                <Property name="lineWrap" type="boolean" value="true"/>
                 <Property name="rows" type="int" value="5"/>
+                <Property name="text" type="java.lang.String" value="Facilitar que el BIM&#xa;3 conquiste C&#xb0; &#x201c;A&#x201d;"/>
               </Properties>
             </Component>
           </SubComponents>
@@ -547,11 +616,18 @@
               <Properties>
                 <Property name="columns" type="int" value="20"/>
                 <Property name="rows" type="int" value="5"/>
+                <Property name="text" type="java.lang.String" value="Permitir que la III DE&#xa;Asegure el AV Mala."/>
               </Properties>
             </Component>
           </SubComponents>
         </Container>
         <Component class="javax.swing.JTextField" name="jTextField35">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Escuadr&#xf3;n"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField35ActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel36">
           <Properties>

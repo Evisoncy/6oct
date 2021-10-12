@@ -73,11 +73,19 @@ public class limitacionesDialog extends javax.swing.JDialog {
         jLabel6.setText("Implicancias");
 
         jTextArea2.setColumns(20);
+        jTextArea2.setLineWrap(true);
         jTextArea2.setRows(5);
+        jTextArea2.setText("-No esta autorizado el empleo de\nminado ofensivo en la isla\nCharlie.\n-No efectuar ataques sobre\ninstalaciones portuarias del\npuerto de Charlie.");
+        jTextArea2.setWrapStyleWord(true);
+        jTextArea2.setMargin(new java.awt.Insets(4, 4, 4, 4));
         jScrollPane4.setViewportView(jTextArea2);
 
         jTextArea4.setColumns(20);
+        jTextArea4.setLineWrap(true);
         jTextArea4.setRows(5);
+        jTextArea4.setText("-Aceptar riesgo del no bloqueo\nde puertos en la isla, para\nimpedir zarpar unidades\nenemigas.\n-Necesidad de planear\noperaciones especiales o\nsubmarinas para\nneutralización de unidades\nenemigas en puerto.");
+        jTextArea4.setWrapStyleWord(true);
+        jTextArea4.setMargin(new java.awt.Insets(4, 4, 4, 4));
         jScrollPane6.setViewportView(jTextArea4);
 
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Restrictivas", "Impositivas", "Pre condicionantes" }));
@@ -94,11 +102,9 @@ public class limitacionesDialog extends javax.swing.JDialog {
                         .addGap(4, 4, 4))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(jLabel4)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel4)
+                            .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 259, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -126,7 +132,10 @@ public class limitacionesDialog extends javax.swing.JDialog {
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-
+                {"", "", ""},
+                {"", "", ""},
+                {"", null, null},
+                {null, null, null}
             },
             new String [] {
                 "Tipo", "Limitaciones", "Implicancias"
@@ -223,7 +232,7 @@ public class limitacionesDialog extends javax.swing.JDialog {
         // boton imprimir
 
         //limpio modelo de tabla
-        modelo.setRowCount(0);
+        modelo.setRowCount(1);
         //imprimo datos en modelo
         for(int i=0;i<lista.size();i++){
             String codx=lista.get(i).getTipo();
@@ -258,7 +267,21 @@ public class limitacionesDialog extends javax.swing.JDialog {
         modelo.addColumn("Tipo");
         modelo.addColumn("Limitaciones");
         modelo.addColumn("Implicancias");
+        Object [] fila = new Object[3];
+        fila[0] = "Impositiva";
+        fila[1] = "- Iniciar el desembarco el día D-1.\n" +
+                    "- Efectuar la neutralización de\n" +
+                    "sistemas de vigilancia\n" +
+                    "electrónica mediante\n" +
+                    "operaciones de GE.";
+        fila[2] = "- Limitación de tiempo para\n" +
+                    "ejecución operaciones.\n" +
+                    "- Limitación de libertad para\n" +
+                    "neutralización por medio de\n" +
+                    "bombardeo o destrucción\n" +
+                    "física.";
         
+        modelo.addRow(fila);
        
         //ASIGNAR modelo a la tabla
         jTable1.setModel(modelo);

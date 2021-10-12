@@ -10,14 +10,24 @@ package PMTD;
  * @author WIMBER
  */
 public class hechos {
+    private String tipo;
     private String hechos;
     private String supo;
     private String justi;
 
-    public hechos(String hechos, String supo, String justi) {
+    public hechos(String tipo,String hechos, String supo, String justi) {
         this.hechos = hechos;
         this.supo = supo;
         this.justi = justi;
+        this.tipo=tipo;
+    }
+
+    public String getTipo() {
+        return tipo;
+    }
+
+    public void setTipo(String tipo) {
+        this.tipo = tipo;
     }
 
     public String getHechos() {

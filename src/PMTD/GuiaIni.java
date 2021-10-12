@@ -6,6 +6,8 @@
 package PMTD;
 
 import Herramientas.HelpContainers;
+import PDF.GuiaIniciacion;
+import PDF.PDF_Generator;
 import com.itextpdf.text.Document;
 import com.itextpdf.text.DocumentException;
 import com.itextpdf.text.Paragraph;
@@ -94,6 +96,8 @@ public class GuiaIni extends javax.swing.JDialog {
         jScrollPane7 = new javax.swing.JScrollPane();
         jPanel1 = new javax.swing.JPanel();
         jLabel9 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         IniciarDiseño = new javax.swing.JComboBox<>();
@@ -108,19 +112,17 @@ public class GuiaIni extends javax.swing.JDialog {
         jScrollPane4 = new javax.swing.JScrollPane();
         Req = new javax.swing.JTextArea();
         jLabel5 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
         time = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
         metodo = new javax.swing.JComboBox<>();
-        jLabel8 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
-        jScrollPane5 = new javax.swing.JScrollPane();
-        lugar = new javax.swing.JTextArea();
         jScrollPane6 = new javax.swing.JScrollPane();
         fecha = new javax.swing.JTextArea();
         jLabel11 = new javax.swing.JLabel();
+        jScrollPane5 = new javax.swing.JScrollPane();
+        lugar = new javax.swing.JTextArea();
+        jLabel8 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -132,11 +134,27 @@ public class GuiaIni extends javax.swing.JDialog {
         jLabel9.setText("GUIA DE INICIACIÓN");
         jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 670, 40));
 
+        jButton1.setText("Generar PDF");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 1070, -1, -1));
+
+        jButton2.setText("Abrir");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 1070, -1, -1));
+
         jLabel1.setText("Iniciar el diseño:");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 50, -1, 20));
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, -1, 30));
 
         jLabel2.setText("Coordinaciones por realizar:");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, -1, -1));
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 140, -1, -1));
 
         IniciarDiseño.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Si", "No" }));
         IniciarDiseño.addActionListener(new java.awt.event.ActionListener() {
@@ -144,7 +162,7 @@ public class GuiaIni extends javax.swing.JDialog {
                 IniciarDiseñoActionPerformed(evt);
             }
         });
-        jPanel1.add(IniciarDiseño, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 50, 40, -1));
+        jPanel1.add(IniciarDiseño, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 50, 40, 30));
 
         jScrollPane3.setToolTipText("");
 
@@ -153,59 +171,43 @@ public class GuiaIni extends javax.swing.JDialog {
         Coord.setRows(5);
         jScrollPane3.setViewportView(Coord);
 
-        jPanel1.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 100, 630, 120));
+        jPanel1.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, 630, 120));
 
         jLabel3.setText("Movimientos autorizados de reconocimiento y vigilancia: ");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 230, -1, 20));
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 290, -1, 20));
 
         Mov.setColumns(20);
         Mov.setLineWrap(true);
         Mov.setRows(5);
-        Mov.setText("- TODOS LOS MOVIMIENTOS SE  REALIZARAN CON ORDEN Y DE  PREFERENCIA EN HORAS DE OSCURIDAD.\n\n- G-2 REALIZAR EL ANALISIS DEL ESPECTRO  ELECTROMAGNETICO.\n\n- RECONOCIMIENTO DE RUTAS  PRINCIPALES Y ALTERNAS, APTAS PARA EL  DESPLAZAMIENTO DE NUESTRAS FUERZAS.\n\n- COORDINAR, CON EL ESCALON SUPERIOR EL  RESULTADO DEL CRUCE DE LOS VECTORES QUE  CONVERGEN EN NUESTRA ADR.\n\n- G-2, G-3 Y G-4, COORDINAR EL PLAN DE DESPLAZAMIIENTO.\n\n- BASES CONTRATERRORISTAS, REALIZAR  RECONOCIMIENTOS DE SECTORES Y DE  RUTAS.\n\n- G-5, G-2 Y G-3 COORDINAR CON  ENTIDADES CIVILES Y ARTICULAR  ESFUERZOS EN NUESTRA ADR\n\n- G-2 ORIENTAR SU ESFUERZO DE BUSQUEDA,  MEDIANTE SUS PLANES DE INTELIGENCIA  DISTRIBUIDOS EN EL SECTOR.CORDINAR C\n\n");
+        Mov.setText("- Todos los movimientos se realizarán con orden y de preferencia en horas de oscuridad.\n- G-2 realizar el análisis del espectro electromagnético.\n- reconocimiento de rutas principales y alternas, aptas para el desplazamiento de nuestras fuerzas.\n- coordinar, con el escalón superior el resultado del cruce de los vectores que convergen en nuestra ADR.\n- G-2, G-3 y G-4, coordinar el plan de desplazamiento.\n- bases contraterroristas, realizar reconocimientos de sectores y de rutas.\n- G-5, G-2 y G-3 coordinar con entidades civiles y articular esfuerzos en nuestra ADR.\n- G-2 orientar su esfuerzo de búsqueda, mediante sus planes de inteligencia distribuidos en el sector.");
         jScrollPane1.setViewportView(Mov);
 
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 250, 630, 120));
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 310, 630, 120));
 
         jLabel4.setText("Trabajos o tareas adicionales para el EM:");
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 380, -1, -1));
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 440, -1, -1));
 
         Trab.setColumns(20);
         Trab.setLineWrap(true);
         Trab.setRows(5);
-        Trab.setText("G-1: Dar cuenta de la situación de personal con respecto a  contagiados con COVID de las UU.\n\nG-2: Intensificar las medidas de contrainteligencia para  proteger la información pertinente de nuestras  operaciones y acciones militares.\n\nG-3: Intensificar el entrenamiento y ensayos nocturnos para las operaciones militares.\n\nG-4: Solicitar al escalón superior el completamiento de las necesidades para cumplir con las acciones militares.\n\nG-5: Realizar en coordinación con los demás miembros del  em, el planeamiento para las acciones militares.");
+        Trab.setText("- G-1: Dar cuenta de la situación de personal con respecto a  contagiados con COVID de las UU.\n- G-2: Intensificar las medidas de contrainteligencia para  proteger la información pertinente de nuestras  operaciones y acciones militares.\n- G-3: Intensificar el entrenamiento y ensayos nocturnos para las operaciones militares.\n- G-4: Solicitar al escalón superior el completamiento de las necesidades para cumplir con las acciones militares.\n- G-5: Realizar en coordinación con los demás miembros del  em, el planeamiento para las acciones militares.");
         jScrollPane2.setViewportView(Trab);
 
-        jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 400, 630, 120));
+        jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 460, 630, 120));
 
         Req.setColumns(20);
         Req.setLineWrap(true);
         Req.setRows(5);
-        Req.setText("- Información detallada de las poblaciones con  mayor vulnerabilidad en el ADR.\n\n- Últimos movimientos de la OT-SL dentro de nuestra ADR.\n\n- Lugares probables para instalación de albergues temporales.\n\n- Capacidad operativa del material y equipo.\n\n- Información sobre puentes en el ADR.\n\n- Apoyo administrativo con lo que contamos.\n");
+        Req.setText("- Información detallada de las poblaciones con  mayor vulnerabilidad en el ADR.\n- Últimos movimientos de la OT-SL dentro de nuestra ADR.\n- Lugares probables para instalación de albergues temporales.\n- Capacidad operativa del material y equipo.\n- Información sobre puentes en el ADR.\n- Apoyo administrativo con lo que contamos.");
         jScrollPane4.setViewportView(Req);
 
-        jPanel1.add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 550, 630, 120));
+        jPanel1.add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 610, 630, 120));
 
         jLabel5.setText("Requerimientos de información:");
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 530, -1, -1));
-
-        jButton1.setText("Generar PDF");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
-        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 1000, -1, -1));
-
-        jButton2.setText("Abrir");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
-            }
-        });
-        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 1000, -1, -1));
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 590, -1, -1));
 
         jLabel6.setText("Días");
-        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 50, -1, 20));
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 50, -1, 30));
 
         time.setText("112");
         time.setEnabled(false);
@@ -214,10 +216,10 @@ public class GuiaIni extends javax.swing.JDialog {
                 timeActionPerformed(evt);
             }
         });
-        jPanel1.add(time, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 50, 40, -1));
+        jPanel1.add(time, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 50, 40, 30));
 
         jLabel7.setText("Método de planeamiento:");
-        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 50, -1, 20));
+        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 50, -1, 30));
 
         metodo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Paralelo", "Secuencial" }));
         metodo.setEnabled(false);
@@ -226,32 +228,32 @@ public class GuiaIni extends javax.swing.JDialog {
                 metodoActionPerformed(evt);
             }
         });
-        jPanel1.add(metodo, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 50, 80, -1));
-
-        jLabel8.setText("Lugar de planeamiento");
-        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 840, -1, -1));
+        jPanel1.add(metodo, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 90, 120, 30));
 
         jLabel10.setText("Fecha de planeamiento");
-        jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 680, -1, -1));
-
-        lugar.setColumns(20);
-        lugar.setLineWrap(true);
-        lugar.setRows(5);
-        lugar.setText("SE REUNIRAN EN LA SALA DE OPERACIONES DEL PUESTO DE COMANDO DE LA 2° BRIG INF QUE  SE ENCUENTRA EN LA LOCALIDAD DE PICHARI BAJO A PARTIR DEL DIA (D-112) SEGÚN LO  ESPECIFICADO POR EL JEMA Y EN SITUACIONES ESPECIALES CON ORDEN.");
-        jScrollPane5.setViewportView(lugar);
-
-        jPanel1.add(jScrollPane5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 860, 630, 120));
+        jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 740, -1, -1));
 
         fecha.setColumns(20);
         fecha.setLineWrap(true);
         fecha.setRows(5);
-        fecha.setText("1. D-112 ( RECEPCION DE LA MISION )\n2. D-105 ( ANALISIS DE  LA MISION )\n3. D-101 ( DESARROLLO DEL CONOPs )\n4. D-94  ( DECISION DEL CMDTE )\n5. D-91  ( DISTRIBUCION DE LA  ORDEN DE OPERACIONES A LAS UU SUBORDINADAS )");
+        fecha.setText("1. D-112 (recepción de la misión)\n2. D-105 (análisis de la misión)\n3. D-101 (desarrollo del CONOPs)\n4. D-94 (decisión del CMDTE)\n5. D-91 (distribución de la orden de operaciones a las UU subordinadas)");
         jScrollPane6.setViewportView(fecha);
 
-        jPanel1.add(jScrollPane6, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 700, 630, 120));
+        jPanel1.add(jScrollPane6, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 760, 630, 120));
 
         jLabel11.setText("Asignacion del tiempo inicial:");
-        jPanel1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, -1, -1));
+        jPanel1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, -1, 30));
+
+        lugar.setColumns(20);
+        lugar.setLineWrap(true);
+        lugar.setRows(5);
+        lugar.setText("Se reunirán en la sala de operaciones del puesto de comando de la 2° BRIG INF que se encuentra en la localidad de Pichari bajo a partir del día (D-112) según lo especificado por el jema y en situaciones especiales con orden.");
+        jScrollPane5.setViewportView(lugar);
+
+        jPanel1.add(jScrollPane5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 920, 630, 120));
+
+        jLabel8.setText("Lugar de planeamiento");
+        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 900, -1, -1));
 
         jScrollPane7.setViewportView(jPanel1);
 
@@ -271,7 +273,10 @@ public class GuiaIni extends javax.swing.JDialog {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         try {
-            Generar(nombre);
+              PDF_Generator.GenerarGuiaIniciacion("Guia de iniciacion",
+                    new GuiaIniciacion(Integer.parseInt(time.getText()), (String)IniciarDiseño.getSelectedItem(),
+                            (String) metodo.getSelectedItem(), Coord.getText(), Mov.getText(), 
+                            Trab.getText(), Req.getText(), fecha.getText(), lugar.getText()) );
         } catch (FileNotFoundException ex) {
             Logger.getLogger(GuiaIni.class.getName()).log(Level.SEVERE, null,ex);
         } catch (DocumentException ex) {
@@ -280,23 +285,23 @@ public class GuiaIni extends javax.swing.JDialog {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        if(!Coord.getText().isEmpty())
-            abrir(nombre);
+        if(!"Guia de iniciacion".isEmpty())
+            abrir("Guia de iniciacion");
         else
             JOptionPane.showMessageDialog(null, "no se encuentra ese archivo con ese nombre","Atencion",2);
     }//GEN-LAST:event_jButton2ActionPerformed
 
-    private void metodoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_metodoActionPerformed
+    private void IniciarDiseñoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IniciarDiseñoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_metodoActionPerformed
+    }//GEN-LAST:event_IniciarDiseñoActionPerformed
 
     private void timeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_timeActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_timeActionPerformed
 
-    private void IniciarDiseñoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IniciarDiseñoActionPerformed
+    private void metodoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_metodoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_IniciarDiseñoActionPerformed
+    }//GEN-LAST:event_metodoActionPerformed
 
     /**
      * @param args the command line arguments

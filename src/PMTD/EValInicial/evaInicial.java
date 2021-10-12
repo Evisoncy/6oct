@@ -5,6 +5,8 @@
  */
 package PMTD.EValInicial;
 
+import PDF.EvaluacionInicial;
+import PDF.PDF_Generator;
 import PMTD.GuiaIni;
 import com.itextpdf.text.Document;
 import com.itextpdf.text.DocumentException;
@@ -41,10 +43,11 @@ public class evaInicial extends javax.swing.JDialog {
     }
     
     int cocientePlaneamiento = 5;
+    String nombreMetodo = "Paralelo";
     String tituloCarta = "Planeamiento Paralelo / Regla 1/5";
     
     public String getTiempoInicial(){
-        return tiempoTotalParaleloTextField.getText();
+        return tiempoTotalTextField.getText();
     }
     
     public int getIndexMetodo(){
@@ -58,38 +61,7 @@ public class evaInicial extends javax.swing.JDialog {
         return new DefaultComboBoxModel<>(new String[]{"Paralelo", "Secuencial"});
     }
     
-    public void Generar(String nombre) throws FileNotFoundException, DocumentException{
-        if(!(tiempoTotalParaleloTextField.getText().isEmpty() || (jTextField22.getText().isEmpty()) || (jTextField12.getText().isEmpty()))){
-            FileOutputStream archivo = new FileOutputStream(nombre + ".pdf"); 
-            Document documento = new Document();
-            PdfWriter.getInstance(documento, archivo);
-            documento.open();
-            
-            Paragraph parrafo = new Paragraph("ORDEN PREPARATORIA N°1 \n\n");
-            parrafo.setAlignment(1);
-            documento.add(parrafo);
-            
-            documento.add(new Paragraph("Planteamiento Secuencial \n" + "Regla de 1/3" + "\n"));
-            documento.add(new Paragraph("Tiempo Total Disponible \n" + tiempoTotalParaleloTextField.getText() + "\n"));
-            documento.add(new Paragraph("Tiempo Asignado \n" + " Días: " + jTextField12.getText() + "\n" + " Horas: " + jTextField22.getText() + "\n"));
-            documento.add(new Paragraph("Etapas y pasos del PMTD \n"));
-            documento.add(new Paragraph("Análisis de la misión \n" + " %Planteamiento: " + jTextField16.getText() + "\n" + "Tiempo en Días: " + jTextField13.getText() + "\n" + "Tiempo en Horas: " + jTextField28.getText() + "\n"));
-            documento.add(new Paragraph("Elaboración de los cursos \n" + " %Planteamiento: " + jTextField15.getText() + "\n" + "Tiempo en Días: " + jTextField24.getText() + "\n" + "Tiempo en Horas: " + jTextField31.getText() + "\n"));
-            documento.add(new Paragraph("Análisis/Comparación \n" + " %Planteamiento: " + jTextField23.getText() + "\n" + "Tiempo en Días: " + jTextField26.getText() + "\n" + "Tiempo en Horas: " + jTextField30.getText() + "\n"));
-            documento.add(new Paragraph("Desarrollo del Plan \n" + " %Planteamiento: " + jTextField25.getText() + "\n" + "Tiempo en Días: " + jTextField17.getText() + "\n" + "Tiempo en Horas: " + jTextField27.getText() + "\n"));
-            documento.add(new Paragraph("Tiempo Total \n" + " %Planteamiento: " + jTextField18.getText() + "\n" + "Tiempo en Días: " + jTextField18.getText() + "\n" + "Tiempo en Horas: " + jTextField29.getText() + "\n"));
-            documento.add(new Paragraph("Reducit el PMTD: " + jComboBox1.getSelectedItem().toString() + "\n"));
-            documento.add(new Paragraph("Organizaciones a Integrar \n" + jTextField20.getText() + "\n"));
-
-            //documento.add(new Paragraph("asdsad: " + xd))
-            documento.close();
-            JOptionPane.showMessageDialog(null, "El archivo pdf fue creado correctamente");
-        }
-        else{
-            JOptionPane.showMessageDialog(null, "Llenar los campos");    
-        }
-    }
-    
+       
     public void abrir(String nombre){
         try {
             File path = new File(nombre + ".pdf");
@@ -114,7 +86,10 @@ public class evaInicial extends javax.swing.JDialog {
         jLabel9 = new javax.swing.JLabel();
         secuencialRadioiButton = new javax.swing.JRadioButton();
         paraleloRadioButton = new javax.swing.JRadioButton();
+        jButton2 = new javax.swing.JButton();
+        jButton6 = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
+        jScrollPane3 = new javax.swing.JScrollPane();
         panelPlaneamiento = new javax.swing.JPanel();
         jLabel11 = new javax.swing.JLabel();
         jTextField12 = new javax.swing.JTextField();
@@ -131,9 +106,8 @@ public class evaInicial extends javax.swing.JDialog {
         jTextField17 = new javax.swing.JTextField();
         jTextField18 = new javax.swing.JTextField();
         jLabel18 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox();
+        reducirPMTD = new javax.swing.JComboBox();
         jLabel19 = new javax.swing.JLabel();
-        jTextField20 = new javax.swing.JTextField();
         jLabel24 = new javax.swing.JLabel();
         jTextField22 = new javax.swing.JTextField();
         jLabel25 = new javax.swing.JLabel();
@@ -149,13 +123,21 @@ public class evaInicial extends javax.swing.JDialog {
         jTextField30 = new javax.swing.JTextField();
         jTextField31 = new javax.swing.JTextField();
         jLabel28 = new javax.swing.JLabel();
-        tiempoTotalParaleloTextField = new javax.swing.JTextField();
+        tiempoTotalTextField = new javax.swing.JTextField();
         jLabel29 = new javax.swing.JLabel();
         jButton3 = new javax.swing.JButton();
         jLabel34 = new javax.swing.JLabel();
         jLabel35 = new javax.swing.JLabel();
-        jButton2 = new javax.swing.JButton();
-        jButton6 = new javax.swing.JButton();
+        jLabel20 = new javax.swing.JLabel();
+        jLabel21 = new javax.swing.JLabel();
+        jLabel22 = new javax.swing.JLabel();
+        jLabel23 = new javax.swing.JLabel();
+        jLabel30 = new javax.swing.JLabel();
+        jLabel31 = new javax.swing.JLabel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        organizacionesInternas = new javax.swing.JTextArea();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        motivoReduccion = new javax.swing.JTextArea();
 
         jCheckBoxMenuItem1.setSelected(true);
         jCheckBoxMenuItem1.setText("jCheckBoxMenuItem1");
@@ -191,6 +173,22 @@ public class evaInicial extends javax.swing.JDialog {
         });
         getContentPane().add(paraleloRadioButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 60, 92, -1));
 
+        jButton2.setText("Generar informe");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 510, -1, -1));
+
+        jButton6.setText("Abrir");
+        jButton6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton6ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 510, -1, -1));
+
         jPanel3.setLayout(new java.awt.CardLayout());
 
         panelPlaneamiento.setBorder(javax.swing.BorderFactory.createTitledBorder("Planeamiento Paralelo / Regla 1/5"));
@@ -209,52 +207,54 @@ public class evaInicial extends javax.swing.JDialog {
         jLabel12.setText("Analisis de la mision");
         panelPlaneamiento.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 130, 133, 20));
 
-        jLabel13.setText("Elaboracion de los cursos");
-        panelPlaneamiento.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, 155, 20));
+        jLabel13.setText("%");
+        panelPlaneamiento.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 190, 30, 20));
 
         jLabel14.setText("Total Tiempo");
         panelPlaneamiento.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 250, 106, 20));
         panelPlaneamiento.add(jTextField13, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 130, 60, -1));
         panelPlaneamiento.add(jTextField14, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 250, 60, -1));
 
-        jTextField15.setText("20%");
-        panelPlaneamiento.add(jTextField15, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 160, 90, -1));
+        jTextField15.setHorizontalAlignment(javax.swing.JTextField.TRAILING);
+        jTextField15.setText("20");
+        panelPlaneamiento.add(jTextField15, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 160, 40, -1));
 
         jLabel15.setText("Etapas y pasos del PMTD");
         panelPlaneamiento.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 110, -1, -1));
 
         jLabel16.setText("% Planeamiento");
-        panelPlaneamiento.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 110, 100, -1));
+        panelPlaneamiento.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 110, 130, -1));
 
         jLabel17.setText("En horas");
         panelPlaneamiento.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 110, -1, -1));
 
-        jTextField16.setText("30%");
+        jTextField16.setHorizontalAlignment(javax.swing.JTextField.TRAILING);
+        jTextField16.setText("30");
         jTextField16.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField16ActionPerformed(evt);
             }
         });
-        panelPlaneamiento.add(jTextField16, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 130, 90, 22));
+        panelPlaneamiento.add(jTextField16, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 130, 40, -1));
         panelPlaneamiento.add(jTextField17, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 220, 60, -1));
 
-        jTextField18.setText("100%");
-        panelPlaneamiento.add(jTextField18, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 250, 90, -1));
+        jTextField18.setHorizontalAlignment(javax.swing.JTextField.TRAILING);
+        jTextField18.setText("100");
+        panelPlaneamiento.add(jTextField18, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 250, 40, -1));
 
         jLabel18.setText("Organizaciones a integrar");
-        panelPlaneamiento.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 310, 158, 20));
+        panelPlaneamiento.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 490, 220, 20));
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Si", "No" }));
-        jComboBox1.addActionListener(new java.awt.event.ActionListener() {
+        reducirPMTD.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Si", "No" }));
+        reducirPMTD.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBox1ActionPerformed(evt);
+                reducirPMTDActionPerformed(evt);
             }
         });
-        panelPlaneamiento.add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 280, 90, -1));
+        panelPlaneamiento.add(reducirPMTD, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 290, 50, 20));
 
-        jLabel19.setText("Reducir el PMTD");
-        panelPlaneamiento.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 280, 106, 20));
-        panelPlaneamiento.add(jTextField20, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 310, 260, 40));
+        jLabel19.setText("Motivo de reduccion");
+        panelPlaneamiento.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 320, 160, 20));
 
         jLabel24.setText("Dias");
         panelPlaneamiento.add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 60, -1, 20));
@@ -263,8 +263,9 @@ public class evaInicial extends javax.swing.JDialog {
         jLabel25.setText("Horas");
         panelPlaneamiento.add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 60, -1, 20));
 
-        jTextField23.setText("30%");
-        panelPlaneamiento.add(jTextField23, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 190, 90, -1));
+        jTextField23.setHorizontalAlignment(javax.swing.JTextField.TRAILING);
+        jTextField23.setText("30");
+        panelPlaneamiento.add(jTextField23, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 190, 40, -1));
 
         jTextField24.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -273,8 +274,9 @@ public class evaInicial extends javax.swing.JDialog {
         });
         panelPlaneamiento.add(jTextField24, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 160, 60, -1));
 
-        jTextField25.setText("20%");
-        panelPlaneamiento.add(jTextField25, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 220, 90, -1));
+        jTextField25.setHorizontalAlignment(javax.swing.JTextField.TRAILING);
+        jTextField25.setText("20");
+        panelPlaneamiento.add(jTextField25, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 220, 40, -1));
         panelPlaneamiento.add(jTextField26, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 190, 60, -1));
 
         jLabel26.setText("Analisis /Comparacion");
@@ -297,13 +299,13 @@ public class evaInicial extends javax.swing.JDialog {
         jLabel28.setText("Tiempo Total Disponible");
         panelPlaneamiento.add(jLabel28, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 30, 140, 20));
 
-        tiempoTotalParaleloTextField.setText("112");
-        tiempoTotalParaleloTextField.addActionListener(new java.awt.event.ActionListener() {
+        tiempoTotalTextField.setText("112");
+        tiempoTotalTextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                tiempoTotalParaleloTextFieldActionPerformed(evt);
+                tiempoTotalTextFieldActionPerformed(evt);
             }
         });
-        panelPlaneamiento.add(tiempoTotalParaleloTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 30, 40, -1));
+        panelPlaneamiento.add(tiempoTotalTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 30, 40, -1));
 
         jLabel29.setText("Dias");
         panelPlaneamiento.add(jLabel29, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 30, -1, 20));
@@ -322,58 +324,97 @@ public class evaInicial extends javax.swing.JDialog {
         jLabel35.setText("En días");
         panelPlaneamiento.add(jLabel35, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 110, -1, -1));
 
-        jPanel3.add(panelPlaneamiento, "card3");
-        panelPlaneamiento.getAccessibleContext().setAccessibleName("");
-        panelPlaneamiento.getAccessibleContext().setAccessibleDescription("");
+        jLabel20.setText("Elaboracion de los cursos");
+        panelPlaneamiento.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, 155, 20));
+
+        jLabel21.setText("%");
+        panelPlaneamiento.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 250, 30, 20));
+
+        jLabel22.setText("%");
+        panelPlaneamiento.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 160, 30, 20));
+
+        jLabel23.setText("%");
+        panelPlaneamiento.add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 130, 30, 20));
+
+        jLabel30.setText("%");
+        panelPlaneamiento.add(jLabel30, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 220, 30, 20));
+
+        jLabel31.setText("Reducir el PMTD");
+        panelPlaneamiento.add(jLabel31, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 290, 160, 20));
+
+        organizacionesInternas.setColumns(20);
+        organizacionesInternas.setLineWrap(true);
+        organizacionesInternas.setRows(5);
+        organizacionesInternas.setText("Entidades Militares\n - GRAL DIV Carlos Ríos Aguilar - COE\n - GRAL BRIG Humberto Huertas Ponce - 31ª BRIG INF\n - GRAL PNP Luis Bisso Pun - VIII MACRO REGION\n - GRAL BRIG Oscar Calle Pérez - 33ª BRIG CT\n - GRAL BRIG Rubén Castañeda Layseca - AGRUP ING “PRG”\n\nEntidades Civiles:\n - Gobierno Regional de Ayacucho\n - Cruz Roja Peruana Filial Ayacucho\n - Municipalidad de Nuevo Chimbote\n - Monseñor Piñeiro - Arzobispo de Ayacucho\n");
+        jScrollPane2.setViewportView(organizacionesInternas);
+
+        panelPlaneamiento.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 520, 490, 130));
+
+        motivoReduccion.setColumns(20);
+        motivoReduccion.setLineWrap(true);
+        motivoReduccion.setRows(5);
+        motivoReduccion.setText("Debido al tipo de planeamiento paralelo en un escenario  referente a la Gestión de Riesgo de Desastre (GRD) y en  condiciones de realizar operaciones contraterroristas y  control territorial con orden.");
+        motivoReduccion.setToolTipText("");
+        jScrollPane1.setViewportView(motivoReduccion);
+
+        panelPlaneamiento.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 350, 490, 130));
+
+        jScrollPane3.setViewportView(panelPlaneamiento);
+
+        jPanel3.add(jScrollPane3, "card3");
 
         getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 94, 530, 400));
-
-        jButton2.setText("Generar informe");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 510, -1, -1));
-
-        jButton6.setText("Abrir");
-        jButton6.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton6ActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 510, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jComboBox1ActionPerformed
-
     private void paraleloRadioButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_paraleloRadioButtonActionPerformed
         cocientePlaneamiento = 5;
+        nombreMetodo="Paralelo";
         panelPlaneamiento.setBorder(javax.swing.BorderFactory.createTitledBorder("Planeamiento Paralelo / Regla 1/5"));
     }//GEN-LAST:event_paraleloRadioButtonActionPerformed
 
     private void secuencialRadioiButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_secuencialRadioiButtonActionPerformed
         cocientePlaneamiento = 3;
+        nombreMetodo="Secuencial";
         panelPlaneamiento.setBorder(javax.swing.BorderFactory.createTitledBorder("Planeamiento Secuencial / Regla 1/3"));
     }//GEN-LAST:event_secuencialRadioiButtonActionPerformed
 
-    private void tiempoTotalParaleloTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tiempoTotalParaleloTextFieldActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_tiempoTotalParaleloTextFieldActionPerformed
-
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         try {
-            Generar(nombre);
+            EvaluacionInicial.Planeamiento[] planeamientos = new EvaluacionInicial.Planeamiento[5];
+            planeamientos[0] = new EvaluacionInicial.Planeamiento("Análisis de la Misión",(float)0.30);
+            planeamientos[1] = new EvaluacionInicial.Planeamiento("Elaboración de los cursos de acción",(float)0.20);
+            planeamientos[2] = new EvaluacionInicial.Planeamiento("Análisis/Comparación/Decisión del COA",(float)0.30);
+            planeamientos[3] = new EvaluacionInicial.Planeamiento("Desarrollo del plan",(float)0.20);
+            planeamientos[4] = new EvaluacionInicial.Planeamiento("Tiempo Total Utilizado",(float)1.0);
+            EvaluacionInicial evaluacion = new EvaluacionInicial(Integer.parseInt(tiempoTotalTextField.getText()),planeamientos,nombreMetodo,(String)reducirPMTD.getSelectedItem(),motivoReduccion.getText(),organizacionesInternas.getText());
+            PDF_Generator.GenerarEvaluacionIncial("Evaluacion_Inical", evaluacion);
         } catch (FileNotFoundException ex) {
             Logger.getLogger(GuiaIni.class.getName()).log(Level.SEVERE, null,ex);
         } catch (DocumentException ex) {
             Logger.getLogger(GuiaIni.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+        if(!"Evaluacion_Inical".isEmpty())
+            abrir("Evaluacion_Inical");
+        else
+            JOptionPane.showMessageDialog(null, "no se encuentra ese archivo con ese nombre","Atencion",2);
+    }//GEN-LAST:event_jButton6ActionPerformed
+
+    private void jTextField12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField12ActionPerformed
+
+    }//GEN-LAST:event_jTextField12ActionPerformed
+
+    private void jTextField16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField16ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField16ActionPerformed
+
+    private void reducirPMTDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reducirPMTDActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_reducirPMTDActionPerformed
 
     private void jTextField24ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField24ActionPerformed
         // TODO add your handling code here:
@@ -383,20 +424,17 @@ public class evaInicial extends javax.swing.JDialog {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField31ActionPerformed
 
-    private void jTextField12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField12ActionPerformed
-    }//GEN-LAST:event_jTextField12ActionPerformed
-
-    private void jTextField16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField16ActionPerformed
+    private void tiempoTotalTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tiempoTotalTextFieldActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField16ActionPerformed
+    }//GEN-LAST:event_tiempoTotalTextFieldActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         DecimalFormatSymbols separadoresPersonalizados = new DecimalFormatSymbols();
         separadoresPersonalizados.setDecimalSeparator('.');
 
         DecimalFormat formato1 = new DecimalFormat("#.00", separadoresPersonalizados);
-        
-        float diasA = Float.parseFloat(tiempoTotalParaleloTextField.getText());
+
+        float diasA = Float.parseFloat(tiempoTotalTextField.getText());
         diasA=(diasA/cocientePlaneamiento);
         float diasAM= (diasA*3)/10;
         float diasAE= (diasA*2)/10;
@@ -422,13 +460,6 @@ public class evaInicial extends javax.swing.JDialog {
         jTextField14.setText(diasAC);
         jTextField29.setText(diasHC);
     }//GEN-LAST:event_jButton3ActionPerformed
-
-    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
-        if(!nombre.isEmpty())
-            abrir(nombre);
-        else
-            JOptionPane.showMessageDialog(null, "no se encuentra ese archivo con ese nombre","Atencion",2);
-    }//GEN-LAST:event_jButton6ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -486,7 +517,6 @@ public class evaInicial extends javax.swing.JDialog {
     private javax.swing.JButton jButton6;
     private javax.swing.JCheckBoxMenuItem jCheckBoxMenuItem1;
     private javax.swing.JCheckBoxMenuItem jCheckBoxMenuItem2;
-    private javax.swing.JComboBox jComboBox1;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
@@ -496,16 +526,25 @@ public class evaInicial extends javax.swing.JDialog {
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
+    private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel21;
+    private javax.swing.JLabel jLabel22;
+    private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel24;
     private javax.swing.JLabel jLabel25;
     private javax.swing.JLabel jLabel26;
     private javax.swing.JLabel jLabel27;
     private javax.swing.JLabel jLabel28;
     private javax.swing.JLabel jLabel29;
+    private javax.swing.JLabel jLabel30;
+    private javax.swing.JLabel jLabel31;
     private javax.swing.JLabel jLabel34;
     private javax.swing.JLabel jLabel35;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel3;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JTextField jTextField12;
     private javax.swing.JTextField jTextField13;
     private javax.swing.JTextField jTextField14;
@@ -513,7 +552,6 @@ public class evaInicial extends javax.swing.JDialog {
     private javax.swing.JTextField jTextField16;
     private javax.swing.JTextField jTextField17;
     private javax.swing.JTextField jTextField18;
-    private javax.swing.JTextField jTextField20;
     private javax.swing.JTextField jTextField22;
     private javax.swing.JTextField jTextField23;
     private javax.swing.JTextField jTextField24;
@@ -524,9 +562,12 @@ public class evaInicial extends javax.swing.JDialog {
     private javax.swing.JTextField jTextField29;
     private javax.swing.JTextField jTextField30;
     private javax.swing.JTextField jTextField31;
+    private javax.swing.JTextArea motivoReduccion;
+    private javax.swing.JTextArea organizacionesInternas;
     private javax.swing.JPanel panelPlaneamiento;
     private javax.swing.JRadioButton paraleloRadioButton;
+    private javax.swing.JComboBox reducirPMTD;
     private javax.swing.JRadioButton secuencialRadioiButton;
-    private javax.swing.JTextField tiempoTotalParaleloTextField;
+    private javax.swing.JTextField tiempoTotalTextField;
     // End of variables declaration//GEN-END:variables
 }

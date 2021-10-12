@@ -5,6 +5,8 @@
  */
 package PMTD;
 
+import PDF.OrdenPreaparatoriaN1;
+import PDF.PDF_Generator;
 import com.itextpdf.text.Document;
 import com.itextpdf.text.DocumentException;
 import com.itextpdf.text.Paragraph;
@@ -79,6 +81,8 @@ public class OrdenP extends javax.swing.JDialog {
         jScrollPane3 = new javax.swing.JScrollPane();
         ordenPreparatoriaN1 = new javax.swing.JPanel();
         jLabel9 = new javax.swing.JLabel();
+        jButton2 = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
@@ -88,8 +92,6 @@ public class OrdenP extends javax.swing.JDialog {
         jScrollPane2 = new javax.swing.JScrollPane();
         act = new javax.swing.JTextArea();
         jLabel5 = new javax.swing.JLabel();
-        jButton2 = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
         jScrollPane5 = new javax.swing.JScrollPane();
         Aopera = new javax.swing.JTextArea();
         jScrollPane6 = new javax.swing.JScrollPane();
@@ -104,36 +106,6 @@ public class OrdenP extends javax.swing.JDialog {
         jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel9.setText("ORDEN PREPARATORIA N° 1");
         ordenPreparatoriaN1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 650, 40));
-
-        jLabel1.setText("Tipo de operación por realizar:");
-        ordenPreparatoriaN1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 40, -1, -1));
-
-        jLabel2.setText("Area de operaciones: ");
-        ordenPreparatoriaN1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 180, -1, -1));
-
-        jLabel3.setText("Fecha de inicio de operación:");
-        ordenPreparatoriaN1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 320, -1, -1));
-
-        operacion.setColumns(20);
-        operacion.setLineWrap(true);
-        operacion.setRows(5);
-        operacion.setText("Se llevará a cabo una operación defensiva (retrograda) (acción retardatriz), La 2a Brig Cab inicialmente  retardará a los CCEE del adversario desde la PI (L/F) hasta la (LFM) la cual se encuentra materializada por el río  Camaná, posteriormente proporcionará protección a la zona de retaguardia con el propósito de permitia que el CTe asegure la ZGESB.\n\n");
-        jScrollPane1.setViewportView(operacion);
-
-        ordenPreparatoriaN1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, 610, 110));
-
-        jLabel4.setText("Movimientos a realizar:");
-        ordenPreparatoriaN1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 460, -1, -1));
-
-        act.setColumns(20);
-        act.setRows(5);
-        act.setText("a. Inteligencia\n\nLos elementos de inteligencia proporcionaran permanentemente informaciones sobre posibles  desplazamientos del enemigo, indicando la cantidad de efectivos, composición y ejes de  itinerarios enemigos.\n\nLos elementos de inteligencia determinaran los posibles puntos de aplicación de los refuerzos\nde unidades del enemigo.\n\nLos elementos de inteligencia permanentemente proporcionarán información sobre las actitudes de la población en nuestro sector de responsabilidad.\n\nb. Vigilancia\n\nRealizar vigilancia sobre la línea de frontera quebrada RIO OCOÑA\n\nc. Reconocimiento\n\nReconocimiento sobre los ejes de progresión \"Azul\" materializado por la Panamericana Sur y eje de  progresión “Rojo” pampa Cunocuno y pampa Ceniceros Rojos.\n\nReconocimiento de la ubicación de las posiciones de los posibles refuerzos del enemigo.\nInformar sobre la ubicación exacta del sector de sembrado de minas en la línea de Frontera (Río\nOcoña).\n\nIdentificar los emplazamientos de las Armas de Apoyo de Fuegos (Artillería) enemiga, calibres y\nalcances de la misma\n\nIdentificar la ubicación de los medios de GE del Enemigo y sus capacidades.");
-        jScrollPane2.setViewportView(act);
-
-        ordenPreparatoriaN1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 620, 610, -1));
-
-        jLabel5.setText("Actividades IVR por realizar:");
-        ordenPreparatoriaN1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 600, -1, -1));
 
         jButton2.setText("Abrir");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -151,10 +123,40 @@ public class OrdenP extends javax.swing.JDialog {
         });
         ordenPreparatoriaN1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 750, -1, -1));
 
+        jLabel1.setText("Tipo de operación por realizar:");
+        ordenPreparatoriaN1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 40, -1, -1));
+
+        jLabel2.setText("Area de operaciones: ");
+        ordenPreparatoriaN1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 180, -1, -1));
+
+        jLabel3.setText("Fecha de inicio de operación:");
+        ordenPreparatoriaN1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 320, -1, -1));
+
+        operacion.setColumns(20);
+        operacion.setLineWrap(true);
+        operacion.setRows(5);
+        operacion.setText("Se llevará a cabo una operación defensiva (retrograda) (acción retardatriz), La 2a BRIG CAB inicialmente retardará a los CCEE del adversario desde la PI (L/F) hasta la (LFM) la cual se encuentra materializada por el río Camaná, posteriormente proporcionará protección a la zona de retaguardia con el propósito que permitía al CTE asegure la ZGESB.");
+        jScrollPane1.setViewportView(operacion);
+
+        ordenPreparatoriaN1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, 610, 110));
+
+        jLabel4.setText("Movimientos a realizar:");
+        ordenPreparatoriaN1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 460, -1, -1));
+
+        act.setColumns(20);
+        act.setRows(5);
+        act.setText("a. Inteligencia\n- Los elementos de inteligencia proporcionaran permanentemente informaciones sobre posibles desplazamientos del enemigo, indicando la cantidad de efectivos, composición y ejes de itinerarios enemigos.\n- Los elementos de inteligencia determinaran los posibles puntos de aplicación de los refuerzos de unidades del enemigo.\n- Los elementos de inteligencia permanentemente proporcionarán información sobre las actitudes de la población en nuestro sector de responsabilidad.\nb. Vigilancia\n- Realizar vigilancia sobre la línea de frontera quebrada RIO OCOÑA\nc. Reconocimiento\n- Reconocimiento sobre los ejes de progresión \"Azul\" materializado por la Panamericana Sur y eje de progresión “Rojo” pampa Cunocuno y pampa Ceniceros Rojos.\n- Reconocimiento de la ubicación de las posiciones de los posibles refuerzos del enemigo.\n- Informar sobre la ubicación exacta del sector de sembrado de minas en la línea de Frontera (Río Ocoña).\n- Identificar los emplazamientos de las Armas de Apoyo de Fuegos (Artillería) enemiga, calibres y alcances de esta.\n- Identificar la ubicación de los medios de GE del Enemigo y sus capacidades.");
+        jScrollPane2.setViewportView(act);
+
+        ordenPreparatoriaN1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 620, 610, -1));
+
+        jLabel5.setText("Actividades IVR por realizar:");
+        ordenPreparatoriaN1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 600, -1, -1));
+
         Aopera.setColumns(20);
         Aopera.setLineWrap(true);
         Aopera.setRows(5);
-        Aopera.setText("-Por el Norte: Jalonada por la cortadura de  la Quebrada Parca SE de C° Chutana,  pendiente S de C° Dos Rayas,  pendiente SO de C° Pacayacu.\n\n- Por el Sur: Hasta la ubicacions del A/S, jalonada por C° Vincho, pendiente S C° Marquesa, pendiente  N C° cueva de León.\n\n- Por el Este: Límite con la II DE,  jalonada por pendiente SO de C°  Pacayacu, C° los Cuellanos,  pendiente N C° Cueva de León. \n\n- Por el Oeste: Límite con la 2ª Brig.  Blind(-), jalonada por pendiente SE  de C° Chutana, C° San Julian, C°  Vincho.");
+        Aopera.setText("-Por el Norte: Jalonada por la cortadura de la Quebrada Parca SE de C° Chutana,  pendiente S de C° Dos Rayas,  pendiente SO de C° Pacayacu.\n- Por el Sur: Hasta la ubicacions del A/S, jalonada por C° Vincho, pendiente S C° Marquesa, pendiente N C° cueva de León.\n- Por el Este: Límite con la II DE, jalonada por pendiente SO de C°  Pacayacu, C° los Cuellanos,  pendiente N C° Cueva de León. \n- Por el Oeste: Límite con la 2ª Brig.  Blind(-), jalonada por pendiente SE  de C° Chutana, C° San Julian, C°  Vincho.");
         jScrollPane5.setViewportView(Aopera);
 
         ordenPreparatoriaN1.add(jScrollPane5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 200, 610, 110));
@@ -162,7 +164,7 @@ public class OrdenP extends javax.swing.JDialog {
         fecha.setColumns(20);
         fecha.setLineWrap(true);
         fecha.setRows(5);
-        fecha.setText("El planeamiento y preparación de las operaciones se iniciaran a partir del (D-250) y  la defensa se realizar el D (0600), disponiendo de\tun total de ……. para el planeamiento y preparación de las operaciones.");
+        fecha.setText("El planeamiento y preparación de las operaciones se iniciaran a partir del (D-250) y  la defensa se realizar el D (0600), disponiendo de un total de ……. para el planeamiento y preparación de las operaciones.");
         jScrollPane6.setViewportView(fecha);
 
         ordenPreparatoriaN1.add(jScrollPane6, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 340, 610, 110));
@@ -170,7 +172,7 @@ public class OrdenP extends javax.swing.JDialog {
         mov.setColumns(20);
         mov.setLineWrap(true);
         mov.setRows(5);
-        mov.setText("- Movimientos y Desplazamientos De Preferencia Nocturnos\n\n- Establecer El Sistema De Vigilancia De Nuestras Instalaciones.\n\n- Todas Las Unidades Se Desplazaran Desde La Zona  De Reunion En Rg Mala Hacia Las Posiciones Defensivas En Qda. Parca.");
+        mov.setText("- Movimientos y Desplazamientos De Preferencia Nocturnos\n- Establecer El Sistema De Vigilancia De Nuestras Instalaciones.\n- Todas Las Unidades Se Desplazarán Desde La Zona De Reunión En Rg Mala Hacia Las Posiciones Defensivas En Qda. Parca.");
         jScrollPane7.setViewportView(mov);
 
         ordenPreparatoriaN1.add(jScrollPane7, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 480, 610, 110));
@@ -197,7 +199,9 @@ public class OrdenP extends javax.swing.JDialog {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         try {
-            Generar(nombre);
+            PDF_Generator.GenerarOrdenPreaparatoriaN1("Orden Preparatoria N°1", 
+                    new OrdenPreaparatoriaN1(operacion.getText(), Aopera.getText(), 
+                    fecha.getText(), mov.getText(), act.getText()));
         } catch (FileNotFoundException ex) {
             Logger.getLogger(GuiaIni.class.getName()).log(Level.SEVERE, null,ex);
         } catch (DocumentException ex) {
@@ -206,8 +210,8 @@ public class OrdenP extends javax.swing.JDialog {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        if(!nombre.isEmpty())
-            abrir(nombre);
+        if(!"Orden Preparatoria N°1".isEmpty())
+            abrir("Orden Preparatoria N°1");
         else
             JOptionPane.showMessageDialog(null, "no se encuentra ese archivo con ese nombre","Atencion",2);
     }//GEN-LAST:event_jButton2ActionPerformed

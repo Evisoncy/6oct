@@ -64,13 +64,39 @@
                 </Constraint>
               </Constraints>
             </Component>
+            <Component class="javax.swing.JButton" name="jButton1">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Generar PDF"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton1ActionPerformed"/>
+              </Events>
+              <Constraints>
+                <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+                  <AbsoluteConstraints x="460" y="1070" width="-1" height="-1"/>
+                </Constraint>
+              </Constraints>
+            </Component>
+            <Component class="javax.swing.JButton" name="jButton2">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Abrir"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton2ActionPerformed"/>
+              </Events>
+              <Constraints>
+                <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+                  <AbsoluteConstraints x="150" y="1070" width="-1" height="-1"/>
+                </Constraint>
+              </Constraints>
+            </Component>
             <Component class="javax.swing.JLabel" name="jLabel1">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Iniciar el dise&#xf1;o:"/>
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                  <AbsoluteConstraints x="510" y="50" width="-1" height="20"/>
+                  <AbsoluteConstraints x="20" y="90" width="-1" height="30"/>
                 </Constraint>
               </Constraints>
             </Component>
@@ -80,7 +106,7 @@
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                  <AbsoluteConstraints x="20" y="80" width="-1" height="-1"/>
+                  <AbsoluteConstraints x="20" y="140" width="-1" height="-1"/>
                 </Constraint>
               </Constraints>
             </Component>
@@ -101,7 +127,7 @@
               </AuxValues>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                  <AbsoluteConstraints x="610" y="50" width="40" height="-1"/>
+                  <AbsoluteConstraints x="600" y="50" width="40" height="30"/>
                 </Constraint>
               </Constraints>
             </Component>
@@ -114,7 +140,7 @@
               </AuxValues>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                  <AbsoluteConstraints x="20" y="100" width="630" height="120"/>
+                  <AbsoluteConstraints x="20" y="160" width="630" height="120"/>
                 </Constraint>
               </Constraints>
 
@@ -135,7 +161,7 @@
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                  <AbsoluteConstraints x="20" y="230" width="-1" height="20"/>
+                  <AbsoluteConstraints x="20" y="290" width="-1" height="20"/>
                 </Constraint>
               </Constraints>
             </Component>
@@ -145,7 +171,7 @@
               </AuxValues>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                  <AbsoluteConstraints x="20" y="250" width="630" height="120"/>
+                  <AbsoluteConstraints x="20" y="310" width="630" height="120"/>
                 </Constraint>
               </Constraints>
 
@@ -156,7 +182,7 @@
                     <Property name="columns" type="int" value="20"/>
                     <Property name="lineWrap" type="boolean" value="true"/>
                     <Property name="rows" type="int" value="5"/>
-                    <Property name="text" type="java.lang.String" value="- TODOS LOS MOVIMIENTOS SE  REALIZARAN CON ORDEN Y DE  PREFERENCIA EN HORAS DE OSCURIDAD.&#xa;&#xa;- G-2 REALIZAR EL ANALISIS DEL ESPECTRO  ELECTROMAGNETICO.&#xa;&#xa;- RECONOCIMIENTO DE RUTAS  PRINCIPALES Y ALTERNAS, APTAS PARA EL  DESPLAZAMIENTO DE NUESTRAS FUERZAS.&#xa;&#xa;- COORDINAR, CON EL ESCALON SUPERIOR EL  RESULTADO DEL CRUCE DE LOS VECTORES QUE  CONVERGEN EN NUESTRA ADR.&#xa;&#xa;- G-2, G-3 Y G-4, COORDINAR EL PLAN DE DESPLAZAMIIENTO.&#xa;&#xa;- BASES CONTRATERRORISTAS, REALIZAR  RECONOCIMIENTOS DE SECTORES Y DE  RUTAS.&#xa;&#xa;- G-5, G-2 Y G-3 COORDINAR CON  ENTIDADES CIVILES Y ARTICULAR  ESFUERZOS EN NUESTRA ADR&#xa;&#xa;- G-2 ORIENTAR SU ESFUERZO DE BUSQUEDA,  MEDIANTE SUS PLANES DE INTELIGENCIA  DISTRIBUIDOS EN EL SECTOR.CORDINAR C&#xa;&#xa;"/>
+                    <Property name="text" type="java.lang.String" value="- Todos los movimientos se realizar&#xe1;n con orden y de preferencia en horas de oscuridad.&#xa;- G-2 realizar el an&#xe1;lisis del espectro electromagn&#xe9;tico.&#xa;- reconocimiento de rutas principales y alternas, aptas para el desplazamiento de nuestras fuerzas.&#xa;- coordinar, con el escal&#xf3;n superior el resultado del cruce de los vectores que convergen en nuestra ADR.&#xa;- G-2, G-3 y G-4, coordinar el plan de desplazamiento.&#xa;- bases contraterroristas, realizar reconocimientos de sectores y de rutas.&#xa;- G-5, G-2 y G-3 coordinar con entidades civiles y articular esfuerzos en nuestra ADR.&#xa;- G-2 orientar su esfuerzo de b&#xfa;squeda, mediante sus planes de inteligencia distribuidos en el sector."/>
                   </Properties>
                 </Component>
               </SubComponents>
@@ -167,7 +193,7 @@
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                  <AbsoluteConstraints x="20" y="380" width="-1" height="-1"/>
+                  <AbsoluteConstraints x="20" y="440" width="-1" height="-1"/>
                 </Constraint>
               </Constraints>
             </Component>
@@ -177,7 +203,7 @@
               </AuxValues>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                  <AbsoluteConstraints x="20" y="400" width="630" height="120"/>
+                  <AbsoluteConstraints x="20" y="460" width="630" height="120"/>
                 </Constraint>
               </Constraints>
 
@@ -188,7 +214,7 @@
                     <Property name="columns" type="int" value="20"/>
                     <Property name="lineWrap" type="boolean" value="true"/>
                     <Property name="rows" type="int" value="5"/>
-                    <Property name="text" type="java.lang.String" value="G-1: Dar cuenta de la situaci&#xf3;n de personal con respecto a  contagiados con COVID de las UU.&#xa;&#xa;G-2: Intensificar las medidas de contrainteligencia para  proteger la informaci&#xf3;n pertinente de nuestras  operaciones y acciones militares.&#xa;&#xa;G-3: Intensificar el entrenamiento y ensayos nocturnos para las operaciones militares.&#xa;&#xa;G-4: Solicitar al escal&#xf3;n superior el completamiento de las necesidades para cumplir con las acciones militares.&#xa;&#xa;G-5: Realizar en coordinaci&#xf3;n con los dem&#xe1;s miembros del  em, el planeamiento para las acciones militares."/>
+                    <Property name="text" type="java.lang.String" value="- G-1: Dar cuenta de la situaci&#xf3;n de personal con respecto a  contagiados con COVID de las UU.&#xa;- G-2: Intensificar las medidas de contrainteligencia para  proteger la informaci&#xf3;n pertinente de nuestras  operaciones y acciones militares.&#xa;- G-3: Intensificar el entrenamiento y ensayos nocturnos para las operaciones militares.&#xa;- G-4: Solicitar al escal&#xf3;n superior el completamiento de las necesidades para cumplir con las acciones militares.&#xa;- G-5: Realizar en coordinaci&#xf3;n con los dem&#xe1;s miembros del  em, el planeamiento para las acciones militares."/>
                   </Properties>
                 </Component>
               </SubComponents>
@@ -199,7 +225,7 @@
               </AuxValues>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                  <AbsoluteConstraints x="20" y="550" width="630" height="120"/>
+                  <AbsoluteConstraints x="20" y="610" width="630" height="120"/>
                 </Constraint>
               </Constraints>
 
@@ -210,7 +236,7 @@
                     <Property name="columns" type="int" value="20"/>
                     <Property name="lineWrap" type="boolean" value="true"/>
                     <Property name="rows" type="int" value="5"/>
-                    <Property name="text" type="java.lang.String" value="- Informaci&#xf3;n detallada de las poblaciones con  mayor vulnerabilidad en el ADR.&#xa;&#xa;- &#xda;ltimos movimientos de la OT-SL dentro de nuestra ADR.&#xa;&#xa;- Lugares probables para instalaci&#xf3;n de albergues temporales.&#xa;&#xa;- Capacidad operativa del material y equipo.&#xa;&#xa;- Informaci&#xf3;n sobre puentes en el ADR.&#xa;&#xa;- Apoyo administrativo con lo que contamos.&#xa;"/>
+                    <Property name="text" type="java.lang.String" value="- Informaci&#xf3;n detallada de las poblaciones con  mayor vulnerabilidad en el ADR.&#xa;- &#xda;ltimos movimientos de la OT-SL dentro de nuestra ADR.&#xa;- Lugares probables para instalaci&#xf3;n de albergues temporales.&#xa;- Capacidad operativa del material y equipo.&#xa;- Informaci&#xf3;n sobre puentes en el ADR.&#xa;- Apoyo administrativo con lo que contamos."/>
                   </Properties>
                 </Component>
               </SubComponents>
@@ -221,33 +247,7 @@
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                  <AbsoluteConstraints x="20" y="530" width="-1" height="-1"/>
-                </Constraint>
-              </Constraints>
-            </Component>
-            <Component class="javax.swing.JButton" name="jButton1">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Generar PDF"/>
-              </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton1ActionPerformed"/>
-              </Events>
-              <Constraints>
-                <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                  <AbsoluteConstraints x="460" y="1000" width="-1" height="-1"/>
-                </Constraint>
-              </Constraints>
-            </Component>
-            <Component class="javax.swing.JButton" name="jButton2">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Abrir"/>
-              </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton2ActionPerformed"/>
-              </Events>
-              <Constraints>
-                <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                  <AbsoluteConstraints x="150" y="1000" width="-1" height="-1"/>
+                  <AbsoluteConstraints x="20" y="590" width="-1" height="-1"/>
                 </Constraint>
               </Constraints>
             </Component>
@@ -257,7 +257,7 @@
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                  <AbsoluteConstraints x="210" y="50" width="-1" height="20"/>
+                  <AbsoluteConstraints x="290" y="50" width="-1" height="30"/>
                 </Constraint>
               </Constraints>
             </Component>
@@ -271,7 +271,7 @@
               </Events>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                  <AbsoluteConstraints x="160" y="50" width="40" height="-1"/>
+                  <AbsoluteConstraints x="240" y="50" width="40" height="30"/>
                 </Constraint>
               </Constraints>
             </Component>
@@ -281,7 +281,7 @@
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                  <AbsoluteConstraints x="250" y="50" width="-1" height="20"/>
+                  <AbsoluteConstraints x="410" y="50" width="-1" height="30"/>
                 </Constraint>
               </Constraints>
             </Component>
@@ -303,17 +303,7 @@
               </AuxValues>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                  <AbsoluteConstraints x="410" y="50" width="80" height="-1"/>
-                </Constraint>
-              </Constraints>
-            </Component>
-            <Component class="javax.swing.JLabel" name="jLabel8">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Lugar de planeamiento"/>
-              </Properties>
-              <Constraints>
-                <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                  <AbsoluteConstraints x="20" y="840" width="-1" height="-1"/>
+                  <AbsoluteConstraints x="150" y="90" width="120" height="30"/>
                 </Constraint>
               </Constraints>
             </Component>
@@ -323,39 +313,17 @@
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                  <AbsoluteConstraints x="20" y="680" width="-1" height="-1"/>
+                  <AbsoluteConstraints x="20" y="740" width="-1" height="-1"/>
                 </Constraint>
               </Constraints>
             </Component>
-            <Container class="javax.swing.JScrollPane" name="jScrollPane5">
-              <AuxValues>
-                <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
-              </AuxValues>
-              <Constraints>
-                <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                  <AbsoluteConstraints x="20" y="860" width="630" height="120"/>
-                </Constraint>
-              </Constraints>
-
-              <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
-              <SubComponents>
-                <Component class="javax.swing.JTextArea" name="lugar">
-                  <Properties>
-                    <Property name="columns" type="int" value="20"/>
-                    <Property name="lineWrap" type="boolean" value="true"/>
-                    <Property name="rows" type="int" value="5"/>
-                    <Property name="text" type="java.lang.String" value="SE REUNIRAN EN LA SALA DE OPERACIONES DEL PUESTO DE COMANDO DE LA 2&#xb0; BRIG INF QUE  SE ENCUENTRA EN LA LOCALIDAD DE PICHARI BAJO A PARTIR DEL DIA (D-112) SEG&#xda;N LO  ESPECIFICADO POR EL JEMA Y EN SITUACIONES ESPECIALES CON ORDEN."/>
-                  </Properties>
-                </Component>
-              </SubComponents>
-            </Container>
             <Container class="javax.swing.JScrollPane" name="jScrollPane6">
               <AuxValues>
                 <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
               </AuxValues>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                  <AbsoluteConstraints x="20" y="700" width="630" height="120"/>
+                  <AbsoluteConstraints x="20" y="760" width="630" height="120"/>
                 </Constraint>
               </Constraints>
 
@@ -366,7 +334,7 @@
                     <Property name="columns" type="int" value="20"/>
                     <Property name="lineWrap" type="boolean" value="true"/>
                     <Property name="rows" type="int" value="5"/>
-                    <Property name="text" type="java.lang.String" value="1. D-112 ( RECEPCION DE LA MISION )&#xa;2. D-105 ( ANALISIS DE  LA MISION )&#xa;3. D-101 ( DESARROLLO DEL CONOPs )&#xa;4. D-94  ( DECISION DEL CMDTE )&#xa;5. D-91  ( DISTRIBUCION DE LA  ORDEN DE OPERACIONES A LAS UU SUBORDINADAS )"/>
+                    <Property name="text" type="java.lang.String" value="1. D-112 (recepci&#xf3;n de la misi&#xf3;n)&#xa;2. D-105 (an&#xe1;lisis de la misi&#xf3;n)&#xa;3. D-101 (desarrollo del CONOPs)&#xa;4. D-94 (decisi&#xf3;n del CMDTE)&#xa;5. D-91 (distribuci&#xf3;n de la orden de operaciones a las UU subordinadas)"/>
                   </Properties>
                 </Component>
               </SubComponents>
@@ -377,7 +345,39 @@
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                  <AbsoluteConstraints x="20" y="50" width="-1" height="-1"/>
+                  <AbsoluteConstraints x="20" y="50" width="-1" height="30"/>
+                </Constraint>
+              </Constraints>
+            </Component>
+            <Container class="javax.swing.JScrollPane" name="jScrollPane5">
+              <AuxValues>
+                <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+              </AuxValues>
+              <Constraints>
+                <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+                  <AbsoluteConstraints x="20" y="920" width="630" height="120"/>
+                </Constraint>
+              </Constraints>
+
+              <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+              <SubComponents>
+                <Component class="javax.swing.JTextArea" name="lugar">
+                  <Properties>
+                    <Property name="columns" type="int" value="20"/>
+                    <Property name="lineWrap" type="boolean" value="true"/>
+                    <Property name="rows" type="int" value="5"/>
+                    <Property name="text" type="java.lang.String" value="Se reunir&#xe1;n en la sala de operaciones del puesto de comando de la 2&#xb0; BRIG INF que se encuentra en la localidad de Pichari bajo a partir del d&#xed;a (D-112) seg&#xfa;n lo especificado por el jema y en situaciones especiales con orden."/>
+                  </Properties>
+                </Component>
+              </SubComponents>
+            </Container>
+            <Component class="javax.swing.JLabel" name="jLabel8">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Lugar de planeamiento"/>
+              </Properties>
+              <Constraints>
+                <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+                  <AbsoluteConstraints x="20" y="900" width="-1" height="-1"/>
                 </Constraint>
               </Constraints>
             </Component>

@@ -150,7 +150,7 @@
     <Component class="javax.swing.JButton" name="jButton5">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/imagenes/2da etapa/botones/Etapa_2_-_Actividad_6.png"/>
+          <Image iconType="3" name="/imagenes/2da etapa/botones/Etapa 2 - Actividad 6.png"/>
         </Property>
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
           <Connection code="null" type="code"/>

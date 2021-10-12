@@ -315,7 +315,7 @@ public class Etapa2 extends javax.swing.JPanel {
 
     private void jButton4MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton4MouseEntered
         // TODO add your handling code here:
-        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/2da etapa/botones/Etapa 2 - Actividad 5 - Seleccionable.png")));
+        //jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/2da etapa/botones/Etapa 2 - Actividad 5 - Seleccionable.png")));
     }//GEN-LAST:event_jButton4MouseEntered
 
     private void jButton5MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton5MouseEntered

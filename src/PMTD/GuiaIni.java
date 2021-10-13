@@ -169,6 +169,7 @@ public class GuiaIni extends javax.swing.JDialog {
         Coord.setColumns(20);
         Coord.setLineWrap(true);
         Coord.setRows(5);
+        Coord.setText("- Unidad: BCT 34\n    - Responsable: Teninete Alarcon Canova Piero");
         jScrollPane3.setViewportView(Coord);
 
         jPanel1.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, 630, 120));

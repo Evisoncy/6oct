@@ -147,11 +147,16 @@ public class ActSit extends java.awt.Dialog {
 
         jLabel22.setText("Fecha: Formato dd/mm/aaaa");
 
+        txtUnidad3.setText("2° Brig Blin");
         txtUnidad3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtUnidad3ActionPerformed(evt);
             }
         });
+
+        txtLugar6.setText("15/10/2021");
+
+        txtLugar7.setText("Rg Mala");
 
         jLabel23.setText("Apreciacion de situacion de ");
 
@@ -209,8 +214,7 @@ public class ActSit extends java.awt.Dialog {
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null},
-                {null, null}
+                {"Consideraciones civiles", "La población de Majes viene desarrollando acciones de lucha contra la peste Bubónica de reciente brote, asi como  las poblaciones de Quilca y Vitor se han detectado casoss de gripe"}
             },
             new String [] {
                 "Factor", "Descripcion"
@@ -276,15 +280,21 @@ public class ActSit extends java.awt.Dialog {
         jLabel45.setText("Otros hechos");
 
         jTextArea3.setColumns(20);
+        jTextArea3.setLineWrap(true);
         jTextArea3.setRows(5);
+        jTextArea3.setText("Los Rios Ocoña y Quilca que se encuentran en nuestra AO incrementaran su caudal por las lluvias en los meses de septiembre a diciembre de forma muy frecuent");
         jScrollPane5.setViewportView(jTextArea3);
 
         jTextArea4.setColumns(20);
+        jTextArea4.setLineWrap(true);
         jTextArea4.setRows(5);
+        jTextArea4.setText("Descripcion1:Los Rios Ocoña y Quilca que se encuentran en nuestra AO incrementaran su caudal por las lluvias en los meses de septiembre a diciembre de forma muy frecuente.\n");
         jScrollPane6.setViewportView(jTextArea4);
 
         jTextArea5.setColumns(20);
+        jTextArea5.setLineWrap(true);
         jTextArea5.setRows(5);
+        jTextArea5.setText("La población de Majes viene desarrollando acciones de lucha contra la peste Bubónica de reciente brote, asi como  las poblaciones de Quilca y Vitor se han detectado casoss de gripe");
         jScrollPane7.setViewportView(jTextArea5);
 
         javax.swing.GroupLayout jPanel17Layout = new javax.swing.GroupLayout(jPanel17);
@@ -325,7 +335,9 @@ public class ActSit extends java.awt.Dialog {
         jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder("c. Fuerzas enemigas"));
 
         jTextArea1.setColumns(20);
+        jTextArea1.setLineWrap(true);
         jTextArea1.setRows(5);
+        jTextArea1.setText("-Dispone (01) Cía de FFEE\n-Dispone (01) Batallón de inf de Marina\n-Dispone 10 Helicopteros \"PUMA\"\n-Dispone de medios de comunicaciones y GE");
         jScrollPane3.setViewportView(jTextArea1);
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
@@ -350,10 +362,9 @@ public class ActSit extends java.awt.Dialog {
 
         jTable2.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null}
+                {"RCB 21","GAB 2",""},
+                {"RCB 22","BTQ 20",""},
+                {"RCB 23","Esc AT 2",""}
             },
             new String [] {
                 "Elon sup.", "U.Vecinas", "Otros"
@@ -412,10 +423,9 @@ public class ActSit extends java.awt.Dialog {
 
         jTable3.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null}
+                {"-1 Cía de Morteros", "Optimas"},
+                {"-3 Compañias de fusileros", "Optimas"},
+                {"-1 Sec Ing Comb en A/D", "Optimas"}
             },
             new String [] {
                 "Recurso", "Condiciones actuales"
@@ -474,10 +484,6 @@ public class ActSit extends java.awt.Dialog {
 
         jTable4.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null},
-                {null},
-                {null},
-                {null}
             },
             new String [] {
                 "Cap. disponible"
@@ -533,6 +539,7 @@ public class ActSit extends java.awt.Dialog {
         );
 
         jTextArea2.setColumns(20);
+        jTextArea2.setLineWrap(true);
         jTextArea2.setRows(5);
         jScrollPane11.setViewportView(jTextArea2);
 
@@ -573,7 +580,9 @@ public class ActSit extends java.awt.Dialog {
         jPanel8.setBorder(javax.swing.BorderFactory.createTitledBorder("e. Consideraciones civiles"));
 
         jTextArea8.setColumns(20);
+        jTextArea8.setLineWrap(true);
         jTextArea8.setRows(5);
+        jTextArea8.setText("-Las modificaciones de los tratados\n-Posibles cambios de partidos políticos en los gobiernos y sus ideas sobre la sociedad");
         jScrollPane12.setViewportView(jTextArea8);
 
         jLabel7.setText("Factores politicos");
@@ -581,24 +590,29 @@ public class ActSit extends java.awt.Dialog {
         jLabel8.setText("Factores económicos");
 
         jTextArea9.setColumns(20);
+        jTextArea9.setLineWrap(true);
         jTextArea9.setRows(5);
         jScrollPane13.setViewportView(jTextArea9);
 
         jLabel9.setText("Factores sociologicos");
 
         jTextArea10.setColumns(20);
+        jTextArea10.setLineWrap(true);
         jTextArea10.setRows(5);
+        jTextArea10.setText("-Cambios geográficos de la población\n-Diversidad raciaal en la poblacion\n-Estructura de edades cambiantes en la poblacion");
         jScrollPane14.setViewportView(jTextArea10);
 
         jLabel10.setText("Factores psicologicos");
 
         jTextArea11.setColumns(20);
+        jTextArea11.setLineWrap(true);
         jTextArea11.setRows(5);
         jScrollPane15.setViewportView(jTextArea11);
 
         jLabel11.setText("Infraestructura");
 
         jTextArea12.setColumns(20);
+        jTextArea12.setLineWrap(true);
         jTextArea12.setRows(5);
         jScrollPane16.setViewportView(jTextArea12);
 
@@ -622,14 +636,19 @@ public class ActSit extends java.awt.Dialog {
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel8Layout.createSequentialGroup()
                 .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(jPanel8Layout.createSequentialGroup()
+                            .addContainerGap()
+                            .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jLabel7)
+                                .addComponent(jLabel8)))
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel8Layout.createSequentialGroup()
+                            .addGap(10, 10, 10)
+                            .addComponent(jScrollPane13, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel8Layout.createSequentialGroup()
                         .addContainerGap()
-                        .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel7)
-                            .addComponent(jLabel8)
-                            .addComponent(jScrollPane13, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addComponent(jScrollPane12, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jScrollPane12, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(20, 20, 20)
                 .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jLabel10)
                     .addComponent(jLabel9)
@@ -652,18 +671,19 @@ public class ActSit extends java.awt.Dialog {
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel8Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel8Layout.createSequentialGroup()
+                        .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel7)
+                            .addComponent(jLabel9))
+                        .addGap(11, 11, 11))
                     .addGroup(jPanel8Layout.createSequentialGroup()
-                        .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(jPanel8Layout.createSequentialGroup()
-                                .addComponent(jLabel9)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jScrollPane14, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel8Layout.createSequentialGroup()
-                                .addComponent(jLabel11)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jScrollPane16, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(18, 18, 18)
+                        .addComponent(jLabel11)
+                        .addGap(13, 13, 13)))
+                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addGroup(jPanel8Layout.createSequentialGroup()
+                        .addComponent(jScrollPane16, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(jPanel8Layout.createSequentialGroup()
                                 .addComponent(jLabel10)
@@ -672,14 +692,14 @@ public class ActSit extends java.awt.Dialog {
                             .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                 .addComponent(btnFin1)
                                 .addComponent(btnFin2))))
-                    .addGroup(jPanel8Layout.createSequentialGroup()
-                        .addComponent(jLabel7)
-                        .addGap(11, 11, 11)
-                        .addComponent(jScrollPane12, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jLabel8)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jScrollPane13, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jScrollPane14, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(jPanel8Layout.createSequentialGroup()
+                            .addComponent(jScrollPane12, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                            .addComponent(jLabel8)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(jScrollPane13, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 

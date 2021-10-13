@@ -207,7 +207,7 @@ public class EvProb extends javax.swing.JDialog {
                 if(tipo.equals("respuesta")){
 
                     lblPregunta.setText("");
-                    lblRespuesta.setText("Desea volver a intentarlo?");
+                    lblRespuesta.setText("");
 
                     JOptionPane.showMessageDialog(null,valor , "Mensaje",JOptionPane.INFORMATION_MESSAGE);
                     res.setText(valor);

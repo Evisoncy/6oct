@@ -57,21 +57,21 @@ public class EvImp extends javax.swing.JDialog {
         buttonGroup1 = new javax.swing.ButtonGroup();
         jPanel1 = new javax.swing.JPanel();
         lblRespuesta = new javax.swing.JLabel();
-        lblPregunta = new javax.swing.JLabel();
         rbtnSi = new javax.swing.JRadioButton();
         rbtnNo = new javax.swing.JRadioButton();
         btnContinuar = new javax.swing.JButton();
         jLabel9 = new javax.swing.JLabel();
         label1 = new java.awt.Label();
         res = new java.awt.TextField();
+        lblPregunta = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jPanel1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         lblRespuesta.setText("jLabel1");
-
-        lblPregunta.setText("jLabel1");
+        jPanel1.add(lblRespuesta, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 70, -1, -1));
 
         buttonGroup1.add(rbtnSi);
         rbtnSi.setText("Si");
@@ -80,9 +80,11 @@ public class EvImp extends javax.swing.JDialog {
                 rbtnSiActionPerformed(evt);
             }
         });
+        jPanel1.add(rbtnSi, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 100, -1, 22));
 
         buttonGroup1.add(rbtnNo);
         rbtnNo.setText("No");
+        jPanel1.add(rbtnNo, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 100, -1, -1));
 
         btnContinuar.setText("Continuar");
         btnContinuar.addActionListener(new java.awt.event.ActionListener() {
@@ -90,62 +92,24 @@ public class EvImp extends javax.swing.JDialog {
                 btnContinuarActionPerformed(evt);
             }
         });
+        jPanel1.add(btnContinuar, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 130, -1, -1));
 
         jLabel9.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel9.setText("EVALUACIÓN DEL NIVEL DE IMPACTO");
+        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 340, 40));
 
         label1.setText("RESULTADO");
+        jPanel1.add(label1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 150, -1, -1));
+        jPanel1.add(res, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 180, 290, 45));
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(205, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel9)
-                        .addGap(197, 197, 197))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(rbtnSi)
-                                .addGap(92, 92, 92)
-                                .addComponent(rbtnNo))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(41, 41, 41)
-                                .addComponent(btnContinuar)))
-                        .addGap(260, 260, 260))))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(31, 31, 31)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(res, javax.swing.GroupLayout.PREFERRED_SIZE, 323, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(label1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblPregunta)
-                    .addComponent(lblRespuesta))
-                .addGap(0, 0, Short.MAX_VALUE))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel9)
-                .addGap(30, 30, 30)
-                .addComponent(lblPregunta)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(lblRespuesta)
-                .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(rbtnSi, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(rbtnNo))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(btnContinuar)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(label1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(res, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(37, Short.MAX_VALUE))
-        );
+        lblPregunta.setEditable(false);
+        lblPregunta.setColumns(20);
+        lblPregunta.setLineWrap(true);
+        lblPregunta.setRows(5);
+        lblPregunta.setBorder(null);
+        lblPregunta.setOpaque(false);
+        jPanel1.add(lblPregunta, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 40, 300, 60));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -153,15 +117,15 @@ public class EvImp extends javax.swing.JDialog {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
@@ -198,7 +162,7 @@ public class EvImp extends javax.swing.JDialog {
                 if(tipo.equals("respuesta")){
 
                     lblPregunta.setText("");
-                    lblRespuesta.setText("Desea volver a intentarlo?");
+                    lblRespuesta.setText("");
 
                     JOptionPane.showMessageDialog(null,valor , "Mensaje",JOptionPane.INFORMATION_MESSAGE);
                     res.setText(valor);
@@ -262,7 +226,7 @@ public class EvImp extends javax.swing.JDialog {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private java.awt.Label label1;
-    private javax.swing.JLabel lblPregunta;
+    private javax.swing.JTextArea lblPregunta;
     private javax.swing.JLabel lblRespuesta;
     private javax.swing.JRadioButton rbtnNo;
     private javax.swing.JRadioButton rbtnSi;

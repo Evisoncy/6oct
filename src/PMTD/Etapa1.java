@@ -290,6 +290,7 @@ public class Etapa1 extends javax.swing.JPanel {
     }//GEN-LAST:event_jButton6ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+       actividad_6 =  (evaInicial) HelpConstructor.objectCreator(actividad_6,evaInicial.class,typeParametter, null,true);
        guiaIniciacion =  (GuiaIni) HelpConstructor.objectCreator(guiaIniciacion,GuiaIni.class,typeParametter, null,true);
        guiaIniciacion.setLocationRelativeTo(null);
        guiaIniciacion.setValoresIniciales(actividad_6.getTiempoInicial(),actividad_6.getModeloMetodo(), actividad_6.getIndexMetodo());

@@ -162,7 +162,7 @@ public class GuiaIni extends javax.swing.JDialog {
                 IniciarDiseñoActionPerformed(evt);
             }
         });
-        jPanel1.add(IniciarDiseño, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 50, 40, 30));
+        jPanel1.add(IniciarDiseño, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 90, 40, 30));
 
         jScrollPane3.setToolTipText("");
 
@@ -219,7 +219,7 @@ public class GuiaIni extends javax.swing.JDialog {
         jPanel1.add(time, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 50, 40, 30));
 
         jLabel7.setText("Método de planeamiento:");
-        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 50, -1, 30));
+        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 50, -1, 30));
 
         metodo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Paralelo", "Secuencial" }));
         metodo.setEnabled(false);
@@ -228,7 +228,7 @@ public class GuiaIni extends javax.swing.JDialog {
                 metodoActionPerformed(evt);
             }
         });
-        jPanel1.add(metodo, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 90, 120, 30));
+        jPanel1.add(metodo, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 50, 120, 30));
 
         jLabel10.setText("Fecha de planeamiento");
         jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 740, -1, -1));

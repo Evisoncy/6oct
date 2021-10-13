@@ -76,9 +76,9 @@ public class Iniciar extends javax.swing.JFrame implements Runnable{
         jTextField2 = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
         pieDePagina = new javax.swing.JPanel();
-        titulo = new javax.swing.JLabel();
         jButton3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
+        titulo = new javax.swing.JLabel();
         VistaCarrusel = new javax.swing.JPanel();
         prev = new javax.swing.JButton();
         next = new javax.swing.JButton();
@@ -143,12 +143,9 @@ public class Iniciar extends javax.swing.JFrame implements Runnable{
         pieDePagina.setOpaque(false);
         pieDePagina.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        titulo.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        titulo.setForeground(new java.awt.Color(255, 255, 255));
-        titulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        pieDePagina.add(titulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 320, 100));
-
         jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/sin-sonido.png"))); // NOI18N
+        jButton3.setBorder(null);
+        jButton3.setBorderPainted(false);
         jButton3.setContentAreaFilled(false);
         jButton3.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -163,6 +160,8 @@ public class Iniciar extends javax.swing.JFrame implements Runnable{
         pieDePagina.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 30, 40, -1));
 
         jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/simbolo-de-interfaz-de-sonido-dibujado-a-mano-de-un-altavoz.png"))); // NOI18N
+        jButton4.setBorder(null);
+        jButton4.setBorderPainted(false);
         jButton4.setContentAreaFilled(false);
         jButton4.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -175,6 +174,11 @@ public class Iniciar extends javax.swing.JFrame implements Runnable{
             }
         });
         pieDePagina.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(265, 30, 50, -1));
+
+        titulo.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        titulo.setForeground(new java.awt.Color(255, 255, 255));
+        titulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        pieDePagina.add(titulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 320, 100));
 
         vistaLogin.add(pieDePagina, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 360, 320, 100));
 
